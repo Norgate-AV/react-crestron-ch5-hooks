@@ -1,61 +1,88 @@
 {
-  "version": "0.1.0",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "react-crestron-ch5-hooks",
-  "author": "Damien Butt",
-  "module": "dist/react-crestron-ch5-hooks.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/react-crestron-ch5-hooks.cjs.production.min.js",
-      "limit": "10 KB"
+    "name": "@norgate-av/react-crestron-ch5-hooks",
+    "description": "A collection of Crestron CH5 hooks 🪝🪝, for React 😀",
+    "version": "0.0.0-development",
+    "keywords": [
+        "react",
+        "hooks",
+        "crestron",
+        "ch5"
+    ],
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/react-crestron-ch5-hooks.esm.js",
+    "typings": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks.git"
     },
-    {
-      "path": "dist/react-crestron-ch5-hooks.esm.js",
-      "limit": "10 KB"
+    "bugs": {
+        "url": "https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/issues"
+    },
+    "files": [
+        "dist"
+    ],
+    "engines": {
+        "node": ">=14"
+    },
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "yarn clean && tsdx build",
+        "test": "tsdx test --passWithNoTests",
+        "lint": "tsdx lint",
+        "lint:fix": "tsdx lint --fix",
+        "prepare": "husky install",
+        "size": "size-limit",
+        "analyze": "size-limit --why",
+        "clean": "rimraf dist",
+        "semantic-release": "semantic-release",
+        "commit": "git-cz",
+        "pretty:fix": "prettier --write ."
+    },
+    "peerDependencies": {
+        "react": ">=16"
+    },
+    "size-limit": [
+        {
+            "path": "dist/react-crestron-ch5-hooks.cjs.production.min.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/react-crestron-ch5-hooks.esm.js",
+            "limit": "10 KB"
+        }
+    ],
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.3",
+        "@commitlint/config-conventional": "^16.2.1",
+        "@size-limit/preset-small-lib": "^7.0.8",
+        "@types/react": "^18.0.3",
+        "@types/react-dom": "^18.0.0",
+        "@types/rimraf": "^3.0.2",
+        "cz-conventional-changelog": "3.3.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.5",
+        "rimraf": "^3.0.2",
+        "semantic-release": "^19.0.2",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "size-limit": "^7.0.8",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.3.1",
+        "typescript": "^4.6.3"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "yarn lint:fix",
+            "yarn pretty:fix"
+        ],
+        "*.{css,scss,md,html,json,yml,yaml}": [
+            "yarn pretty:fix"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
-  ],
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "^7.0.8",
-    "@types/react": "^18.0.3",
-    "@types/react-dom": "^18.0.0",
-    "husky": "^7.0.4",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "size-limit": "^7.0.8",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.6.3"
-  }
 }
