@@ -85,6 +85,7 @@
         "rimraf": "^3.0.2",
         "semantic-release": "^19.0.2",
         "size-limit": "^7.0.8",
+        "sponge": "^0.1.0",
         "tsdx": "^0.14.1",
         "tslib": "^2.3.1",
         "typescript": "^4.6.3"
