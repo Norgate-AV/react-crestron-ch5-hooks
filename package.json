@@ -83,6 +83,7 @@
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "rimraf": "^3.0.2",
+        "run-script-os": "^1.1.6",
         "semantic-release": "^19.0.2",
         "size-limit": "^7.0.8",
         "sponge": "^0.1.0",
