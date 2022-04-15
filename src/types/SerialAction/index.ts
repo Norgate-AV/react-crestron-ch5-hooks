@@ -1,3 +1,3 @@
-declare interface SerialAction {
+export declare interface SerialAction {
     setValue: (value: string) => void;
 }
