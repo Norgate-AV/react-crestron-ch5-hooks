@@ -21,21 +21,21 @@ export function useCrestronPublishDigital(signalName: string): [DigitalAction] {
         release();
     };
 
-    const hold = (duration: number, callback: () => void) => {
-        push();
+    // const hold = (duration: number, callback: () => void) => {
+    //     push();
 
-        setTimeout(() => {
-            release();
-            callback();
-        }, duration);
-    };
+    //     setTimeout(() => {
+    //         release();
+    //         callback();
+    //     }, duration);
+    // };
 
     return [
         {
             push,
             release,
             click,
-            hold,
+            // hold,
         },
     ];
 }

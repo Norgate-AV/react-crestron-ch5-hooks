@@ -25,20 +25,20 @@ export function useCrestronPublishDigitalCollection(
             release();
         };
 
-        const hold = (duration: number, callback: () => void) => {
-            push();
+        // const hold = (duration: number, callback: () => void) => {
+        //     push();
 
-            setTimeout(() => {
-                release();
-                callback();
-            }, duration);
-        };
+        //     setTimeout(() => {
+        //         release();
+        //         callback();
+        //     }, duration);
+        // };
 
         actions.push({
             push,
             release,
             click,
-            hold,
+            // hold,
         });
     });
 
