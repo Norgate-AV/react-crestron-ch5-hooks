@@ -17,15 +17,15 @@ export function useCrestronPublishDigital(signalName: string): [DigitalAction] {
     };
 
     const click = () => {
-        publish(true);
-        publish(false);
+        push();
+        release();
     };
 
     const hold = (duration: number, callback: () => void) => {
-        publish(true);
+        push();
 
         setTimeout(() => {
-            publish(false);
+            release();
             callback();
         }, duration);
     };

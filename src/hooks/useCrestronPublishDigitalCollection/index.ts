@@ -3,9 +3,9 @@ import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 
 export function useCrestronPublishDigitalCollection(
     signalNames: string[],
-): DigitalActions[] {
+): DigitalAction[] {
     const signalType = CrestronCH5.SignalType.Boolean;
-    const actions: DigitalActions[] = [];
+    const actions: DigitalAction[] = [];
 
     signalNames.forEach((signalName) => {
         const publish = (value: boolean) => {
@@ -21,15 +21,15 @@ export function useCrestronPublishDigitalCollection(
         };
 
         const click = () => {
-            publish(true);
-            publish(false);
+            push();
+            release();
         };
 
         const hold = (duration: number, callback: () => void) => {
-            publish(true);
+            push();
 
             setTimeout(() => {
-                publish(false);
+                release();
                 callback();
             }, duration);
         };
