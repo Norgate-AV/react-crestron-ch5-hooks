@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { DigitalStateCollectionCallback } from "../../types";
+import { DigitalStateCollectionCallback, StateSubscription } from "../../types";
 
 export function useCrestronSubscribeDigitalCollection(
     signalNames: string[],
@@ -19,7 +19,7 @@ export function useCrestronSubscribeDigitalCollection(
 
     useEffect(() => {
         const signalType = CrestronCH5.SignalType.Boolean;
-        const subscriptions: CrestronStateSubscription[] = [];
+        const subscriptions: StateSubscription[] = [];
 
         signalNames.forEach((signalName, index) => {
             const id = subscribeState(
