@@ -1,16 +1,7 @@
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 
-interface DigitalActions {
-    push: () => void;
-    release: () => void;
-    click: () => void;
-    hold: (duration: number, callback: () => void) => void;
-}
-
-export function useCrestronPublishDigital(
-    signalName: string,
-): [DigitalActions] {
+export function useCrestronPublishDigital(signalName: string): [DigitalAction] {
     const signalType = CrestronCH5.SignalType.Boolean;
 
     const publish = (value: boolean) => {
