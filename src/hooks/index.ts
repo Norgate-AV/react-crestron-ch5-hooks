@@ -11,3 +11,4 @@ export * from "./useCrestronSubscribeAnalog";
 export * from "./useCrestronSubscribeDigital";
 export * from "./useCrestronSubscribeSerial";
 export * from "./useCrestronSubscribeAnalogCollection";
+export * from "./useCrestronSubscribeDigitalCollection";
