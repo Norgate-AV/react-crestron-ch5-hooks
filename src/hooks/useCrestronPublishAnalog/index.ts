@@ -1,12 +1,13 @@
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
+import { AnalogAction } from "../../types";
 
-export function useCrestronPublishAnalog(
-    signalName: string,
-): [(value: number) => void] {
+export function useCrestronPublishAnalog(signalName: string): [AnalogAction] {
     return [
-        (value: number) =>
-            publishEvent(CrestronCH5.SignalType.Number, signalName, value),
+        {
+            setValue: (value: number) =>
+                publishEvent(CrestronCH5.SignalType.Number, signalName, value),
+        },
     ];
 }
 
