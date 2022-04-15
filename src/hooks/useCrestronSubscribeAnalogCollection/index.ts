@@ -8,7 +8,7 @@ export function useCrestronSubscribeAnalogCollection(
     callback?: AnalogStateCollectionCallback,
 ): number[] {
     const [state, setState] = useState<number[]>(
-        Array.from({ length: signalNames.length }).fill(0),
+        Array.from<number>({ length: signalNames.length }).fill(0),
     );
 
     const callbackRef = useRef<AnalogStateCollectionCallback | undefined>();

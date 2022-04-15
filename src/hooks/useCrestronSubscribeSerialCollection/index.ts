@@ -8,7 +8,7 @@ export function useCrestronSubscribeSerialCollection(
     callback?: SerialStateCollectionCallback,
 ): string[] {
     const [state, setState] = useState<string[]>(
-        Array.from({ length: signalNames.length }).fill(""),
+        Array.from<string>({ length: signalNames.length }).fill(""),
     );
 
     const callbackRef = useRef<SerialStateCollectionCallback | undefined>();

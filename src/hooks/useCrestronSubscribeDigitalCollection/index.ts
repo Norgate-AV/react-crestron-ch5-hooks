@@ -8,7 +8,7 @@ export function useCrestronSubscribeDigitalCollection(
     callback?: DigitalStateCollectionCallback,
 ): boolean[] {
     const [state, setState] = useState<boolean[]>(
-        Array.from({ length: signalNames.length }).fill(false),
+        Array.from<boolean>({ length: signalNames.length }).fill(false),
     );
 
     const callbackRef = useRef<DigitalStateCollectionCallback | undefined>();
