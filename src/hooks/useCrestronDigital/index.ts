@@ -1,41 +1,15 @@
-import { useState, useRef, useEffect } from "react";
-import {
-    subscribeState,
-    unsubscribeState,
-    publishEvent,
-} from "@crestron/ch5-crcomlib";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
+import { DigitalAction, DigitalStateCallback } from "../../types";
+import { useCrestronPublishDigital } from "../useCrestronPublishDigital";
+import { useCrestronSubscribeDigital } from "../useCrestronSubscribeDigital";
 
 export function useCrestronDigital(
     signalName: string,
-    callback?: (value: boolean) => void,
-): [boolean, (value: boolean) => void] {
-    const signalType = CrestronCH5.SignalType.Boolean;
-    const [state, setState] = useState<boolean>(false);
-    const callbackRef = useRef<(value: boolean) => void | undefined>();
+    callback?: DigitalStateCallback,
+): [boolean, DigitalAction] {
+    const [state] = useCrestronSubscribeDigital(signalName, callback);
+    const [action] = useCrestronPublishDigital(signalName);
 
-    useEffect(() => {
-        callbackRef.current = callback;
-    }, [callback]);
-
-    useEffect(() => {
-        const id = subscribeState(signalType, signalName, (value: boolean) => {
-            setState(value);
-
-            if (callbackRef.current) {
-                callbackRef.current(value);
-            }
-        });
-
-        return () => {
-            unsubscribeState(signalType, signalName, id);
-        };
-    }, [signalName]);
-
-    return [
-        state,
-        (value: boolean) => publishEvent(signalType, signalName, value),
-    ];
+    return [state, action];
 }
 
 export default useCrestronDigital;
