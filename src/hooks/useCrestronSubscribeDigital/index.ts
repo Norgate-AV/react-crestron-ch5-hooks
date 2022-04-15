@@ -1,13 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
+import { DigitalStateCallback } from "../../types";
 
 export function useCrestronSubscribeDigital(
     signalName: string,
-    callback?: (value: boolean) => void,
+    callback?: DigitalStateCallback,
 ): [boolean] {
     const [state, setState] = useState<boolean>(false);
-    const callbackRef = useRef<(value: boolean) => void | undefined>();
+    const callbackRef = useRef<DigitalStateCallback | undefined>();
 
     useEffect(() => {
         callbackRef.current = callback;
