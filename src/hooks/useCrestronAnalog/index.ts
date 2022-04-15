@@ -5,14 +5,15 @@ import {
     publishEvent,
 } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
+import { AnalogAction, AnalogStateCallback } from "../../types";
 
 export function useCrestronAnalog(
     signalName: string,
-    callback?: (value: number) => void,
-): [number, (value: number) => void] {
+    callback?: AnalogStateCallback,
+): [number, AnalogAction] {
     const signalType = CrestronCH5.SignalType.Number;
     const [state, setState] = useState<number>(0);
-    const callbackRef = useRef<(value: number) => void | undefined>();
+    const callbackRef = useRef<AnalogStateCallback | undefined>();
 
     useEffect(() => {
         callbackRef.current = callback;
@@ -34,7 +35,10 @@ export function useCrestronAnalog(
 
     return [
         state,
-        (value: number) => publishEvent(signalType, signalName, value),
+        {
+            setValue: (value: number) =>
+                publishEvent(signalType, signalName, value),
+        },
     ];
 }
 
