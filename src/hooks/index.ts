@@ -3,6 +3,7 @@ export * from "./useCrestronDigital";
 export * from "./useCrestronSerial";
 export * from "./useCrestronAnalogCollection";
 export * from "./useCrestronDigitalCollection";
+export * from "./useCrestronSerialCollection";
 export * from "./useCrestronPublishAnalog";
 export * from "./useCrestronPublishDigital";
 export * from "./useCrestronPublishSerial";
