@@ -3,11 +3,11 @@ import { useCrestronPublishAnalogCollection } from "../useCrestronPublishAnalogC
 import { useCrestronSubscribeAnalogCollection } from "../useCrestronSubscribeAnalogCollection";
 
 export function useCrestronAnalogCollection(
-    signalName: string,
+    signalNames: string[],
     callback?: AnalogStateCollectionCallback,
 ): [number[], AnalogAction[]] {
-    const state = useCrestronSubscribeAnalogCollection(signalName, callback);
-    const action = useCrestronPublishAnalogCollection(signalName);
+    const state = useCrestronSubscribeAnalogCollection(signalNames, callback);
+    const action = useCrestronPublishAnalogCollection(signalNames);
 
     return [state, action];
 }
