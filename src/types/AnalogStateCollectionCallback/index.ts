@@ -1,4 +1,5 @@
-export declare type AnalogStateCollectionCallback = (
-    signalName: string,
-    value: number,
-) => void;
+import { StateCollectionCallback } from "../StateCollectionCallback";
+import { Analog } from "../Analog";
+
+export declare type AnalogStateCollectionCallback =
+    StateCollectionCallback<Analog>;

@@ -1,4 +1,5 @@
-export declare type SerialStateCollectionCallback = (
-    signalName: string,
-    value: string,
-) => void;
+import { StateCollectionCallback } from "../StateCollectionCallback";
+import { Serial } from "../Serial";
+
+export declare type SerialStateCollectionCallback =
+    StateCollectionCallback<Serial>;
