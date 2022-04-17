@@ -1,3 +1,3 @@
-export declare interface AnalogAction {
+export declare interface IAnalogAction {
     setValue: (value: number) => void;
 }

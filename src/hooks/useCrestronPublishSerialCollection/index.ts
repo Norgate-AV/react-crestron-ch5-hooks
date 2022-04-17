@@ -1,12 +1,12 @@
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { SerialAction } from "../../types";
+import { ISerialAction } from "../../types";
 
 export function useCrestronPublishSerialCollection(
     signalNames: string[],
-): SerialAction[] {
+): ISerialAction[] {
     const signalType = CrestronCH5.SignalType.String;
-    const actions: SerialAction[] = [];
+    const actions: ISerialAction[] = [];
 
     signalNames.forEach((signalName) => {
         actions.push({

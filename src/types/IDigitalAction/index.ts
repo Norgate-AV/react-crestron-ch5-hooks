@@ -1,4 +1,4 @@
-export declare interface DigitalAction {
+export declare interface IDigitalAction {
     push: () => void;
     release: () => void;
     click: () => void;
