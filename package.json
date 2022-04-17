@@ -63,6 +63,7 @@
         "@crestron/ch5-crcomlib": "^1.2.0",
         "@norgate-av/crestron-ch5-helper": "^1.1.0",
         "@size-limit/preset-small-lib": "^7.0.8",
+        "@testing-library/react": "^13.1.1",
         "@types/react": "^18.0.3",
         "@types/react-dom": "^18.0.0",
         "@types/rimraf": "^3.0.2",
