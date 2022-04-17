@@ -1,3 +1,4 @@
-export declare interface ISerialAction {
-    setValue: (value: string) => void;
-}
+import { IBaseAction } from "../IBaseAction";
+import { Serial } from "../Serial";
+
+export declare interface ISerialAction extends IBaseAction<Serial> {}
