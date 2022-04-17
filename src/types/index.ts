@@ -4,6 +4,7 @@ export * from "./IAnalogState";
 export * from "./AnalogStateCallback";
 export * from "./Digital";
 export * from "./IDigitalAction";
+export * from "./IDigitalState";
 export * from "./DigitalStateCallback";
 export * from "./Serial";
 export * from "./ISerialAction";
