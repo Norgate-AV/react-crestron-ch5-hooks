@@ -20,7 +20,7 @@ export function useCrestronSubscribeDigital(
             setState(value);
 
             if (callbackRef.current) {
-                callbackRef.current(value);
+                callbackRef.current(value, signalName);
             }
         });
 
