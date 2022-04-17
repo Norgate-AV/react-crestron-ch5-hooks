@@ -28,7 +28,7 @@
     "scripts": {
         "start": "yarn resolve:crcomlib && tsdx watch",
         "build": "yarn clean && yarn resolve:crcomlib && tsdx build",
-        "test": "tsdx test --passWithNoTests",
+        "test": "yarn resolve:crcomlib && tsdx test --passWithNoTests",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prepare": "husky install",
@@ -64,6 +64,7 @@
         "@norgate-av/crestron-ch5-helper": "^1.1.0",
         "@size-limit/preset-small-lib": "^7.0.8",
         "@testing-library/react": "^13.1.1",
+        "@testing-library/react-hooks": "^8.0.0",
         "@types/react": "^18.0.3",
         "@types/react-dom": "^18.0.0",
         "@types/rimraf": "^3.0.2",
