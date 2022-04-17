@@ -8,6 +8,7 @@ export * from "./IDigitalState";
 export * from "./DigitalStateCallback";
 export * from "./Serial";
 export * from "./ISerialAction";
+export * from "./ISerialState";
 export * from "./SerialStateCallback";
 export * from "./StateCallback";
 export * from "./IStateSubscription";
