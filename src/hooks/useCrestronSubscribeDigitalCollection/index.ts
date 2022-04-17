@@ -1,20 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import {
-    DigitalStateCollectionCallback,
-    IStateSubscription,
-} from "../../types";
+import { DigitalStateCallback, IStateSubscription } from "../../types";
 
 export function useCrestronSubscribeDigitalCollection(
     signalNames: string[],
-    callback?: DigitalStateCollectionCallback,
+    callback?: DigitalStateCallback,
 ): boolean[] {
     const [state, setState] = useState<boolean[]>(
         Array.from<boolean>({ length: signalNames.length }).fill(false),
     );
 
-    const callbackRef = useRef<DigitalStateCollectionCallback | undefined>();
+    const callbackRef = useRef<DigitalStateCallback | undefined>();
 
     useEffect(() => {
         callbackRef.current = callback;
@@ -35,7 +32,7 @@ export function useCrestronSubscribeDigitalCollection(
                     setState(newState);
 
                     if (callbackRef.current) {
-                        callbackRef.current(signalName, value);
+                        callbackRef.current(value, signalName);
                     }
                 },
             );
