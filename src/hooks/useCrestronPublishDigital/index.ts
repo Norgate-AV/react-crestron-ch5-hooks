@@ -7,16 +7,16 @@ export function useCrestronPublishDigital(
 ): [IDigitalAction] {
     const signalType = CrestronCH5.SignalType.Boolean;
 
-    const publish = (value: boolean) => {
+    const setValue = (value: boolean) => {
         publishEvent(signalType, signalName, value);
     };
 
     const push = () => {
-        publish(true);
+        setValue(true);
     };
 
     const release = () => {
-        publish(false);
+        setValue(false);
     };
 
     const click = () => {
@@ -35,6 +35,7 @@ export function useCrestronPublishDigital(
 
     return [
         {
+            setValue,
             push,
             release,
             click,

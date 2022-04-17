@@ -9,16 +9,16 @@ export function useCrestronPublishDigitalCollection(
     const actions: IDigitalAction[] = [];
 
     signalNames.forEach((signalName) => {
-        const publish = (value: boolean) => {
+        const setValue = (value: boolean) => {
             publishEvent(signalType, signalName, value);
         };
 
         const push = () => {
-            publish(true);
+            setValue(true);
         };
 
         const release = () => {
-            publish(false);
+            setValue(false);
         };
 
         const click = () => {
@@ -36,6 +36,7 @@ export function useCrestronPublishDigitalCollection(
         // };
 
         actions.push({
+            setValue,
             push,
             release,
             click,
