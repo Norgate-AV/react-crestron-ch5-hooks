@@ -13,3 +13,4 @@ export * from "./SerialStateCollectionCallback";
 export * from "./StateCallback";
 export * from "./StateCollectionCallback";
 export * from "./IStateSubscription";
+export * from "./IBaseAction";
