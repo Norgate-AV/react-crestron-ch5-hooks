@@ -1,1 +1,1 @@
-export declare type StateCallback = <T>(value: T) => void;
+export declare type StateCallback<T> = (value: T, signalName?: string) => void;
