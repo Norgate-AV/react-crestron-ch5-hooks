@@ -1,14 +1,25 @@
 import React from "react";
 import { useCrestronSubscribeAnalog } from "../hooks";
 
-interface IProps {
+export function UseCrestronSubscribeAnalogExample({
+    signalName,
+}: {
     signalName: string;
-}
+}) {
+    const [state] = useCrestronSubscribeAnalog(
+        signalName,
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
 
-export function UseCrestronSubscribeAnalogExample({ signalName }: IProps) {
-    const [state] = useCrestronSubscribeAnalog(signalName);
-
-    return <div>Analog State Subscription: {state}</div>;
+    return (
+        <div>
+            <h1>useCrestronSubscribeAnalog</h1>
+            <h2>Signal: {signalName}</h2>
+            <h2>Value: {state}</h2>
+        </div>
+    );
 }
 
 export default UseCrestronSubscribeAnalogExample;
