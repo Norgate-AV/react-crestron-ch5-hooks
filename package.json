@@ -44,7 +44,8 @@
         "pretty:fix": "prettier --write .",
         "resolve:crcomlib": "run-script-os",
         "resolve:crcomlib:default": "./node_modules/node-jq/bin/jq '.main=\"build_bundles/cjs/cr-com-lib.js\"' $npm_package_crestron_crcomlib_packageJson | sponge $npm_package_crestron_crcomlib_packageJson",
-        "resolve:crcomlib:windows": "./node_modules/node-jq/bin/jq \".main=\"\"build_bundles/cjs/cr-com-lib.js\"\"\" %npm_package_crestron_crcomlib_packageJson% | sponge %npm_package_crestron_crcomlib_packageJson%"
+        "resolve:crcomlib:windows": "./node_modules/node-jq/bin/jq \".main=\"\"build_bundles/cjs/cr-com-lib.js\"\"\" %npm_package_crestron_crcomlib_packageJson% | sponge %npm_package_crestron_crcomlib_packageJson%",
+        "doctoc": "doctoc --title '**Contents**' README.md"
     },
     "peerDependencies": {
         "@crestron/ch5-crcomlib": "^1.2.0",
