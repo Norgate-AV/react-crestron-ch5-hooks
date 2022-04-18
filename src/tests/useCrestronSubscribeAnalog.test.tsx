@@ -1,13 +1,14 @@
-// import React from "react";
-// import { render } from "@testing-library/react";
+import React from "react";
+import { render, screen } from "@testing-library/react/pure";
+import "@testing-library/jest-dom";
 // import { subscribeState } from "@crestron/ch5-crcomlib";
 // import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-// import { UseCrestronSubscribeAnalogExample } from "../components/useCrestronSubscribeAnalog.example";
+import { UseCrestronSubscribeAnalogExample } from "../components/useCrestronSubscribeAnalog.example";
 // import { useCrestronSubscribeAnalog } from "../hooks/useCrestronSubscribeAnalog";
 // import * as CrestronCH5Hooks from "../hooks";
 
 // const signalType = CrestronCH5.SignalType.Analog;
-// const signalName = "ToInfinityAndBeyond";
+const signalName = "ToInfinityAndBeyond";
 // const useCrestronSubscribeAnalogMock = jest.spyOn(
 //     CrestronCH5Hooks,
 //     "useCrestronSubscribeAnalog",
@@ -17,24 +18,33 @@
 // const unsubscribeState = jest.spyOn(CrComLib, "unsubscribeState");
 // type SubscribeStateCallback<T> = (value: T) => void;
 
-describe("useCrestronSubscribeAnalog()", () => {
-    // beforeAll(() => {
-    //     render(<UseCrestronSubscribeAnalogExample signalName={signalName} />);
-    // });
-
-    // beforeEach(() => {
-    //     useCrestronSubscribeAnalogMock.mockClear();
-    //     // subscribeStateMock.mockClear();
-    // });
-
-    it("should call hook correctly", () => {
-        // expect(useCrestronSubscribeAnalogMock).toHaveBeenCalledWith(signalName);
-        // expect(useCrestronSubscribeAnalogMock).toHaveBeenCalledTimes(1);
-        // expect(useCrestronSubscribeAnalogMock).toHaveReturnedWith(
-        //     expect.arrayContaining<number>([]),
-        // );
-        expect(1).toEqual(1);
+describe("useCrestronSubscribeAnalog", () => {
+    beforeAll(() => {
+        render(<UseCrestronSubscribeAnalogExample signalName={signalName} />);
     });
+
+    beforeEach(() => {
+        // useCrestronSubscribeAnalogMock.mockClear();
+        // subscribeStateMock.mockClear();
+    });
+
+    it("should render without crashing", () => {
+        const title = screen.getByText(/useCrestronSubscribeAnalog/i);
+        const signalName = screen.getByText(/Signal:/i);
+        const value = screen.getByText(/Value:/i);
+
+        expect(title).toBeInTheDocument();
+        expect(signalName).toBeInTheDocument();
+        expect(value).toBeInTheDocument();
+    });
+
+    // it("should render without crashing", () => {
+    //     expect(useCrestronSubscribeAnalogMock).toHaveBeenCalledWith(signalName);
+    //     expect(useCrestronSubscribeAnalogMock).toHaveBeenCalledTimes(1);
+    //     expect(useCrestronSubscribeAnalogMock).toHaveReturnedWith(
+    //         expect.arrayContaining<number>([]),
+    //     );
+    // });
 
     // it("should call Crestron subscribeState correctly", () => {
     //     expect(subscribeStateMock).toHaveBeenCalledWith(
