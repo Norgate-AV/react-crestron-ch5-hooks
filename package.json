@@ -29,6 +29,8 @@
         "start": "yarn resolve:crcomlib && tsdx watch",
         "build": "yarn clean && yarn resolve:crcomlib && tsdx build",
         "test": "yarn resolve:crcomlib && tsdx test --passWithNoTests",
+        "test:watch": "yarn resolve:crcomlib && tsdx test --passWithNoTests --watch",
+        "test:coverage": "yarn resolve:crcomlib && tsdx test --passWithNoTests --coverage",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prepare": "husky install",
