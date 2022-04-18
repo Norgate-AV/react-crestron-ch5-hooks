@@ -82,7 +82,7 @@
         "eslint-plugin-react": "^7.29.4",
         "eslint-plugin-react-hooks": "^4.3.0",
         "husky": "^7.0.4",
-        "lint-staged": "^12.3.5",
+        "lint-staged": "^12.3.8",
         "node-jq": "^2.3.3",
         "prettier": "^2.6.0",
         "react": "^18.0.0",
