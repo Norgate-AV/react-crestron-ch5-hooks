@@ -16,6 +16,18 @@
 
 This library is currently in development. When it is ready to use, there will be a release posted here and the package will be published to NPM.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Contents**
+
+-   [⚡️ Installation](#%EF%B8%8F-installation)
+-   [Team](#team)
+-   [Contributors ✨](#contributors-)
+-   [LICENSE](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## ⚡️ Installation
 
 ```sh
