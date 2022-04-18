@@ -21,14 +21,27 @@ This library is currently in development. When it is ready to use, there will be
 
 **Contents**
 
--   [⚡️ Installation](#%EF%B8%8F-installation)
+-   [Installation ⚡️](#installation-%EF%B8%8F)
+-   [Usage 🚀](#usage-)
+    -   [useCrestronSubscribeAnalog 🪝](#usecrestronsubscribeanalog-%F0%9F%AA%9D)
+        -   [with optional callback](#with-optional-callback)
+-   [Types](#types)
+    -   [Aliases](#aliases)
+        -   [Analog](#analog)
+        -   [Digital](#digital)
+        -   [Serial](#serial)
+    -   [Event Actions](#event-actions)
+        -   [IBaseAction](#ibaseaction)
+        -   [IAnalogAction](#ianalogaction)
+        -   [IDigitalAction](#idigitalaction)
+        -   [ISerialAction](#iserialaction)
 -   [Team](#team)
 -   [Contributors ✨](#contributors-)
 -   [LICENSE](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## ⚡️ Installation
+## Installation ⚡️
 
 ```sh
 npm install @norgate-av/react-crestron-ch5-hooks
@@ -36,6 +49,100 @@ npm install @norgate-av/react-crestron-ch5-hooks
 # or
 
 yarn add @norgate-av/react-crestron-ch5-hooks
+```
+
+## Usage 🚀
+
+### useCrestronSubscribeAnalog 🪝
+
+```tsx
+import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent: React.FC = () => {
+    const [value] = useCrestronSubscribeAnalog("some-analog-id");
+
+    return (
+        <div>
+            <h1>{value}</h1>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### with optional callback
+
+```tsx
+import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent: React.FC = () => {
+    const [value] = useCrestronSubscribeAnalog("some-analog-id", (value) => {
+        console.log(`New Value: ${value}`);
+    });
+
+    return (
+        <div>
+            <h1>{value}</h1>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+## Types
+
+### Aliases
+
+#### Analog
+
+```ts
+export declare type Analog = number;
+```
+
+#### Digital
+
+```ts
+export declare type Digital = boolean;
+```
+
+#### Serial
+
+```ts
+export declare type Serial = string;
+```
+
+### Event Actions
+
+#### IBaseAction
+
+```ts
+export declare interface IBaseAction<T> {
+    setValue: (value: T) => void;
+}
+```
+
+#### IAnalogAction
+
+```ts
+export declare interface IAnalogAction extends IBaseAction<Analog> {}
+```
+
+#### IDigitalAction
+
+```ts
+export declare interface IDigitalAction extends IBaseAction<Digital> {
+    push: () => void;
+    release: () => void;
+    click: () => void;
+}
+```
+
+#### ISerialAction
+
+```ts
+export declare interface ISerialAction extends IBaseAction<Serial> {}
 ```
 
 ## Team
