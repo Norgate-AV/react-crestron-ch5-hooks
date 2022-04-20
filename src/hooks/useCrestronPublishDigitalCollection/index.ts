@@ -1,12 +1,12 @@
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { IDigitalAction } from "../../types";
+import { IDigitalEventAction } from "../../types";
 
 export function useCrestronPublishDigitalCollection(
     signalNames: string[],
-): IDigitalAction[] {
+): IDigitalEventAction[] {
     const signalType = CrestronCH5.SignalType.Boolean;
-    const actions: IDigitalAction[] = [];
+    const actions: IDigitalEventAction[] = [];
 
     signalNames.forEach((signalName) => {
         const setValue = (value: boolean) => {

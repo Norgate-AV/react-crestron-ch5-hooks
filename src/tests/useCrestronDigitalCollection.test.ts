@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronDigitalCollection } from "../hooks";
-import { IDigitalAction, Digital } from "../types";
+import { IDigitalEventAction, Digital } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronDigitalCollection", () => {
@@ -14,11 +14,13 @@ describe("useCrestronDigitalCollection", () => {
         unsubscribeState,
     } = setupTest<Digital>(CrestronCH5.SignalType.Digital, signalNames);
 
-    let hook: RenderHookResult<[Digital[], IDigitalAction[]], unknown> | null =
-        null;
+    let hook: RenderHookResult<
+        [Digital[], IDigitalEventAction[]],
+        unknown
+    > | null = null;
 
     let state: Digital[];
-    let actions: IDigitalAction[];
+    let actions: IDigitalEventAction[];
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -44,12 +46,14 @@ describe("useCrestronDigitalCollection", () => {
         expect(hook?.result.current).toEqual([
             // Array.from<Digital>({ length: signalName.length }).fill(false),
             state,
-            Array.from<IDigitalAction>({ length: signalName.length }).fill({
-                setValue: expect.any(Function),
-                push: expect.any(Function),
-                release: expect.any(Function),
-                click: expect.any(Function),
-            }),
+            Array.from<IDigitalEventAction>({ length: signalName.length }).fill(
+                {
+                    setValue: expect.any(Function),
+                    push: expect.any(Function),
+                    release: expect.any(Function),
+                    click: expect.any(Function),
+                },
+            ),
         ]);
     });
 

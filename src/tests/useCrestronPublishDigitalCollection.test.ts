@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishDigitalCollection } from "../hooks";
-import { IDigitalAction } from "../types";
+import { IDigitalEventAction } from "../types";
 import { setupPublishTest, signalNames } from "./helpers";
 
 describe("useCrestronPublishDigitalCollection", () => {
@@ -10,8 +10,8 @@ describe("useCrestronPublishDigitalCollection", () => {
         signalNames,
     );
 
-    let hook: RenderHookResult<IDigitalAction[], unknown> | null = null;
-    let actions: IDigitalAction[];
+    let hook: RenderHookResult<IDigitalEventAction[], unknown> | null = null;
+    let actions: IDigitalEventAction[];
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -23,12 +23,14 @@ describe("useCrestronPublishDigitalCollection", () => {
 
     it("should initialize correctly", () => {
         expect(hook?.result.current).toEqual(
-            Array.from<IDigitalAction>({ length: signalName.length }).fill({
-                setValue: expect.any(Function),
-                push: expect.any(Function),
-                release: expect.any(Function),
-                click: expect.any(Function),
-            }),
+            Array.from<IDigitalEventAction>({ length: signalName.length }).fill(
+                {
+                    setValue: expect.any(Function),
+                    push: expect.any(Function),
+                    release: expect.any(Function),
+                    click: expect.any(Function),
+                },
+            ),
         );
     });
 

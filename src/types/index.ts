@@ -3,7 +3,7 @@ export * from "./IAnalogAction";
 export * from "./IAnalogState";
 export * from "./AnalogStateCallback";
 export * from "./Digital";
-export * from "./IDigitalAction";
+export * from "./IDigitalEventAction";
 export * from "./IDigitalState";
 export * from "./DigitalStateCallback";
 export * from "./Serial";

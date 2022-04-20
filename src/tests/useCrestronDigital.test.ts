@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronDigital } from "../hooks";
-import { IDigitalAction, Digital } from "../types";
+import { IDigitalEventAction, Digital } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronDigital", () => {
@@ -14,11 +14,11 @@ describe("useCrestronDigital", () => {
         unsubscribeState,
     } = setupTest<Digital>(CrestronCH5.SignalType.Digital, signalNames[0]);
 
-    let hook: RenderHookResult<[Digital, IDigitalAction], unknown> | null =
+    let hook: RenderHookResult<[Digital, IDigitalEventAction], unknown> | null =
         null;
 
     let state: Digital;
-    let action: IDigitalAction;
+    let action: IDigitalEventAction;
 
     beforeAll(() => {
         hook = renderHook(() =>

@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishDigital } from "../hooks";
-import { IDigitalAction } from "../types";
+import { IDigitalEventAction } from "../types";
 import { setupPublishTest, signalNames } from "./helpers";
 
 describe("useCrestronSubscribeDigital", () => {
@@ -10,8 +10,8 @@ describe("useCrestronSubscribeDigital", () => {
         signalNames[0],
     );
 
-    let hook: RenderHookResult<[IDigitalAction], unknown> | null = null;
-    let action: IDigitalAction;
+    let hook: RenderHookResult<[IDigitalEventAction], unknown> | null = null;
+    let action: IDigitalEventAction;
 
     beforeAll(() => {
         hook = renderHook(() =>

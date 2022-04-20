@@ -1,11 +1,11 @@
-import { IDigitalAction, DigitalStateCallback } from "../../types";
+import { IDigitalEventAction, DigitalStateCallback } from "../../types";
 import { useCrestronPublishDigitalCollection } from "../useCrestronPublishDigitalCollection";
 import { useCrestronSubscribeDigitalCollection } from "../useCrestronSubscribeDigitalCollection";
 
 export function useCrestronDigitalCollection(
     signalNames: string[],
     callback?: DigitalStateCallback,
-): [boolean[], IDigitalAction[]] {
+): [boolean[], IDigitalEventAction[]] {
     const state = useCrestronSubscribeDigitalCollection(signalNames, callback);
     const action = useCrestronPublishDigitalCollection(signalNames);
 
