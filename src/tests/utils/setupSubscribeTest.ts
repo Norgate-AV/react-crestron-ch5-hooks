@@ -1,5 +1,5 @@
 import * as CrComLib from "@crestron/ch5-crcomlib";
-import { StateCallback } from "../types";
+import { StateCallback } from "../../types";
 
 export function setupSubscribeTest<T>(
     signalType: string,
