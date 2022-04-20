@@ -1,7 +1,7 @@
 import * as CrComLib from "@crestron/ch5-crcomlib";
 
 export function setupPublishTest(
-    signalType: string,
+    signalType: CrComLib.TSignalNonStandardTypeName,
     signalName: string | string[],
 ) {
     const publishEvent = jest.spyOn(CrComLib, "publishEvent");
