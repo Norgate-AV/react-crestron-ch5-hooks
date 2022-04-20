@@ -29,12 +29,15 @@
         "start": "yarn resolve:crcomlib && tsdx watch",
         "build": "yarn clean && yarn resolve:crcomlib && tsdx build",
         "test": "yarn resolve:crcomlib && tsdx test --passWithNoTests",
+        "test:watch": "yarn resolve:crcomlib && tsdx test --passWithNoTests --watch",
+        "test:coverage": "yarn clean:coverage && yarn resolve:crcomlib && tsdx test --passWithNoTests --coverage",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prepare": "husky install",
         "size": "size-limit",
         "analyze": "size-limit --why",
         "clean": "rimraf dist",
+        "clean:coverage": "rimraf coverage",
         "semantic-release": "semantic-release",
         "commit": "git-cz",
         "pretty:fix": "prettier --write .",
@@ -64,7 +67,6 @@
         "@norgate-av/crestron-ch5-helper": "^1.1.0",
         "@size-limit/preset-small-lib": "^7.0.8",
         "@testing-library/react": "^13.1.1",
-        "@testing-library/react-hooks": "^8.0.0",
         "@types/react": "^18.0.5",
         "@types/react-dom": "^18.0.1",
         "@types/rimraf": "^3.0.2",
@@ -110,9 +112,10 @@
         }
     },
     "lint-staged": {
-        "*.{js,jsx,ts,tsx}": [
+        "*?(test|spec).{js,jsx,ts,tsx}": [
             "yarn lint:fix",
-            "yarn pretty:fix"
+            "yarn pretty:fix",
+            "yarn test"
         ],
         "*.{css,scss,md,html,json,yml,yaml}": [
             "yarn pretty:fix"

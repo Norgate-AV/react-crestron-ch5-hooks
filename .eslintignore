@@ -5,3 +5,4 @@ templates/*
 dist/*
 node_modules/*
 .history/*
+coverage/*
