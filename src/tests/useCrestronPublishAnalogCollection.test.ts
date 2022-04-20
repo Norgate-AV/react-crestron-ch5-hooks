@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishAnalogCollection } from "../hooks";
-import { IAnalogAction } from "../types";
+import { IAnalogEventAction } from "../types";
 import { setupPublishTest, signalNames } from "./helpers";
 
 describe("useCrestronPublishAnalogCollection", () => {
@@ -10,8 +10,8 @@ describe("useCrestronPublishAnalogCollection", () => {
         signalNames,
     );
 
-    let hook: RenderHookResult<IAnalogAction[], unknown> | null = null;
-    let actions: IAnalogAction[];
+    let hook: RenderHookResult<IAnalogEventAction[], unknown> | null = null;
+    let actions: IAnalogEventAction[];
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -23,7 +23,7 @@ describe("useCrestronPublishAnalogCollection", () => {
 
     it("should initialize correctly", () => {
         expect(hook?.result.current).toEqual(
-            Array.from<IAnalogAction>({ length: signalName.length }).fill({
+            Array.from<IAnalogEventAction>({ length: signalName.length }).fill({
                 setValue: expect.any(Function),
             }),
         );

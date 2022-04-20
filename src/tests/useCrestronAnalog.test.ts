@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronAnalog } from "../hooks";
-import { IAnalogAction, Analog } from "../types";
+import { IAnalogEventAction, Analog } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronAnalog", () => {
@@ -14,10 +14,11 @@ describe("useCrestronAnalog", () => {
         unsubscribeState,
     } = setupTest<Analog>(CrestronCH5.SignalType.Analog, signalNames[0]);
 
-    let hook: RenderHookResult<[Analog, IAnalogAction], unknown> | null = null;
+    let hook: RenderHookResult<[Analog, IAnalogEventAction], unknown> | null =
+        null;
 
     let state: Analog;
-    let action: IAnalogAction;
+    let action: IAnalogEventAction;
 
     beforeAll(() => {
         hook = renderHook(() =>

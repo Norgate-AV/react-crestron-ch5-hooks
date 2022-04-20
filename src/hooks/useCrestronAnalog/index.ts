@@ -1,11 +1,11 @@
-import { IAnalogAction, AnalogStateCallback } from "../../types";
+import { IAnalogEventAction, AnalogStateCallback } from "../../types";
 import { useCrestronPublishAnalog } from "../useCrestronPublishAnalog";
 import { useCrestronSubscribeAnalog } from "../useCrestronSubscribeAnalog";
 
 export function useCrestronAnalog(
     signalName: string,
     callback?: AnalogStateCallback,
-): [number, IAnalogAction] {
+): [number, IAnalogEventAction] {
     const [state] = useCrestronSubscribeAnalog(signalName, callback);
     const [action] = useCrestronPublishAnalog(signalName);
 

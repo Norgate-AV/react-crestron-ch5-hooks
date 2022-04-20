@@ -1,5 +1,5 @@
 export * from "./Analog";
-export * from "./IAnalogAction";
+export * from "./IAnalogEventAction";
 export * from "./IAnalogState";
 export * from "./AnalogStateCallback";
 export * from "./Digital";

@@ -1,12 +1,12 @@
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { IAnalogAction } from "../../types";
+import { IAnalogEventAction } from "../../types";
 
 export function useCrestronPublishAnalogCollection(
     signalNames: string[],
-): IAnalogAction[] {
+): IAnalogEventAction[] {
     const signalType = CrestronCH5.SignalType.Number;
-    const actions: IAnalogAction[] = [];
+    const actions: IAnalogEventAction[] = [];
 
     signalNames.forEach((signalName) => {
         actions.push({
