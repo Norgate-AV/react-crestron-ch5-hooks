@@ -1,9 +1,8 @@
-import { renderHook } from "@testing-library/react/pure";
+import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSubscribeAnalog } from "../hooks";
 import { Analog } from "../types";
-import { setupSubscribeTest } from "./utils/setupSubscribeTest";
-import { signalNames } from "./utils/signalNames";
+import { setupSubscribeTest, signalNames } from "./helpers";
 
 describe("useCrestronSubscribeAnalog", () => {
     const {
@@ -17,7 +16,7 @@ describe("useCrestronSubscribeAnalog", () => {
         signalNames[0],
     );
 
-    let hook: any = {};
+    let hook: RenderHookResult<[Analog], unknown> | null = null;
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -26,7 +25,7 @@ describe("useCrestronSubscribeAnalog", () => {
     });
 
     it("should initialize correctly", () => {
-        expect(hook.result.current).toEqual([0]);
+        expect(hook?.result.current).toEqual([0]);
     });
 
     it("should call CrComLib.subscribeState() correctly", () => {
@@ -41,7 +40,9 @@ describe("useCrestronSubscribeAnalog", () => {
     });
 
     it("should call CrComLib.unsubscribeState() correctly on unmount", () => {
-        hook.unmount();
+        act(() => {
+            hook?.unmount();
+        });
 
         expect(unsubscribeState).toHaveBeenCalledWith(
             signalType,
