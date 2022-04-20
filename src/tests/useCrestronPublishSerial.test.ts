@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishSerial } from "../hooks";
-import { ISerialAction } from "../types";
+import { ISerialEventAction } from "../types";
 import { setupPublishTest, signalNames } from "./helpers";
 
 describe("useCrestronSubscribeSerial", () => {
@@ -10,8 +10,8 @@ describe("useCrestronSubscribeSerial", () => {
         signalNames[0],
     );
 
-    let hook: RenderHookResult<[ISerialAction], unknown> | null = null;
-    let action: ISerialAction;
+    let hook: RenderHookResult<[ISerialEventAction], unknown> | null = null;
+    let action: ISerialEventAction;
 
     beforeAll(() => {
         hook = renderHook(() => useCrestronPublishSerial(signalName as string));

@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSerialCollection } from "../hooks";
-import { ISerialAction, Serial } from "../types";
+import { ISerialEventAction, Serial } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronSerialCollection", () => {
@@ -14,11 +14,13 @@ describe("useCrestronSerialCollection", () => {
         unsubscribeState,
     } = setupTest<Serial>(CrestronCH5.SignalType.Serial, signalNames);
 
-    let hook: RenderHookResult<[Serial[], ISerialAction[]], unknown> | null =
-        null;
+    let hook: RenderHookResult<
+        [Serial[], ISerialEventAction[]],
+        unknown
+    > | null = null;
 
     let state: Serial[];
-    let actions: ISerialAction[];
+    let actions: ISerialEventAction[];
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -44,7 +46,7 @@ describe("useCrestronSerialCollection", () => {
         expect(hook?.result.current).toEqual([
             // Array.from<Serial>({ length: signalName.length }).fill(false),
             state,
-            Array.from<ISerialAction>({ length: signalName.length }).fill({
+            Array.from<ISerialEventAction>({ length: signalName.length }).fill({
                 setValue: expect.any(Function),
             }),
         ]);

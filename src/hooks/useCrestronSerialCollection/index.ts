@@ -1,11 +1,11 @@
-import { ISerialAction, SerialStateCallback } from "../../types";
+import { ISerialEventAction, SerialStateCallback } from "../../types";
 import { useCrestronPublishSerialCollection } from "../useCrestronPublishSerialCollection";
 import { useCrestronSubscribeSerialCollection } from "../useCrestronSubscribeSerialCollection";
 
 export function useCrestronSerialCollection(
     signalNames: string[],
     callback?: SerialStateCallback,
-): [string[], ISerialAction[]] {
+): [string[], ISerialEventAction[]] {
     const state = useCrestronSubscribeSerialCollection(signalNames, callback);
     const action = useCrestronPublishSerialCollection(signalNames);
 

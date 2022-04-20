@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishSerialCollection } from "../hooks";
-import { ISerialAction } from "../types";
+import { ISerialEventAction } from "../types";
 import { setupPublishTest, signalNames } from "./helpers";
 
 describe("useCrestronPublishSerialCollection", () => {
@@ -10,8 +10,8 @@ describe("useCrestronPublishSerialCollection", () => {
         signalNames,
     );
 
-    let hook: RenderHookResult<ISerialAction[], unknown> | null = null;
-    let actions: ISerialAction[];
+    let hook: RenderHookResult<ISerialEventAction[], unknown> | null = null;
+    let actions: ISerialEventAction[];
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -23,7 +23,7 @@ describe("useCrestronPublishSerialCollection", () => {
 
     it("should initialize correctly", () => {
         expect(hook?.result.current).toEqual(
-            Array.from<ISerialAction>({ length: signalName.length }).fill({
+            Array.from<ISerialEventAction>({ length: signalName.length }).fill({
                 setValue: expect.any(Function),
             }),
         );

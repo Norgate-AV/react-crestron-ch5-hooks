@@ -1,8 +1,10 @@
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { ISerialAction } from "../../types";
+import { ISerialEventAction } from "../../types";
 
-export function useCrestronPublishSerial(signalName: string): [ISerialAction] {
+export function useCrestronPublishSerial(
+    signalName: string,
+): [ISerialEventAction] {
     return [
         {
             setValue: (value: string) =>

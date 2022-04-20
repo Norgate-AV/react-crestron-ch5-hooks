@@ -7,7 +7,7 @@ export * from "./IDigitalEventAction";
 export * from "./IDigitalState";
 export * from "./DigitalStateCallback";
 export * from "./Serial";
-export * from "./ISerialAction";
+export * from "./ISerialEventAction";
 export * from "./ISerialState";
 export * from "./SerialStateCallback";
 export * from "./StateCallback";
