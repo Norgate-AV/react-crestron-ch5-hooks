@@ -2,25 +2,31 @@ import { renderHook } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSubscribeAnalogCollection } from "../hooks";
 import { Analog } from "../types";
-import { setupSubscribeTest } from "./setupSubscribeTest";
+import { setupSubscribeTest } from "./utils/setupSubscribeTest";
+import { signalNames } from "./utils/signalNames";
 
 describe("useCrestronSubscribeAnalogCollection", () => {
-    const { signalType, signalName, callback, subscribeState } =
-        setupSubscribeTest<Analog>(CrestronCH5.SignalType.Analog, [
-            "ToInfinityAndBeyond",
-            "LovelyJubley",
-            "IllBeBack",
-        ]);
+    const {
+        signalType,
+        signalName,
+        callback,
+        subscribeState,
+        unsubscribeState,
+    } = setupSubscribeTest<Analog>(CrestronCH5.SignalType.Analog, signalNames);
 
-    it("should initialize correctly", () => {
-        const { result } = renderHook(() =>
+    let hook: any = {};
+
+    beforeAll(() => {
+        hook = renderHook(() =>
             useCrestronSubscribeAnalogCollection(
                 signalName as string[],
                 callback,
             ),
         );
+    });
 
-        expect(result.current).toEqual(
+    it("should initialize correctly", () => {
+        expect(hook.result.current).toEqual(
             Array.from<Analog>({ length: signalName.length }).fill(0),
         );
     });
@@ -34,5 +40,17 @@ describe("useCrestronSubscribeAnalogCollection", () => {
 
         expect(subscribeState).toHaveBeenCalledTimes(signalName.length);
         expect(subscribeState).toHaveReturnedWith(expect.any(String));
+    });
+
+    it("should call CrComLib.unsubscribeState() correctly on unmount", () => {
+        hook.unmount();
+
+        expect(unsubscribeState).toHaveBeenCalledWith(
+            signalType,
+            expect.any(String),
+            expect.any(String),
+        );
+
+        expect(unsubscribeState).toHaveBeenCalledTimes(signalName.length);
     });
 });
