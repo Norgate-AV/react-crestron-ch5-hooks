@@ -25,26 +25,39 @@ This library is currently in development. When it is ready to use, there will be
 
 -   [Installation ⚡️](#installation-%EF%B8%8F)
 -   [Usage 🚀](#usage-)
-    -   [useCrestronSubscribeAnalog 🪝](#usecrestronsubscribeanalog-%F0%9F%AA%9D)
-        -   [with optional callback](#with-optional-callback)
-    -   [useCrestronSubscribeDigital 🪝](#usecrestronsubscribedigital-%F0%9F%AA%9D)
-        -   [with optional callback](#with-optional-callback-1)
-    -   [useCrestronSubscribeSerial 🪝](#usecrestronsubscribeserial-%F0%9F%AA%9D)
-        -   [with optional callback](#with-optional-callback-2)
-    -   [useCrestronSubscribeAnalogCollection 🪝](#usecrestronsubscribeanalogcollection-%F0%9F%AA%9D)
-        -   [with optional callback](#with-optional-callback-3)
-    -   [useCrestronSubscribeDigitalCollection 🪝](#usecrestronsubscribedigitalcollection-%F0%9F%AA%9D)
-        -   [with optional callback](#with-optional-callback-4)
-    -   [useCrestronSubscribeSerialCollection 🪝](#usecrestronsubscribeserialcollection-%F0%9F%AA%9D)
-        -   [with optional callback](#with-optional-callback-5)
-    -   [useCrestronPublishAnalog 🪝](#usecrestronpublishanalog-%F0%9F%AA%9D)
-    -   [useCrestronPublishDigital 🪝](#usecrestronpublishdigital-%F0%9F%AA%9D)
-    -   [useCrestronPublishSerial 🪝](#usecrestronpublishserial-%F0%9F%AA%9D)
-    -   [useCrestronPublishAnalogCollection 🪝](#usecrestronpublishanalogcollection-%F0%9F%AA%9D)
-    -   [useCrestronPublishDigitalCollection 🪝](#usecrestronpublishdigitalcollection-%F0%9F%AA%9D)
-    -   [useCrestronPublishSerialCollection 🪝](#usecrestronpublishserialcollection-%F0%9F%AA%9D)
-    -   [useCrestronAnalog 🪝](#usecrestronanalog-%F0%9F%AA%9D)
-    -   [useCrestronDigital 🪝](#usecrestrondigital-%F0%9F%AA%9D)
+    -   [Publish :arrow_right:](#publish-arrow_right)
+        -   [useCrestronPublishAnalog 🪝](#usecrestronpublishanalog-%F0%9F%AA%9D)
+        -   [useCrestronPublishDigital 🪝](#usecrestronpublishdigital-%F0%9F%AA%9D)
+        -   [useCrestronPublishSerial 🪝](#usecrestronpublishserial-%F0%9F%AA%9D)
+        -   [useCrestronPublishAnalogCollection 🪝](#usecrestronpublishanalogcollection-%F0%9F%AA%9D)
+        -   [useCrestronPublishDigitalCollection 🪝](#usecrestronpublishdigitalcollection-%F0%9F%AA%9D)
+        -   [useCrestronPublishSerialCollection 🪝](#usecrestronpublishserialcollection-%F0%9F%AA%9D)
+    -   [Subscribe ⬅️](#subscribe-)
+        -   [useCrestronSubscribeAnalog 🪝](#usecrestronsubscribeanalog-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback)
+        -   [useCrestronSubscribeDigital 🪝](#usecrestronsubscribedigital-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-1)
+        -   [useCrestronSubscribeSerial 🪝](#usecrestronsubscribeserial-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-2)
+        -   [useCrestronSubscribeAnalogCollection 🪝](#usecrestronsubscribeanalogcollection-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-3)
+        -   [useCrestronSubscribeDigitalCollection 🪝](#usecrestronsubscribedigitalcollection-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-4)
+        -   [useCrestronSubscribeSerialCollection 🪝](#usecrestronsubscribeserialcollection-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-5)
+    -   [Publish & Subscribe ↔️](#publish--subscribe-)
+        -   [useCrestronAnalog 🪝](#usecrestronanalog-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-6)
+        -   [useCrestronDigital 🪝](#usecrestrondigital-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-7)
+        -   [useCrestronSerial 🪝](#usecrestronserial-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-8)
+        -   [useCrestronAnalogCollection 🪝](#usecrestronanalogcollection-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-9)
+        -   [useCrestronDigitalCollection 🪝](#usecrestrondigitalcollection-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-10)
+        -   [useCrestronSerialCollection 🪝](#usecrestronserialcollection-%F0%9F%AA%9D)
+            -   [with optional callback](#with-optional-callback-11)
 -   [Types ⌨️](#types-)
     -   [Aliases](#aliases)
         -   [Analog](#analog)
@@ -73,289 +86,9 @@ yarn add @norgate-av/react-crestron-ch5-hooks
 
 ## Usage 🚀
 
-### useCrestronSubscribeAnalog 🪝
+### Publish :arrow_right:
 
-```tsx
-import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state] = useCrestronSubscribeAnalog("some-analog-join-or-name");
-
-    return (
-        <div>
-            <h1>Analog State</h1>
-            <h2>Value: {state.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-#### with optional callback
-
-```tsx
-import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state] = useCrestronSubscribeAnalog(
-        "some-analog-join-or-name",
-        (value) => {
-            console.log(`New Value: ${value}`);
-        },
-    );
-
-    return (
-        <div>
-            <h1>Analog State</h1>
-            <h2>Value: {state.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-### useCrestronSubscribeDigital 🪝
-
-```tsx
-import { useCrestronSubscribeDigital } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state] = useCrestronSubscribeDigital("some-digital-join-or-name");
-
-    return (
-        <div>
-            <h1>Digital State</h1>
-            <h2>Value: {state.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-#### with optional callback
-
-```tsx
-import { useCrestronSubscribeDigital } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state] = useCrestronSubscribeDigital(
-        "some-digital-join-or-name",
-        (value) => {
-            console.log(`New Value: ${value}`);
-        },
-    );
-
-    return (
-        <div>
-            <h1>Digital State</h1>
-            <h2>Value: {state.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-### useCrestronSubscribeSerial 🪝
-
-```tsx
-import { useCrestronSubscribeSerial } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state] = useCrestronSubscribeSerial("some-serial-join-or-name");
-
-    return (
-        <div>
-            <h1>Serial State</h1>
-            <h2>Value: {state.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-#### with optional callback
-
-```tsx
-import { useCrestronSubscribeSerial } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state] = useCrestronSubscribeSerial(
-        "some-serial-join-or-name",
-        (value) => {
-            console.log(`New Value: ${value}`);
-        },
-    );
-
-    return (
-        <div>
-            <h1>Serial State</h1>
-            <h2>Value: {state.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-### useCrestronSubscribeAnalogCollection 🪝
-
-```tsx
-import { useCrestronSubscribeAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state1, state2, state3] = useCrestronSubscribeAnalogCollection([
-        "some-analog-join-or-name",
-        "2",
-        "3",
-    ]);
-
-    return (
-        <div>
-            <h1>Analog State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-#### with optional callback
-
-```tsx
-import { useCrestronSubscribeAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state1, state2, state3] = useCrestronSubscribeAnalogCollection(
-        ["some-analog-join-or-name", "2", "3"],
-        (value, signalName) => {
-            console.log(`Signal: ${signalName}, New Value: ${value}`);
-        },
-    );
-
-    return (
-        <div>
-            <h1>Analog State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-### useCrestronSubscribeDigitalCollection 🪝
-
-```tsx
-import { useCrestronSubscribeDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state1, state2, state3] = useCrestronSubscribeDigitalCollection([
-        "some-digital-join-or-name",
-        "2",
-        "3",
-    ]);
-
-    return (
-        <div>
-            <h1>Digital State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-#### with optional callback
-
-```tsx
-import { useCrestronSubscribeDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state1, state2, state3] = useCrestronSubscribeDigitalCollection(
-        ["some-digital-join-or-name", "2", "3"],
-        (value, signalName) => {
-            console.log(`Signal: ${signalName}, New Value: ${value}`);
-        },
-    );
-
-    return (
-        <div>
-            <h1>Digital State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-### useCrestronSubscribeSerialCollection 🪝
-
-```tsx
-import { useCrestronSubscribeSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state1, state2, state3] = useCrestronSubscribeSerialCollection([
-        "some-serial-join-or-name",
-        "2",
-        "3",
-    ]);
-
-    return (
-        <div>
-            <h1>Serial State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-#### with optional callback
-
-```tsx
-import { useCrestronSubscribeSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
-
-export const SomeAwesomeComponent = () => {
-    const [state1, state2, state3] = useCrestronSubscribeSerialCollection(
-        ["some-serial-join-or-name", "2", "3"],
-        (value, signalName) => {
-            console.log(`Signal: ${signalName}, New Value: ${value}`);
-        },
-    );
-
-    return (
-        <div>
-            <h1>Serial State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
-        </div>
-    );
-};
-
-export default SomeAwesomeComponent;
-```
-
-### useCrestronPublishAnalog 🪝
+#### useCrestronPublishAnalog 🪝
 
 ```tsx
 import { useCrestronPublishAnalog } from "@norgate-av/react-crestron-ch5-hooks";
@@ -374,7 +107,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronPublishDigital 🪝
+#### useCrestronPublishDigital 🪝
 
 ```tsx
 import { useCrestronPublishDigital } from "@norgate-av/react-crestron-ch5-hooks";
@@ -401,7 +134,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronPublishSerial 🪝
+#### useCrestronPublishSerial 🪝
 
 ```tsx
 import { useCrestronPublishSerial } from "@norgate-av/react-crestron-ch5-hooks";
@@ -422,7 +155,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronPublishAnalogCollection 🪝
+#### useCrestronPublishAnalogCollection 🪝
 
 ```tsx
 import { useCrestronPublishAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
@@ -447,7 +180,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronPublishDigitalCollection 🪝
+#### useCrestronPublishDigitalCollection 🪝
 
 ```tsx
 import { useCrestronPublishDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
@@ -498,7 +231,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronPublishSerialCollection 🪝
+#### useCrestronPublishSerialCollection 🪝
 
 ```tsx
 import { useCrestronPublishSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
@@ -533,7 +266,293 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronAnalog 🪝
+### Subscribe ⬅️
+
+#### useCrestronSubscribeAnalog 🪝
+
+```tsx
+import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeAnalog("some-analog-join-or-name");
+
+    return (
+        <div>
+            <h1>Analog State</h1>
+            <h2>Value: {state.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeAnalog(
+        "some-analog-join-or-name",
+        (value) => {
+            console.log(`New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Analog State</h1>
+            <h2>Value: {state.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSubscribeDigital 🪝
+
+```tsx
+import { useCrestronSubscribeDigital } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeDigital("some-digital-join-or-name");
+
+    return (
+        <div>
+            <h1>Digital State</h1>
+            <h2>Value: {state.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSubscribeDigital } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeDigital(
+        "some-digital-join-or-name",
+        (value) => {
+            console.log(`New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Digital State</h1>
+            <h2>Value: {state.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSubscribeSerial 🪝
+
+```tsx
+import { useCrestronSubscribeSerial } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeSerial("some-serial-join-or-name");
+
+    return (
+        <div>
+            <h1>Serial State</h1>
+            <h2>Value: {state.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSubscribeSerial } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeSerial(
+        "some-serial-join-or-name",
+        (value) => {
+            console.log(`New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Serial State</h1>
+            <h2>Value: {state.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSubscribeAnalogCollection 🪝
+
+```tsx
+import { useCrestronSubscribeAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state1, state2, state3] = useCrestronSubscribeAnalogCollection([
+        "some-analog-join-or-name",
+        "2",
+        "3",
+    ]);
+
+    return (
+        <div>
+            <h1>Analog State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSubscribeAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state1, state2, state3] = useCrestronSubscribeAnalogCollection(
+        ["some-analog-join-or-name", "2", "3"],
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Analog State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSubscribeDigitalCollection 🪝
+
+```tsx
+import { useCrestronSubscribeDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state1, state2, state3] = useCrestronSubscribeDigitalCollection([
+        "some-digital-join-or-name",
+        "2",
+        "3",
+    ]);
+
+    return (
+        <div>
+            <h1>Digital State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSubscribeDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state1, state2, state3] = useCrestronSubscribeDigitalCollection(
+        ["some-digital-join-or-name", "2", "3"],
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Digital State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSubscribeSerialCollection 🪝
+
+```tsx
+import { useCrestronSubscribeSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state1, state2, state3] = useCrestronSubscribeSerialCollection([
+        "some-serial-join-or-name",
+        "2",
+        "3",
+    ]);
+
+    return (
+        <div>
+            <h1>Serial State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSubscribeSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state1, state2, state3] = useCrestronSubscribeSerialCollection(
+        ["some-serial-join-or-name", "2", "3"],
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Serial State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+### Publish & Subscribe ↔️
+
+#### useCrestronAnalog 🪝
 
 ```tsx
 import { useCrestronAnalog } from "@norgate-av/react-crestron-ch5-hooks";
@@ -555,7 +574,31 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### useCrestronDigital 🪝
+##### with optional callback
+
+```tsx
+import { useCrestronAnalog } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal] = useCrestronAnalog("some-analog-join-or-name", (value) => {
+        console.log(`New Value: ${value}`);
+    });
+
+    return (
+        <div>
+            <h1>Analog Signal</h1>
+            <h2>Value: {signal.state.value}</h2>
+            <button onClick={() => signal.action.setValue(666)}>
+                Set Value
+            </button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronDigital 🪝
 
 ```tsx
 import { useCrestronDigital } from "@norgate-av/react-crestron-ch5-hooks";
@@ -576,6 +619,343 @@ export const SomeAwesomeComponent = () => {
             <button onClick={() => signal.action.push()}>Push</button>
             <button onClick={() => signal.action.release()}>Release</button>
             <button onClick={() => signal.action.click()}>Click</button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronDigital } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal] = useCrestronDigital("some-some-join-or-name", (value) => {
+        console.log(`New Value: ${value}`);
+    });
+
+    return (
+        <div>
+            <h1>Digital Signal</h1>
+            <h2>Value: {signal.state.value}</h2>
+            <button onClick={() => signal.action.setValue(true)}>
+                Set Value True
+            </button>
+            <button onClick={() => signal.action.setValue(false)}>
+                Set Value False
+            </button>
+            <button onClick={() => signal.action.push()}>Push</button>
+            <button onClick={() => signal.action.release()}>Release</button>
+            <button onClick={() => signal.action.click()}>Click</button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSerial 🪝
+
+```tsx
+import { useCrestronSerial } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal] = useCrestronSerial("some-serial-join-or-name");
+
+    return (
+        <div>
+            <h1>Serial Signal</h1>
+            <h2>Value: {signal.state.value}</h2>
+            <button onClick={() => signal.action.setValue("cowbell")}>
+                Set Value
+            </button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSerial } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal] = useCrestronSerial("some-serial-join-or-name", (value) => {
+        console.log(`New Value: ${value}`);
+    });
+
+    return (
+        <div>
+            <h1>Serial Signal</h1>
+            <h2>Value: {signal.state.value}</h2>
+            <button onClick={() => signal.action.setValue("cowbell")}>
+                Set Value
+            </button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronAnalogCollection 🪝
+
+```tsx
+import { useCrestronAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal1, signal2, signal3] = useCrestronAnalogCollection([
+        "some-analog-join-or-name",
+        "2",
+        "3",
+    ]);
+
+    return (
+        <div>
+            <h1>Analog Signal Collection</h1>
+            <h2>Value 1: {signal1.state.value}</h2>
+            <h2>Value 2: {signal2.state.value}</h2>
+            <h2>Value 3: {signal3.state.value}</h2>
+
+            <button onClick={() => signal1.action.setValue(666)}>
+                Set Value 1
+            </button>
+            <button onClick={() => signal2.action.setValue(666)}>
+                Set Value 2
+            </button>
+            <button onClick={() => signal3.action.setValue(666)}>
+                Set Value 3
+            </button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal1, signal2, signal3] = useCrestronAnalogCollection(
+        ["some-analog-join-or-name", "2", "3"],
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Analog Signal Collection</h1>
+            <h2>Value 1: {signal1.state.value}</h2>
+            <h2>Value 2: {signal2.state.value}</h2>
+            <h2>Value 3: {signal3.state.value}</h2>
+
+            <button onClick={() => signal1.action.setValue(666)}>
+                Set Value 1
+            </button>
+            <button onClick={() => signal2.action.setValue(666)}>
+                Set Value 2
+            </button>
+            <button onClick={() => signal3.action.setValue(666)}>
+                Set Value 3
+            </button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronDigitalCollection 🪝
+
+```tsx
+import { useCrestronDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal1, signal2, signal3] = useCrestronDigitalCollection([
+        "some-digital-join-or-name",
+        "2",
+        "3",
+    ]);
+
+    return (
+        <div>
+            <h1>Digital Signal Collection</h1>
+            <h2>Value 1: {signal1.state.value}</h2>
+            <h2>Value 2: {signal2.state.value}</h2>
+            <h2>Value 3: {signal3.state.value}</h2>
+
+            <button onClick={() => signal1.action.setValue(true)}>
+                Set Value 1 True
+            </button>
+            <button onClick={() => signal1.action.setValue(false)}>
+                Set Value 1 False
+            </button>
+            <button onClick={() => signal1.action.push()}>Push 1</button>
+            <button onClick={() => signal1.action.release()}>Release 1</button>
+            <button onClick={() => signal1.action.click()}>Click 1</button>
+
+            <button onClick={() => signal2.action.setValue(true)}>
+                Set Value 2 True
+            </button>
+            <button onClick={() => signal2.action.setValue(false)}>
+                Set Value 2 False
+            </button>
+            <button onClick={() => signal2.action.push()}>Push 2</button>
+            <button onClick={() => signal2.action.release()}>Release 2</button>
+            <button onClick={() => signal2.action.click()}>Click 2</button>
+
+            <button onClick={() => signal3.action.setValue(true)}>
+                Set Value 3 True
+            </button>
+            <button onClick={() => signal3.action.setValue(false)}>
+                Set Value 3 False
+            </button>
+            <button onClick={() => signal3.action.push()}>Push 3</button>
+            <button onClick={() => signal3.action.release()}>Release 3</button>
+            <button onClick={() => signal3.action.click()}>Click 3</button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronDigitalCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal1, signal2, signal3] = useCrestronDigitalCollection(
+        ["some-digital-join-or-name", "2", "3"],
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Digital Signal Collection</h1>
+            <h2>Value 1: {signal1.state.value}</h2>
+            <h2>Value 2: {signal2.state.value}</h2>
+            <h2>Value 3: {signal3.state.value}</h2>
+
+            <button onClick={() => signal1.action.setValue(true)}>
+                Set Value 1 True
+            </button>
+            <button onClick={() => signal1.action.setValue(false)}>
+                Set Value 1 False
+            </button>
+            <button onClick={() => signal1.action.push()}>Push 1</button>
+            <button onClick={() => signal1.action.release()}>Release 1</button>
+            <button onClick={() => signal1.action.click()}>Click 1</button>
+
+            <button onClick={() => signal2.action.setValue(true)}>
+                Set Value 2 True
+            </button>
+            <button onClick={() => signal2.action.setValue(false)}>
+                Set Value 2 False
+            </button>
+            <button onClick={() => signal2.action.push()}>Push 2</button>
+            <button onClick={() => signal2.action.release()}>Release 2</button>
+            <button onClick={() => signal2.action.click()}>Click 2</button>
+
+            <button onClick={() => signal3.action.setValue(true)}>
+                Set Value 3 True
+            </button>
+            <button onClick={() => signal3.action.setValue(false)}>
+                Set Value 3 False
+            </button>
+            <button onClick={() => signal3.action.push()}>Push 3</button>
+            <button onClick={() => signal3.action.release()}>Release 3</button>
+            <button onClick={() => signal3.action.click()}>Click 3</button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+#### useCrestronSerialCollection 🪝
+
+```tsx
+import { useCrestronSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal1, signal2, signal3] = useCrestronSerialCollection([
+        "some-serial-join-or-name",
+        "2",
+        "3",
+    ]);
+
+    return (
+        <div>
+            <h1>Serial Signal Collection</h1>
+            <h2>Value 1: {signal1.state.value}</h2>
+            <h2>Value 2: {signal2.state.value}</h2>
+            <h2>Value 3: {signal3.state.value}</h2>
+
+            <button onClick={() => action1.setValue("cowbell")}>
+                Set Value 1
+            </button>
+            <button onClick={() => action2.setValue("cowbell")}>
+                Set Value 2
+            </button>
+            <button
+                onClick={() =>
+                    action3.setValue("That's enough cowbell for now!")
+                }
+            >
+                Set Value 3
+            </button>
+        </div>
+    );
+};
+
+export default SomeAwesomeComponent;
+```
+
+##### with optional callback
+
+```tsx
+import { useCrestronSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [signal1, signal2, signal3] = useCrestronSerialCollection(
+        ["some-serial-join-or-name", "2", "3"],
+        (value, signalName) => {
+            console.log(`Signal: ${signalName}, New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Serial Signal Collection</h1>
+            <h2>Value 1: {signal1.state.value}</h2>
+            <h2>Value 2: {signal2.state.value}</h2>
+            <h2>Value 3: {signal3.state.value}</h2>
+
+            <button onClick={() => action1.setValue("cowbell")}>
+                Set Value 1
+            </button>
+            <button onClick={() => action2.setValue("cowbell")}>
+                Set Value 2
+            </button>
+            <button
+                onClick={() =>
+                    action3.setValue("That's enough cowbell for now!")
+                }
+            >
+                Set Value 3
+            </button>
         </div>
     );
 };
