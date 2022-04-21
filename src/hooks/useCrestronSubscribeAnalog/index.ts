@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { AnalogStateCallback } from "../../types";
+import { AnalogStateCallback, IAnalogState } from "../../types";
 
 export function useCrestronSubscribeAnalog(
     signalName: string,
     callback?: AnalogStateCallback,
-): [number] {
+): [IAnalogState] {
     const [state, setState] = useState<number>(0);
     const callbackRef = useRef<AnalogStateCallback | undefined>();
 
@@ -29,7 +29,7 @@ export function useCrestronSubscribeAnalog(
         };
     }, [signalName]);
 
-    return [state];
+    return [{ value: state }];
 }
 
 export default useCrestronSubscribeAnalog;

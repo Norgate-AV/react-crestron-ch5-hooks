@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
-import { SerialStateCallback } from "../../types";
+import { ISerialState, SerialStateCallback } from "../../types";
 
 export function useCrestronSubscribeSerial(
     signalName: string,
     callback?: SerialStateCallback,
-): [string] {
+): [ISerialState] {
     const [state, setState] = useState<string>("");
     const callbackRef = useRef<SerialStateCallback | undefined>();
 
@@ -29,7 +29,7 @@ export function useCrestronSubscribeSerial(
         };
     }, [signalName]);
 
-    return [state];
+    return [{ value: state }];
 }
 
 export default useCrestronSubscribeSerial;
