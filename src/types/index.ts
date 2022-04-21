@@ -11,6 +11,7 @@ export * from "./DigitalStateCallback";
 export * from "./Serial";
 export * from "./ISerialEventAction";
 export * from "./ISerialState";
+export * from "./ISerialSignal";
 export * from "./SerialStateCallback";
 export * from "./StateCallback";
 export * from "./IStateSubscription";
