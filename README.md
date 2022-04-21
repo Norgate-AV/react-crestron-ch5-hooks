@@ -21,7 +21,7 @@ This library is currently in development. When it is ready to use, there will be
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Contents**
+## Contents 📖
 
 -   [Installation ⚡️](#installation-%EF%B8%8F)
 -   [Usage 🚀](#usage-)
