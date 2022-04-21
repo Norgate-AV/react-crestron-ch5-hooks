@@ -27,7 +27,7 @@ jobs:
 
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
-        
+
       - name: Cache Coverage
         id: cache-coverage
         uses: actions/cache@v3
@@ -41,7 +41,7 @@ jobs:
         with:
           path-to-lcov: ./coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Upload coverage to Codecov
         if: steps.cache-coverage.outputs.cache-hit == 'true'
         uses: codecov/codecov-action@v2
@@ -82,7 +82,7 @@ jobs:
         with:
           path-to-lcov: ./coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Upload coverage to Codecov
         if: steps.cache-coverage.outputs.cache-hit == 'true'
         uses: codecov/codecov-action@v2
