@@ -14,3 +14,4 @@ export * from "./StateCallback";
 export * from "./IStateSubscription";
 export * from "./IBaseEventAction";
 export * from "./IBaseState";
+export * from "./IBaseSignal";
