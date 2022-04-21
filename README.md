@@ -12,6 +12,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/badge.svg?branch=develop)](https://coveralls.io/github/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks?branch=develop)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
+[![NPM](https://img.shields.io/npm/v/@norgate-av/react-crestron-ch5-hooks.svg)](https://www.npmjs.com/package/@norgate-av/react-crestron-ch5-hooks)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **NOTE**
