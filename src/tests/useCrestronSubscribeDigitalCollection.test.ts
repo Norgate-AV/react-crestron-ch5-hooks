@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSubscribeDigitalCollection } from "../hooks";
-import { Digital } from "../types";
+import { Digital, IDigitalState } from "../types";
 import { setupSubscribeTest, signalNames } from "./helpers";
 
 describe("useCrestronSubscribeDigitalCollection", () => {
@@ -16,7 +16,7 @@ describe("useCrestronSubscribeDigitalCollection", () => {
         signalNames,
     );
 
-    let hook: RenderHookResult<Digital[], unknown> | null = null;
+    let hook: RenderHookResult<IDigitalState[], unknown> | null = null;
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -29,7 +29,9 @@ describe("useCrestronSubscribeDigitalCollection", () => {
 
     it("should initialize correctly", () => {
         expect(hook?.result.current).toEqual(
-            Array.from<Digital>({ length: signalName.length }).fill(false),
+            Array.from<IDigitalState>({ length: signalName.length }).fill({
+                value: false,
+            }),
         );
     });
 
