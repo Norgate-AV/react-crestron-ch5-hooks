@@ -27,7 +27,7 @@
     },
     "scripts": {
         "start": "yarn resolve:crcomlib && tsdx watch",
-        "build": "yarn clean:dist && yarn resolve:crcomlib && tsdx build",
+        "build": "yarn clean:dist && yarn resolve:crcomlib && tsdx build --format cjs,esm,umd",
         "test": "yarn resolve:crcomlib && tsdx test --passWithNoTests",
         "test:watch": "yarn resolve:crcomlib && tsdx test --passWithNoTests --watch",
         "test:coverage": "yarn clean:coverage && yarn resolve:crcomlib && tsdx test --passWithNoTests --coverage",
