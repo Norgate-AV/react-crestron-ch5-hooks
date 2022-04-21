@@ -1,6 +1,7 @@
 export * from "./Analog";
 export * from "./IAnalogEventAction";
 export * from "./IAnalogState";
+export * from "./IAnalogSignal";
 export * from "./AnalogStateCallback";
 export * from "./Digital";
 export * from "./IDigitalEventAction";
