@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronDigital } from "../hooks";
-import { IDigitalEventAction, Digital } from "../types";
+import { Digital, IDigitalSignal } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronDigital", () => {
@@ -14,29 +14,30 @@ describe("useCrestronDigital", () => {
         unsubscribeState,
     } = setupTest<Digital>(CrestronCH5.SignalType.Digital, signalNames[0]);
 
-    let hook: RenderHookResult<[Digital, IDigitalEventAction], unknown> | null =
-        null;
-
-    let state: Digital;
-    let action: IDigitalEventAction;
+    let hook: RenderHookResult<[IDigitalSignal], unknown> | null = null;
+    let signal: IDigitalSignal;
 
     beforeAll(() => {
         hook = renderHook(() =>
             useCrestronDigital(signalName as string, callback),
         );
 
-        [state, action] = hook.result.current;
+        [signal] = hook.result.current;
     });
 
     it("should initialize correctly", () => {
         expect(hook?.result.current).toEqual(
             expect.arrayContaining([
-                state,
                 expect.objectContaining({
-                    setValue: expect.any(Function),
-                    push: expect.any(Function),
-                    release: expect.any(Function),
-                    click: expect.any(Function),
+                    state: {
+                        value: false,
+                    },
+                    action: {
+                        setValue: expect.any(Function),
+                        push: expect.any(Function),
+                        release: expect.any(Function),
+                        click: expect.any(Function),
+                    },
                 }),
             ]),
         );
@@ -55,7 +56,7 @@ describe("useCrestronDigital", () => {
 
     it("should call CrComLib.publishEvent() correctly", () => {
         act(() => {
-            action.setValue(true);
+            signal.action.setValue(true);
         });
 
         expect(publishEvent).toHaveBeenCalledWith(signalType, signalName, true);
@@ -63,7 +64,7 @@ describe("useCrestronDigital", () => {
         publishEvent.mockClear();
 
         act(() => {
-            action.setValue(false);
+            signal.action.setValue(false);
         });
 
         expect(publishEvent).toHaveBeenCalledWith(
@@ -76,7 +77,7 @@ describe("useCrestronDigital", () => {
         publishEvent.mockClear();
 
         act(() => {
-            action.push();
+            signal.action.push();
         });
 
         expect(publishEvent).toHaveBeenCalledWith(signalType, signalName, true);
@@ -84,7 +85,7 @@ describe("useCrestronDigital", () => {
         publishEvent.mockClear();
 
         act(() => {
-            action.release();
+            signal.action.release();
         });
 
         expect(publishEvent).toHaveBeenCalledWith(
@@ -97,7 +98,7 @@ describe("useCrestronDigital", () => {
         publishEvent.mockClear();
 
         act(() => {
-            action.click();
+            signal.action.click();
         });
 
         expect(publishEvent).toHaveBeenCalledWith(signalType, signalName, true);
