@@ -27,15 +27,26 @@ jobs:
 
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
+        
+      - name: Cache Coverage
+        id: cache-coverage
+        uses: actions/cache@v3
+        with:
+          path: ./coverage
+          key: ${{ runner.os }}-coverage
 
-      - name: Coveralls GitHub Action
+      - name: Upload coverage to Coveralls
+        if: steps.cache-coverage.outputs.cache-hit == 'true'
         uses: coverallsapp/github-action@1.1.3
         with:
           path-to-lcov: ./coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: codecov/codecov-action@v2
+      
+      - name: Upload coverage to Codecov
+        if: steps.cache-coverage.outputs.cache-hit == 'true'
+        uses: codecov/codecov-action@v2
         with:
+          directory: ./coverage
           verbose: true
 
       - name: Build
@@ -65,14 +76,18 @@ jobs:
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
 
-      - name: Coveralls GitHub Action
+      - name: Upload coverage to Coveralls
+        if: steps.cache-coverage.outputs.cache-hit == 'true'
         uses: coverallsapp/github-action@1.1.3
         with:
           path-to-lcov: ./coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: codecov/codecov-action@v2
+      
+      - name: Upload coverage to Codecov
+        if: steps.cache-coverage.outputs.cache-hit == 'true'
+        uses: codecov/codecov-action@v2
         with:
+          directory: ./coverage
           verbose: true
 
       - name: Build
