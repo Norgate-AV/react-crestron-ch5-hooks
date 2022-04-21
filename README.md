@@ -11,19 +11,20 @@
 [![codecov](https://codecov.io/gh/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/branch/develop/graph/badge.svg?token=ZA36O8UTSI)](https://codecov.io/gh/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks)
 [![Coverage Status](https://coveralls.io/repos/github/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/badge.svg?branch=develop)](https://coveralls.io/github/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks?branch=develop)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks)](#contributors)
 [![NPM](https://img.shields.io/npm/v/@norgate-av/react-crestron-ch5-hooks.svg)](https://www.npmjs.com/package/@norgate-av/react-crestron-ch5-hooks)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**NOTE**
+---
 
-This library is currently in development. When it is ready to use, there will be a release posted here and the package will be published to NPM.
+A collection of React custom hooks for Crestron CH5 project development.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Contents 📖
 
+-   [Features 📦](#features-)
 -   [Installation ⚡️](#installation-%EF%B8%8F)
 -   [Usage 🚀](#usage-)
     -   [Publish :arrow_right:](#publish-arrow_right)
@@ -89,6 +90,14 @@ This library is currently in development. When it is ready to use, there will be
 -   [LICENSE ⚖️](#license-)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Features 📦
+
+✅ Collection of 18 hooks
+
+✅ CommonJS, UMD and ESM Support
+
+✅ Built-in Type definitions for TypeScript
 
 ## Installation ⚡️
 
@@ -1137,6 +1146,12 @@ This project is maintained by the following person(s) and a bunch of [awesome co
 </table>
 
 ## Contributors ✨
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks go to these awesome people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
