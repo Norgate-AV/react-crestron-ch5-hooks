@@ -45,7 +45,7 @@
         "resolve:crcomlib": "run-script-os",
         "resolve:crcomlib:default": "./node_modules/node-jq/bin/jq '.main=\"build_bundles/cjs/cr-com-lib.js\"' $npm_package_crestron_crcomlib_packageJson | sponge $npm_package_crestron_crcomlib_packageJson",
         "resolve:crcomlib:windows": "./node_modules/node-jq/bin/jq \".main=\"\"build_bundles/cjs/cr-com-lib.js\"\"\" %npm_package_crestron_crcomlib_packageJson% | sponge %npm_package_crestron_crcomlib_packageJson%",
-        "doctoc": "doctoc --title '**Contents**' README.md",
+        "doctoc": "doctoc --title '## Contents 📖' README.md",
         "contrib:add": "all-contributors add",
         "contrib:generate": "all-contributors generate",
         "contrib:check": "all-contributors check"
