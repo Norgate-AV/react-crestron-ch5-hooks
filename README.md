@@ -68,6 +68,21 @@ This library is currently in development. When it is ready to use, there will be
         -   [IAnalogEventAction](#ianalogeventaction)
         -   [IDigitalEventAction](#idigitaleventaction)
         -   [ISerialEventAction](#iserialeventaction)
+    -   [State](#state)
+        -   [IBaseState](#ibasestate)
+        -   [IAnalogState](#ianalogstate)
+        -   [IDigitalState](#idigitalstate)
+        -   [ISerialState](#iserialstate)
+        -   [IStateSubscription](#istatesubscription)
+        -   [StateCallback](#statecallback)
+        -   [AnalogStateCallback](#analogstatecallback)
+        -   [DigitalStateCallback](#digitalstatecallback)
+        -   [SerialStateCallback](#serialstatecallback)
+    -   [Signals](#signals)
+        -   [IBaseSignal](#ibasesignal)
+        -   [IAnalogSignal](#ianalogsignal)
+        -   [IDigitalSignal](#idigitalsignal)
+        -   [ISerialSignal](#iserialsignal)
 -   [Team ⚽](#team-)
 -   [Contributors ✨](#contributors-)
 -   [LICENSE ⚖️](#license-)
@@ -1015,6 +1030,99 @@ export declare interface IDigitalEventAction extends IBaseEventAction<Digital> {
 
 ```ts
 export declare interface ISerialEventAction extends IBaseEventAction<Serial> {}
+```
+
+### State
+
+#### IBaseState
+
+```ts
+export declare interface IBaseState<T> {
+    value: T;
+}
+```
+
+#### IAnalogState
+
+```ts
+export declare interface IAnalogState extends IBaseState<Analog> {}
+```
+
+#### IDigitalState
+
+```ts
+export declare interface IDigitalState extends IBaseState<Digital> {}
+```
+
+#### ISerialState
+
+```ts
+export declare interface ISerialState extends IBaseState<Serial> {}
+```
+
+#### IStateSubscription
+
+```ts
+export declare interface IStateSubscription {
+    id: string;
+    signalName: string;
+}
+```
+
+#### StateCallback
+
+```ts
+export declare type StateCallback<T> = (value: T, signalName?: string) => void;
+```
+
+#### AnalogStateCallback
+
+```ts
+export declare type AnalogStateCallback = StateCallback<Analog>;
+```
+
+#### DigitalStateCallback
+
+```ts
+export declare type DigitalStateCallback = StateCallback<Digital>;
+```
+
+#### SerialStateCallback
+
+```ts
+export declare type SerialStateCallback = StateCallback<Serial>;
+```
+
+### Signals
+
+#### IBaseSignal
+
+```ts
+export declare interface IBaseSignal<TState, TAction> {
+    state: TState;
+    action: TAction;
+}
+```
+
+#### IAnalogSignal
+
+```ts
+export declare interface IAnalogSignal
+    extends IBaseSignal<IAnalogState, IAnalogEventAction> {}
+```
+
+#### IDigitalSignal
+
+```ts
+export declare interface IDigitalSignal
+    extends IBaseSignal<IDigitalState, IDigitalEventAction> {}
+```
+
+#### ISerialSignal
+
+```ts
+export declare interface ISerialSignal
+    extends IBaseSignal<ISerialState, ISerialEventAction> {}
 ```
 
 ## Team ⚽
