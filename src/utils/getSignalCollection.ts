@@ -1,11 +1,11 @@
-import { IBaseEventAction, IBaseSignal, IBaseState } from "../types";
+import { IBaseSignal } from "../types";
 
-export function getSignalCollection<T>(
+export function getSignalCollection<TState, TEventAction>(
     length: number,
-    state: IBaseState<T>[],
-    action: IBaseEventAction<T>[],
-): IBaseSignal<IBaseState<T>, IBaseEventAction<T>>[] {
-    const signals: IBaseSignal<IBaseState<T>, IBaseEventAction<T>>[] = [];
+    state: TState[],
+    action: TEventAction[],
+): IBaseSignal<TState, TEventAction>[] {
+    const signals: IBaseSignal<TState, TEventAction>[] = [];
 
     // eslint-disable-next-line no-plusplus
     for (let index = 0; index < length; index++) {
