@@ -6,6 +6,7 @@ export * from "./AnalogStateCallback";
 export * from "./Digital";
 export * from "./IDigitalEventAction";
 export * from "./IDigitalState";
+export * from "./IDigitalSignal";
 export * from "./DigitalStateCallback";
 export * from "./Serial";
 export * from "./ISerialEventAction";
