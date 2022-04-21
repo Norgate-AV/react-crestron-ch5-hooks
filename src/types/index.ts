@@ -12,5 +12,5 @@ export * from "./ISerialState";
 export * from "./SerialStateCallback";
 export * from "./StateCallback";
 export * from "./IStateSubscription";
-export * from "./IBaseAction";
+export * from "./IBaseEventAction";
 export * from "./IBaseState";
