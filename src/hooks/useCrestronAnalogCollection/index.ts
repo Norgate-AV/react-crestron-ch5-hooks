@@ -1,15 +1,25 @@
-import { IAnalogEventAction, AnalogStateCallback } from "../../types";
+import {
+    AnalogStateCallback,
+    IAnalogEventAction,
+    IAnalogSignal,
+    IAnalogState,
+} from "../../types";
+import { getSignalCollection } from "../../utils";
 import { useCrestronPublishAnalogCollection } from "../useCrestronPublishAnalogCollection";
 import { useCrestronSubscribeAnalogCollection } from "../useCrestronSubscribeAnalogCollection";
 
 export function useCrestronAnalogCollection(
     signalNames: string[],
     callback?: AnalogStateCallback,
-): [number[], IAnalogEventAction[]] {
+): IAnalogSignal[] {
     const state = useCrestronSubscribeAnalogCollection(signalNames, callback);
     const action = useCrestronPublishAnalogCollection(signalNames);
 
-    return [state, action];
+    return getSignalCollection<IAnalogState, IAnalogEventAction>(
+        signalNames.length,
+        state,
+        action,
+    );
 }
 
 export default useCrestronAnalogCollection;
