@@ -29,34 +29,10 @@ describe("useCrestronPublishSerialCollection", () => {
         );
     });
 
-    // it.each(
-    //     signalNames.map((signalName, index) => {
-    //         return [signalName, index];
-    //     }),
-    // )(
-    //     "%s: should call CrComLib.publishEvent() correctly",
-    //     (signalName, index) => {
-    //         const action = actions[index as number];
-
-    //         act(() => {
-    //             action.setValue("100");
-    //         });
-
-    //         expect(publishEvent).toHaveBeenCalledWith(
-    //             signalType,
-    //             signalName,
-    //             "100",
-    //         );
-
-    //         expect(publishEvent).toHaveBeenCalledTimes(1);
-    //         publishEvent.mockClear();
-    //     },
-    // );
-
     it("should call CrComLib.publishEvent() correctly for each signalName", () => {
-        const testSignalNames = signalName as string[];
+        const signalNames = signalName as string[];
 
-        testSignalNames.forEach((signalName, index) => {
+        signalNames.forEach((signalName, index) => {
             const action = actions[index];
 
             act(() => {

@@ -31,20 +31,7 @@ describe("useCrestronDigitalCollection", () => {
     });
 
     it("should initialize correctly", () => {
-        // expect(hook?.result.current).toEqual(
-        //     expect.arrayContaining([
-        //         state,
-        //         expect.objectContaining({
-        //             setValue: expect.any(Function),
-        //             push: expect.any(Function),
-        //             release: expect.any(Function),
-        //             click: expect.any(Function),
-        //         }),
-        //     ]),
-        // );
-
         expect(hook?.result.current).toEqual([
-            // Array.from<Digital>({ length: signalName.length }).fill(false),
             state,
             Array.from<IDigitalEventAction>({ length: signalName.length }).fill(
                 {

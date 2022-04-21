@@ -4,6 +4,7 @@ export const signalNames = [
     "IllBeBack",
     "WhySoSerious",
     "HastaLaVistaBaby",
+    "LiveLongAndProsper",
 ];
 
 export default signalNames;

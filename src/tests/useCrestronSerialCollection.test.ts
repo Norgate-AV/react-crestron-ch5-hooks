@@ -31,20 +31,7 @@ describe("useCrestronSerialCollection", () => {
     });
 
     it("should initialize correctly", () => {
-        // expect(hook?.result.current).toEqual(
-        //     expect.arrayContaining([
-        //         state,
-        //         expect.objectContaining({
-        //             setValue: expect.any(Function),
-        //             push: expect.any(Function),
-        //             release: expect.any(Function),
-        //             click: expect.any(Function),
-        //         }),
-        //     ]),
-        // );
-
         expect(hook?.result.current).toEqual([
-            // Array.from<Serial>({ length: signalName.length }).fill(false),
             state,
             Array.from<ISerialEventAction>({ length: signalName.length }).fill({
                 setValue: expect.any(Function),
