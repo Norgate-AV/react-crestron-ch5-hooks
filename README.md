@@ -151,9 +151,11 @@ export declare interface ISerialAction extends IBaseAction<Serial> {}
 
 This project is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/graphs/contributors).
 
-| [![Damien Butt](https://github.com/damienbutt.png?size=100)](https://github.com/damienbutt) |
-| ------------------------------------------------------------------------------------------- |
-| [Damien Butt](https://github.com/damienbutt)                                                |
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/damienbutt"><img src="https://avatars.githubusercontent.com/damienbutt?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Damien Butt</b></sub></a><br /></td>
+  </tr>
+</table>
 
 ## Contributors ✨
 
