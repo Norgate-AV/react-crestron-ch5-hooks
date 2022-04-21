@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSubscribeSerial } from "../hooks";
-import { Serial } from "../types";
+import { ISerialState, Serial } from "../types";
 import { setupSubscribeTest, signalNames } from "./helpers";
 
 describe("useCrestronSubscribeSerial", () => {
@@ -16,7 +16,7 @@ describe("useCrestronSubscribeSerial", () => {
         signalNames[0],
     );
 
-    let hook: RenderHookResult<[Serial], unknown> | null = null;
+    let hook: RenderHookResult<[ISerialState], unknown> | null = null;
 
     beforeAll(() => {
         hook = renderHook(() =>
@@ -25,7 +25,13 @@ describe("useCrestronSubscribeSerial", () => {
     });
 
     it("should initialize correctly", () => {
-        expect(hook?.result.current).toEqual([""]);
+        expect(hook?.result.current).toEqual(
+            expect.arrayContaining([
+                expect.objectContaining({
+                    value: "",
+                }),
+            ]),
+        );
     });
 
     it("should call CrComLib.subscribeState() correctly", () => {
