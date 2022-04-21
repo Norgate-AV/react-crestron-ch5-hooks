@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronAnalogCollection } from "../hooks";
-import { IAnalogEventAction, Analog } from "../types";
+import { Analog, IAnalogSignal } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronAnalogCollection", () => {
@@ -14,29 +14,28 @@ describe("useCrestronAnalogCollection", () => {
         unsubscribeState,
     } = setupTest<Analog>(CrestronCH5.SignalType.Analog, signalNames);
 
-    let hook: RenderHookResult<
-        [Analog[], IAnalogEventAction[]],
-        unknown
-    > | null = null;
-
-    let state: Analog[];
-    let actions: IAnalogEventAction[];
+    let hook: RenderHookResult<IAnalogSignal[], unknown> | null = null;
+    let signals: IAnalogSignal[];
 
     beforeAll(() => {
         hook = renderHook(() =>
             useCrestronAnalogCollection(signalName as string[], callback),
         );
 
-        [state, actions] = hook.result.current;
+        signals = hook.result.current;
     });
 
     it("should initialize correctly", () => {
-        expect(hook?.result.current).toEqual([
-            state,
-            Array.from<IAnalogEventAction>({ length: signalName.length }).fill({
-                setValue: expect.any(Function),
+        expect(hook?.result.current).toEqual(
+            Array.from<IAnalogSignal>({ length: signalName.length }).fill({
+                state: {
+                    value: 0,
+                },
+                action: {
+                    setValue: expect.any(Function),
+                },
             }),
-        ]);
+        );
     });
 
     it("should call CrComLib.subscribeState() correctly", () => {
@@ -54,7 +53,7 @@ describe("useCrestronAnalogCollection", () => {
         const signalNames = signalName as string[];
 
         signalNames.forEach((signalName, index) => {
-            const action = actions[index];
+            const { action } = signals[index];
 
             act(() => {
                 action.setValue(100);

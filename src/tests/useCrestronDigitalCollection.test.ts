@@ -1,7 +1,7 @@
 import { renderHook, RenderHookResult, act } from "@testing-library/react/pure";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronDigitalCollection } from "../hooks";
-import { IDigitalEventAction, Digital } from "../types";
+import { Digital, IDigitalSignal } from "../types";
 import { setupTest, signalNames } from "./helpers";
 
 describe("useCrestronDigitalCollection", () => {
@@ -14,34 +14,31 @@ describe("useCrestronDigitalCollection", () => {
         unsubscribeState,
     } = setupTest<Digital>(CrestronCH5.SignalType.Digital, signalNames);
 
-    let hook: RenderHookResult<
-        [Digital[], IDigitalEventAction[]],
-        unknown
-    > | null = null;
-
-    let state: Digital[];
-    let actions: IDigitalEventAction[];
+    let hook: RenderHookResult<IDigitalSignal[], unknown> | null = null;
+    let signals: IDigitalSignal[];
 
     beforeAll(() => {
         hook = renderHook(() =>
             useCrestronDigitalCollection(signalName as string[], callback),
         );
 
-        [state, actions] = hook.result.current;
+        signals = hook.result.current;
     });
 
     it("should initialize correctly", () => {
-        expect(hook?.result.current).toEqual([
-            state,
-            Array.from<IDigitalEventAction>({ length: signalName.length }).fill(
-                {
+        expect(hook?.result.current).toEqual(
+            Array.from<IDigitalSignal>({ length: signalName.length }).fill({
+                state: {
+                    value: false,
+                },
+                action: {
                     setValue: expect.any(Function),
                     push: expect.any(Function),
                     release: expect.any(Function),
                     click: expect.any(Function),
                 },
-            ),
-        ]);
+            }),
+        );
     });
 
     it("should call CrComLib.subscribeState() correctly", () => {
@@ -59,7 +56,7 @@ describe("useCrestronDigitalCollection", () => {
         const signalNames = signalName as string[];
 
         signalNames.forEach((signalName, index) => {
-            const action = actions[index];
+            const { action } = signals[index];
 
             act(() => {
                 action.setValue(true);
