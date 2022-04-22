@@ -10,6 +10,7 @@
 [![CI](https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/branch/develop/graph/badge.svg?token=ZA36O8UTSI)](https://codecov.io/gh/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks)
 [![Coverage Status](https://coveralls.io/repos/github/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/badge.svg?branch=develop)](https://coveralls.io/github/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks?branch=develop)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![GitHub contributors](https://img.shields.io/github/contributors/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks)](#contributors)
 [![NPM](https://img.shields.io/npm/v/@norgate-av/react-crestron-ch5-hooks.svg)](https://www.npmjs.com/package/@norgate-av/react-crestron-ch5-hooks)
