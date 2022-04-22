@@ -42,14 +42,14 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
         -   [useCrestronSubscribeAnalogCollection](#usecrestronsubscribeanalogcollection)
         -   [useCrestronSubscribeDigitalCollection](#usecrestronsubscribedigitalcollection)
         -   [useCrestronSubscribeSerialCollection](#usecrestronsubscribeserialcollection)
-    -   [Publish & Subscribe ↔️](#publish--subscribe-)
+    -   [Publish & Subscribe :left_right_arrow:](#publish--subscribe-left_right_arrow)
         -   [useCrestronAnalog](#usecrestronanalog)
         -   [useCrestronDigital](#usecrestrondigital)
         -   [useCrestronSerial](#usecrestronserial)
         -   [useCrestronAnalogCollection](#usecrestronanalogcollection)
         -   [useCrestronDigitalCollection](#usecrestrondigitalcollection)
         -   [useCrestronSerialCollection](#usecrestronserialcollection)
-    -   [Optional Callback](#optional-callback)
+    -   [Optional Callback :phone:](#optional-callback-phone)
 -   [Types ⌨️](#types-)
     -   [Aliases](#aliases)
         -   [Analog](#analog)
@@ -415,7 +415,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Publish & Subscribe ↔️
+### Publish & Subscribe :left_right_arrow:
 
 #### useCrestronAnalog
 
@@ -618,14 +618,16 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Optional Callback
+### Optional Subscribe Callback :phone:
+
+All hooks that subscribe to state can be passed an optional [callback](#statecallback) to be called when the state changes.
 
 ```tsx
-import { useCrestronSerialCollection } from "@norgate-av/react-crestron-ch5-hooks";
+import { useCrestronSubscribeAnalogCollection } from "@norgate-av/react-crestron-ch5-hooks";
 
 export const SomeAwesomeComponent = () => {
-    const [signal1, signal2, signal3] = useCrestronSerialCollection(
-        ["some-serial-join-or-name", "2", "3"],
+    const [state1, state2, state3] = useCrestronSubscribeAnalogCollection(
+        ["some-analog-join-or-name", "2", "3"],
         (value, signalName) => {
             console.log(`Signal: ${signalName}, New Value: ${value}`);
         },
@@ -633,24 +635,34 @@ export const SomeAwesomeComponent = () => {
 
     return (
         <div>
-            <h1>Serial Signal Collection</h1>
-            <h2>Value 1: {signal1.state.value}</h2>
-            <h2>Value 2: {signal2.state.value}</h2>
-            <h2>Value 3: {signal3.state.value}</h2>
+            <h1>Analog State Collection</h1>
+            <h2>Value 1: {state1.value}</h2>
+            <h2>Value 2: {state2.value}</h2>
+            <h2>Value 3: {state3.value}</h2>
+        </div>
+    );
+};
 
-            <button onClick={() => action1.setValue("cowbell")}>
-                Set Value 1
-            </button>
-            <button onClick={() => action2.setValue("cowbell")}>
-                Set Value 2
-            </button>
-            <button
-                onClick={() =>
-                    action3.setValue("That's enough cowbell for now!")
-                }
-            >
-                Set Value 3
-            </button>
+export default SomeAwesomeComponent;
+```
+
+The `signalName` parameter on the [callback](#statecallback) is also optional and can be omitted if you only have one signal.
+
+```tsx
+import { useCrestronSubscribeAnalog } from "@norgate-av/react-crestron-ch5-hooks";
+
+export const SomeAwesomeComponent = () => {
+    const [state] = useCrestronSubscribeAnalog(
+        "some-analog-join-or-name",
+        (value) => {
+            console.log(`New Value: ${value}`);
+        },
+    );
+
+    return (
+        <div>
+            <h1>Analog State</h1>
+            <h2>Value: {state.value}</h2>
         </div>
     );
 };
