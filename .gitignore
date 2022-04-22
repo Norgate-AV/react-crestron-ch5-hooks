@@ -7,3 +7,5 @@ coverage
 
 # local history folder
 /.history
+
+.docusaurus
