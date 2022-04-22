@@ -26,9 +26,9 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
 ## Contents 📖
 
 -   [Features 📦](#features-)
--   [Installation ⚡️](#installation-%EF%B8%8F)
+-   [Installation ⚡](#installation-)
 -   [Usage 🚀](#usage-)
-    -   [Publish :arrow_right:](#publish-arrow_right)
+    -   [Publish ➡️](#publish-)
         -   [useCrestronPublishAnalog](#usecrestronpublishanalog)
         -   [useCrestronPublishDigital](#usecrestronpublishdigital)
         -   [useCrestronPublishSerial](#usecrestronpublishserial)
@@ -42,14 +42,14 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
         -   [useCrestronSubscribeAnalogCollection](#usecrestronsubscribeanalogcollection)
         -   [useCrestronSubscribeDigitalCollection](#usecrestronsubscribedigitalcollection)
         -   [useCrestronSubscribeSerialCollection](#usecrestronsubscribeserialcollection)
-    -   [Publish & Subscribe :left_right_arrow:](#publish--subscribe-left_right_arrow)
+    -   [Publish & Subscribe ↔️](#publish--subscribe-)
         -   [useCrestronAnalog](#usecrestronanalog)
         -   [useCrestronDigital](#usecrestrondigital)
         -   [useCrestronSerial](#usecrestronserial)
         -   [useCrestronAnalogCollection](#usecrestronanalogcollection)
         -   [useCrestronDigitalCollection](#usecrestrondigitalcollection)
         -   [useCrestronSerialCollection](#usecrestronserialcollection)
-    -   [Optional Callback :phone:](#optional-callback-phone)
+    -   [Optional Subscribe Callback ☎️](#optional-subscribe-callback-)
 -   [Types ⌨️](#types-)
     -   [Aliases](#aliases)
         -   [Analog](#analog)
@@ -77,7 +77,7 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
         -   [ISerialSignal](#iserialsignal)
 -   [Team ⚽](#team-)
 -   [Contributors ✨](#contributors-)
--   [LICENSE :balance_scale:](#license-balance_scale)
+-   [LICENSE ⚖️](#license-)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -89,7 +89,7 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
 
 ✅ Built-in Type definitions for TypeScript
 
-## Installation ⚡️
+## Installation ⚡
 
 ```sh
 npm install @norgate-av/react-crestron-ch5-hooks
@@ -101,7 +101,7 @@ yarn add @norgate-av/react-crestron-ch5-hooks
 
 ## Usage 🚀
 
-### Publish :arrow_right:
+### Publish ➡️
 
 #### useCrestronPublishAnalog
 
@@ -415,7 +415,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Publish & Subscribe :left_right_arrow:
+### Publish & Subscribe ↔️
 
 #### useCrestronAnalog
 
@@ -618,7 +618,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Optional Subscribe Callback :phone:
+### Optional Subscribe Callback ☎️
 
 All hooks that subscribe to state can be passed an optional [callback](#statecallback) to be called when the state changes.
 
@@ -854,6 +854,6 @@ Thanks go to these awesome people ([emoji key](https://allcontributors.org/docs/
 This project follows the [all-contributors](https://allcontributors.org) specification.
 Contributions of any kind are welcome!
 
-## LICENSE :balance_scale:
+## LICENSE ⚖️
 
 [MIT](LICENSE)
