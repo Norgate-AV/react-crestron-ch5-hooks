@@ -5,6 +5,3 @@ updates:
     schedule:
       interval: "daily"
     target-branch: "develop"
-    labels:
-      - "npm"
-      - "dependencies"
