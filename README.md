@@ -25,32 +25,32 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
 
 ## Contents 📖
 
--   [Features 📦](#features-)
--   [Installation ⚡](#installation-)
--   [Usage 🚀](#usage-)
-    -   [Publish ➡️](#publish-)
+-   [Features :package:](#features-package)
+-   [Installation :zap:](#installation-zap)
+-   [Usage :rocket:](#usage-rocket)
+    -   [Publish :arrow_right:](#publish-arrow_right)
         -   [useCrestronPublishAnalog](#usecrestronpublishanalog)
         -   [useCrestronPublishDigital](#usecrestronpublishdigital)
         -   [useCrestronPublishSerial](#usecrestronpublishserial)
         -   [useCrestronPublishAnalogCollection](#usecrestronpublishanalogcollection)
         -   [useCrestronPublishDigitalCollection](#usecrestronpublishdigitalcollection)
         -   [useCrestronPublishSerialCollection](#usecrestronpublishserialcollection)
-    -   [Subscribe ⬅️](#subscribe-)
+    -   [Subscribe :arrow_left:](#subscribe-arrow_left)
         -   [useCrestronSubscribeAnalog](#usecrestronsubscribeanalog)
         -   [useCrestronSubscribeDigital](#usecrestronsubscribedigital)
         -   [useCrestronSubscribeSerial](#usecrestronsubscribeserial)
         -   [useCrestronSubscribeAnalogCollection](#usecrestronsubscribeanalogcollection)
         -   [useCrestronSubscribeDigitalCollection](#usecrestronsubscribedigitalcollection)
         -   [useCrestronSubscribeSerialCollection](#usecrestronsubscribeserialcollection)
-    -   [Publish & Subscribe ↔️](#publish--subscribe-)
+    -   [Publish & Subscribe :left_right_arrow:](#publish--subscribe-left_right_arrow)
         -   [useCrestronAnalog](#usecrestronanalog)
         -   [useCrestronDigital](#usecrestrondigital)
         -   [useCrestronSerial](#usecrestronserial)
         -   [useCrestronAnalogCollection](#usecrestronanalogcollection)
         -   [useCrestronDigitalCollection](#usecrestrondigitalcollection)
         -   [useCrestronSerialCollection](#usecrestronserialcollection)
-    -   [Optional Subscribe Callback ☎️](#optional-subscribe-callback-)
--   [Types ⌨️](#types-)
+    -   [Optional Subscribe Callback :phone:](#optional-subscribe-callback-phone)
+-   [Types :keyboard:](#types-keyboard)
     -   [Aliases](#aliases)
         -   [Analog](#analog)
         -   [Digital](#digital)
@@ -75,13 +75,13 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
         -   [IAnalogSignal](#ianalogsignal)
         -   [IDigitalSignal](#idigitalsignal)
         -   [ISerialSignal](#iserialsignal)
--   [Team ⚽](#team-)
--   [Contributors ✨](#contributors-)
--   [LICENSE ⚖️](#license-)
+-   [Team :soccer:](#team-soccer)
+-   [Contributors :sparkles:](#contributors-sparkles)
+-   [LICENSE :balance_scale:](#license-balance_scale)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Features 📦
+## Features :package:
 
 ✅ Collection of 18 hooks
 
@@ -89,7 +89,7 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
 
 ✅ Built-in Type definitions for TypeScript
 
-## Installation ⚡
+## Installation :zap:
 
 ```sh
 npm install @norgate-av/react-crestron-ch5-hooks
@@ -99,9 +99,9 @@ npm install @norgate-av/react-crestron-ch5-hooks
 yarn add @norgate-av/react-crestron-ch5-hooks
 ```
 
-## Usage 🚀
+## Usage :rocket:
 
-### Publish ➡️
+### Publish :arrow_right:
 
 #### useCrestronPublishAnalog
 
@@ -281,7 +281,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Subscribe ⬅️
+### Subscribe :arrow_left:
 
 #### useCrestronSubscribeAnalog
 
@@ -415,7 +415,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Publish & Subscribe ↔️
+### Publish & Subscribe :left_right_arrow:
 
 #### useCrestronAnalog
 
@@ -618,7 +618,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-### Optional Subscribe Callback ☎️
+### Optional Subscribe Callback :phone:
 
 All hooks that subscribe to state can be passed an optional [callback](#statecallback) to be called when the state changes.
 
@@ -670,7 +670,7 @@ export const SomeAwesomeComponent = () => {
 export default SomeAwesomeComponent;
 ```
 
-## Types ⌨️
+## Types :keyboard:
 
 ### Aliases
 
@@ -817,7 +817,7 @@ export declare interface ISerialSignal
     extends IBaseSignal<ISerialState, ISerialEventAction> {}
 ```
 
-## Team ⚽
+## Team :soccer:
 
 This project is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/graphs/contributors).
 
@@ -827,7 +827,7 @@ This project is maintained by the following person(s) and a bunch of [awesome co
   </tr>
 </table>
 
-## Contributors ✨
+## Contributors :sparkles:
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
@@ -854,6 +854,6 @@ Thanks go to these awesome people ([emoji key](https://allcontributors.org/docs/
 This project follows the [all-contributors](https://allcontributors.org) specification.
 Contributions of any kind are welcome!
 
-## LICENSE ⚖️
+## LICENSE :balance_scale:
 
 [MIT](LICENSE)
