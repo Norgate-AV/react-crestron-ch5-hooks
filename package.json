@@ -101,7 +101,7 @@
         "size-limit": "^7.0.8",
         "sponge": "^0.1.0",
         "tsdx": "^0.14.1",
-        "tslib": "^2.3.1",
+        "tslib": "^2.4.0",
         "typescript": "^4.6.3"
     },
     "crestron": {
