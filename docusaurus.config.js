@@ -6,15 +6,16 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: "My Site",
-    tagline: "Dinosaurs are cool",
+    title: "React Crestron CH5 Hooks",
+    tagline:
+        "A collection of React custom hooks for Crestron CH5 project development",
     url: "https://your-docusaurus-test-site.com",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
-    organizationName: "facebook", // Usually your GitHub org/user name.
-    projectName: "docusaurus", // Usually your repo name.
+    organizationName: "Norgate AV Solutions Ltd", // Usually your GitHub org/user name.
+    projectName: "react-crestron-ch5-hooks", // Usually your repo name.
 
     presets: [
         [
@@ -44,7 +45,7 @@ const config = {
         /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
             navbar: {
-                title: "My Site",
+                title: "React Crestron CH5 Hooks",
                 logo: {
                     alt: "My Site Logo",
                     src: "img/logo.svg",
@@ -56,9 +57,9 @@ const config = {
                         position: "left",
                         label: "Tutorial",
                     },
-                    { to: "/blog", label: "Blog", position: "left" },
+                    // { to: "/blog", label: "Blog", position: "left" },
                     {
-                        href: "https://github.com/facebook/docusaurus",
+                        href: "https://github.com/Norgate-AV-Solutions/react-crestron-ch5-hooks",
                         label: "GitHub",
                         position: "right",
                     },
@@ -67,47 +68,47 @@ const config = {
             footer: {
                 style: "dark",
                 links: [
-                    {
-                        title: "Docs",
-                        items: [
-                            {
-                                label: "Tutorial",
-                                to: "/docs/intro",
-                            },
-                        ],
-                    },
-                    {
-                        title: "Community",
-                        items: [
-                            {
-                                label: "Stack Overflow",
-                                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-                            },
-                            {
-                                label: "Discord",
-                                href: "https://discordapp.com/invite/docusaurus",
-                            },
-                            {
-                                label: "Twitter",
-                                href: "https://twitter.com/docusaurus",
-                            },
-                        ],
-                    },
-                    {
-                        title: "More",
-                        items: [
-                            {
-                                label: "Blog",
-                                to: "/blog",
-                            },
-                            {
-                                label: "GitHub",
-                                href: "https://github.com/facebook/docusaurus",
-                            },
-                        ],
-                    },
+                    // {
+                    //     title: "Docs",
+                    //     items: [
+                    //         {
+                    //             label: "Tutorial",
+                    //             to: "/docs/intro",
+                    //         },
+                    //     ],
+                    // },
+                    // {
+                    //     title: "Community",
+                    //     items: [
+                    //         {
+                    //             label: "Stack Overflow",
+                    //             href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                    //         },
+                    //         {
+                    //             label: "Discord",
+                    //             href: "https://discordapp.com/invite/docusaurus",
+                    //         },
+                    //         {
+                    //             label: "Twitter",
+                    //             href: "https://twitter.com/docusaurus",
+                    //         },
+                    //     ],
+                    // },
+                    // {
+                    //     title: "More",
+                    //     items: [
+                    //         // {
+                    //         //     label: "Blog",
+                    //         //     to: "/blog",
+                    //         // },
+                    //         {
+                    //             label: "GitHub",
+                    //             href: "https://github.com/Norgate-AV-Solutions/react-crestron-ch5-hooks",
+                    //         },
+                    //     ],
+                    // },
                 ],
-                copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+                copyright: `Copyright © ${new Date().getFullYear()} Norgate AV Solutions Ltd`,
             },
             prism: {
                 theme: lightCodeTheme,
