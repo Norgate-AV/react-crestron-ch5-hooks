@@ -134,8 +134,12 @@
         }
     },
     "lint-staged": {
-        "*?(test|spec).{js,jsx,ts,tsx}": [
+        "*?(test|spec).{ts,tsx}": [
             "yarn lint:fix",
+            "yarn pretty:fix",
+            "yarn test"
+        ],
+        "*?(test|spec).{js,jsx}": [
             "yarn pretty:fix",
             "yarn test"
         ],
