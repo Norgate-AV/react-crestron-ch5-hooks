@@ -1,0 +1,8 @@
+build/*
+public/*
+docs/*
+templates/*
+dist/*
+node_modules/*
+.history/*
+coverage/*
