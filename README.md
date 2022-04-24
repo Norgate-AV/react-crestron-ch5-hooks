@@ -133,14 +133,20 @@ export const SomeAwesomeComponent = () => {
     return (
         <div>
             <h1>Digital Event Actions</h1>
-            <button onClick={() => action.setValue(true)}>
-                Set Value True
+            <button
+                onTouchStart={() => action.setValue(true)}
+                onTouchEnd={() => action.setValue(false)}
+            >
+                Set Value
             </button>
-            <button onClick={() => action.setValue(false)}>
-                Set Value False
+
+            <button
+                onTouchStart={() => action.push()}
+                onTouchEnd={() => action.release()}
+            >
+                Push/Release
             </button>
-            <button onClick={() => action.push()}>Push</button>
-            <button onClick={() => action.release()}>Release</button>
+
             <button onClick={() => action.click()}>Click</button>
         </div>
     );
@@ -210,34 +216,51 @@ export const SomeAwesomeComponent = () => {
     return (
         <div>
             <h1>Digital Event Actions Collection</h1>
-            <button onClick={() => action1.setValue(true)}>
-                Set Value 1 True
+            <button
+                onTouchStart={() => action1.setValue(true)}
+                onTouchEnd={() => action1.setValue(false)}
+            >
+                Set Value 1
             </button>
-            <button onClick={() => action1.setValue(false)}>
-                Set Value 1 False
+
+            <button
+                onTouchStart={() => action1.push()}
+                onTouchEnd={() => action1.release()}
+            >
+                Push/Release 1
             </button>
-            <button onClick={() => action1.push()}>Push 1</button>
-            <button onClick={() => action1.release()}>Release 1</button>
+
             <button onClick={() => action1.click()}>Click 1</button>
 
-            <button onClick={() => action2.setValue(true)}>
-                Set Value 2 True
+            <button
+                onTouchStart={() => action2.setValue(true)}
+                onTouchEnd={() => action2.setValue(false)}
+            >
+                Set Value 2
             </button>
-            <button onClick={() => action2.setValue(false)}>
-                Set Value 2 False
+
+            <button
+                onTouchStart={() => action2.push()}
+                onTouchEnd={() => action2.release()}
+            >
+                Push/Release 2
             </button>
-            <button onClick={() => action2.push()}>Push 2</button>
-            <button onClick={() => action2.release()}>Release 2</button>
+
             <button onClick={() => action2.click()}>Click 2</button>
 
-            <button onClick={() => action3.setValue(true)}>
-                Set Value 3 True
+            <button
+                onTouchStart={() => action3.setValue(true)}
+                onTouchEnd={() => action3.setValue(false)}
+            >
+                Set Value 3
             </button>
-            <button onClick={() => action3.setValue(false)}>
-                Set Value 3 False
+
+            <button
+                onTouchStart={() => action3.push()}
+                onTouchEnd={() => action3.release()}
+            >
+                Push/Release 3
             </button>
-            <button onClick={() => action3.push()}>Push 3</button>
-            <button onClick={() => action3.release()}>Release 3</button>
             <button onClick={() => action3.click()}>Click 3</button>
         </div>
     );
@@ -264,9 +287,11 @@ export const SomeAwesomeComponent = () => {
             <button onClick={() => action1.setValue("cowbell")}>
                 Set Value 1
             </button>
+
             <button onClick={() => action2.setValue("cowbell")}>
                 Set Value 2
             </button>
+
             <button
                 onClick={() =>
                     action3.setValue("That's enough cowbell for now!")
@@ -429,6 +454,7 @@ export const SomeAwesomeComponent = () => {
         <div>
             <h1>Analog Signal</h1>
             <h2>Value: {signal.state.value}</h2>
+
             <button onClick={() => signal.action.setValue(666)}>
                 Set Value
             </button>
@@ -451,14 +477,21 @@ export const SomeAwesomeComponent = () => {
         <div>
             <h1>Digital Signal</h1>
             <h2>Value: {signal.state.value ? "True" : "False"}</h2>
-            <button onClick={() => signal.action.setValue(true)}>
-                Set Value True
+
+            <button
+                onTouchStart={() => signal.action.setValue(true)}
+                onTouchEnd={() => signal.action.setValue(false)}
+            >
+                Set Value
             </button>
-            <button onClick={() => signal.action.setValue(false)}>
-                Set Value False
+
+            <button
+                onTouchStart={() => signal.action.push()}
+                onTouchEnd={() => signal.action.release()}
+            >
+                Push/Release
             </button>
-            <button onClick={() => signal.action.push()}>Push</button>
-            <button onClick={() => signal.action.release()}>Release</button>
+
             <button onClick={() => signal.action.click()}>Click</button>
         </div>
     );
@@ -479,6 +512,7 @@ export const SomeAwesomeComponent = () => {
         <div>
             <h1>Serial Signal</h1>
             <h2>Value: {signal.state.value}</h2>
+
             <button onClick={() => signal.action.setValue("cowbell")}>
                 Set Value
             </button>
@@ -511,9 +545,11 @@ export const SomeAwesomeComponent = () => {
             <button onClick={() => signal1.action.setValue(666)}>
                 Set Value 1
             </button>
+
             <button onClick={() => signal2.action.setValue(666)}>
                 Set Value 2
             </button>
+
             <button onClick={() => signal3.action.setValue(666)}>
                 Set Value 3
             </button>
@@ -543,34 +579,51 @@ export const SomeAwesomeComponent = () => {
             <h2>Value 2: {signal2.state.value ? "True" : "False"}</h2>
             <h2>Value 3: {signal3.state.value ? "True" : "False"}</h2>
 
-            <button onClick={() => signal1.action.setValue(true)}>
-                Set Value 1 True
+            <button
+                onTouchStart={() => signal1.action.setValue(true)}
+                onTouchEnd={() => signal1.action.setValue(false)}
+            >
+                Set Value 1
             </button>
-            <button onClick={() => signal1.action.setValue(false)}>
-                Set Value 1 False
+
+            <button
+                onTouchStart={() => signal1.action.push()}
+                onTouchEnd={() => signal1.action.release()}
+            >
+                Push/Release 1
             </button>
-            <button onClick={() => signal1.action.push()}>Push 1</button>
-            <button onClick={() => signal1.action.release()}>Release 1</button>
+
             <button onClick={() => signal1.action.click()}>Click 1</button>
 
-            <button onClick={() => signal2.action.setValue(true)}>
-                Set Value 2 True
+            <button
+                onTouchStart={() => signal2.action.setValue(true)}
+                onTouchEnd={() => signal2.action.setValue(false)}
+            >
+                Set Value 2
             </button>
-            <button onClick={() => signal2.action.setValue(false)}>
-                Set Value 2 False
+
+            <button
+                onTouchStart={() => signal2.action.push()}
+                onTouchEnd={() => signal2.action.release()}
+            >
+                Push/Release 2
             </button>
-            <button onClick={() => signal2.action.push()}>Push 2</button>
-            <button onClick={() => signal2.action.release()}>Release 2</button>
+
             <button onClick={() => signal2.action.click()}>Click 2</button>
 
-            <button onClick={() => signal3.action.setValue(true)}>
-                Set Value 3 True
+            <button
+                onTouchStart={() => signal3.action.setValue(true)}
+                onTouchEnd={() => signal3.action.setValue(false)}
+            >
+                Set Value 3
             </button>
-            <button onClick={() => signal3.action.setValue(false)}>
-                Set Value 3 False
+
+            <button
+                onTouchStart={() => signal3.action.push()}
+                onTouchEnd={() => signal3.action.release()}
+            >
+                Push/Release 3
             </button>
-            <button onClick={() => signal3.action.push()}>Push 3</button>
-            <button onClick={() => signal3.action.release()}>Release 3</button>
             <button onClick={() => signal3.action.click()}>Click 3</button>
         </div>
     );
@@ -601,9 +654,11 @@ export const SomeAwesomeComponent = () => {
             <button onClick={() => action1.setValue("cowbell")}>
                 Set Value 1
             </button>
+
             <button onClick={() => action2.setValue("cowbell")}>
                 Set Value 2
             </button>
+
             <button
                 onClick={() =>
                     action3.setValue("That's enough cowbell for now!")
