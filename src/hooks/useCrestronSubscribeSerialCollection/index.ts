@@ -7,6 +7,14 @@ import {
     ISerialState,
 } from "../../types";
 
+/**
+ * `useCrestronSubscribeSerialCollection` is a hook that returns an array of objects each with a value property.
+ * @param {string[]} signalNames - An array of strings that represent the names of the signals you want
+ * to subscribe to.
+ * @param {SerialStateCallback} [callback] - An optional callback function that will be called whenever the
+ * state changes.
+ * @returns An array of ISerialState objects.
+ */
 export function useCrestronSubscribeSerialCollection(
     signalNames: string[],
     callback?: SerialStateCallback,

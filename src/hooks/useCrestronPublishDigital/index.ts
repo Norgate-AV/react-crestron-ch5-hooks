@@ -2,6 +2,11 @@ import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { IDigitalEventAction } from "../../types";
 
+/**
+ * `useCrestronPublishDigital` is a hook that returns an object with setValue, push, release and click functions.
+ * @param {string} signalName - The name of the signal you want to publish to.
+ * @returns An array with a single IDigitalEventAction object.
+ */
 export function useCrestronPublishDigital(
     signalName: string,
 ): [IDigitalEventAction] {

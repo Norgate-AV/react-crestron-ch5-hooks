@@ -7,6 +7,14 @@ import {
     IStateSubscription,
 } from "../../types";
 
+/**
+ * `useCrestronSubscribeAnalogCollection` is a hook that returns an array of objects each with a value property.
+ * @param {string[]} signalNames - An array of strings that represent the names of the signals you want
+ * to subscribe to.
+ * @param {AnalogStateCallback} [callback] - An optional callback function that will be called whenever the
+ * state changes.
+ * @returns An array of IAnalogState objects.
+ */
 export function useCrestronSubscribeAnalogCollection(
     signalNames: string[],
     callback?: AnalogStateCallback,
