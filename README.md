@@ -313,7 +313,7 @@ export const SomeAwesomeComponent = () => {
     return (
         <div>
             <h1>Digital State</h1>
-            <h2>Value: {state.value}</h2>
+            <h2>Value: {state.value ? "True" : "False"}</h2>
         </div>
     );
 };
@@ -380,9 +380,9 @@ export const SomeAwesomeComponent = () => {
     return (
         <div>
             <h1>Digital State Collection</h1>
-            <h2>Value 1: {state1.value}</h2>
-            <h2>Value 2: {state2.value}</h2>
-            <h2>Value 3: {state3.value}</h2>
+            <h2>Value 1: {state1.value ? "True" : "False"}</h2>
+            <h2>Value 2: {state2.value ? "True" : "False"}</h2>
+            <h2>Value 3: {state3.value ? "True" : "False"}</h2>
         </div>
     );
 };
@@ -450,7 +450,7 @@ export const SomeAwesomeComponent = () => {
     return (
         <div>
             <h1>Digital Signal</h1>
-            <h2>Value: {signal.state.value}</h2>
+            <h2>Value: {signal.state.value ? "True" : "False"}</h2>
             <button onClick={() => signal.action.setValue(true)}>
                 Set Value True
             </button>
@@ -539,9 +539,9 @@ export const SomeAwesomeComponent = () => {
     return (
         <div>
             <h1>Digital Signal Collection</h1>
-            <h2>Value 1: {signal1.state.value}</h2>
-            <h2>Value 2: {signal2.state.value}</h2>
-            <h2>Value 3: {signal3.state.value}</h2>
+            <h2>Value 1: {signal1.state.value ? "True" : "False"}</h2>
+            <h2>Value 2: {signal2.state.value ? "True" : "False"}</h2>
+            <h2>Value 3: {signal3.state.value ? "True" : "False"}</h2>
 
             <button onClick={() => signal1.action.setValue(true)}>
                 Set Value 1 True
