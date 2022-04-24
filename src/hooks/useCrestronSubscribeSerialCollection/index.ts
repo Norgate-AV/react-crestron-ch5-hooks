@@ -55,7 +55,7 @@ export function useCrestronSubscribeSerialCollection(
         return () => {
             unsubscribeAll();
         };
-    }, [signalNames]);
+    }, []);
 
     return state;
 }
