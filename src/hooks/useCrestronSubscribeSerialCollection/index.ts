@@ -32,10 +32,13 @@ export function useCrestronSubscribeSerialCollection(
                 signalType,
                 signalName,
                 (value: string) => {
-                    const newState = [...state];
-                    newState[index].value = value;
+                    setState((prevState) => {
+                        const newState = [...prevState];
 
-                    setState(newState);
+                        newState[index] = { ...newState[index], value };
+
+                        return newState;
+                    });
 
                     if (callbackRef.current) {
                         callbackRef.current(value, signalName);
