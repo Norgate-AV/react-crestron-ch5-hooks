@@ -8,6 +8,14 @@ import { getSignalCollection } from "../../utils";
 import { useCrestronPublishDigitalCollection } from "../useCrestronPublishDigitalCollection";
 import { useCrestronSubscribeDigitalCollection } from "../useCrestronSubscribeDigitalCollection";
 
+/**
+ * `useCrestronDigitalCollection` is a hook that returns an array of objects each with state and action properties.
+ * @param {string[]} signalNames - An array of strings that represent the names of the signals you want
+ * to use.
+ * @param {DigitalStateCallback} [callback] - A optional callback function that will be called whenever the state of
+ * the signal changes.
+ * @returns An array of IDigitalSignal objects.
+ */
 export function useCrestronDigitalCollection(
     signalNames: string[],
     callback?: DigitalStateCallback,

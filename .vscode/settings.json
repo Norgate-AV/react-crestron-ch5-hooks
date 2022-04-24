@@ -16,5 +16,6 @@
         "**/.DS_Store": true,
         "**/*.js.map": true,
         "node_modules": true
-    }
+    },
+    "docwriter.progress.trackFunctions": true
 }

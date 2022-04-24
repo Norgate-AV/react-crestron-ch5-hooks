@@ -2,6 +2,13 @@ import { AnalogStateCallback, IAnalogSignal } from "../../types";
 import { useCrestronPublishAnalog } from "../useCrestronPublishAnalog";
 import { useCrestronSubscribeAnalog } from "../useCrestronSubscribeAnalog";
 
+/**
+ * `useCrestronAnalog` is a hook that returns an object with a state and action property.
+ * @param {string} signalName - The name of the signal you want to use.
+ * @param {AnalogStateCallback} [callback] - An optional callback function that will be called whenever the state of the signal
+ * changes.
+ * @returns An array with a single IAnalogSignal object.
+ */
 export function useCrestronAnalog(
     signalName: string,
     callback?: AnalogStateCallback,

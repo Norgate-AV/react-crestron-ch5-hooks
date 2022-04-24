@@ -7,6 +7,14 @@ import {
     IStateSubscription,
 } from "../../types";
 
+/**
+ * `useCrestronSubscribeDigitalCollection` is a hook that returns an array of objects each with a value property.
+ * @param {string[]} signalNames - An array of strings that represent the names of the signals you want
+ * to subscribe to.
+ * @param {DigitalStateCallback} [callback] - An optional callback function that will be called whenever the
+ * state changes.
+ * @returns An array of IDigitalState objects.
+ */
 export function useCrestronSubscribeDigitalCollection(
     signalNames: string[],
     callback?: DigitalStateCallback,
@@ -32,10 +40,13 @@ export function useCrestronSubscribeDigitalCollection(
                 signalType,
                 signalName,
                 (value: boolean) => {
-                    const newState = [...state];
-                    newState[index].value = value;
+                    setState((prevState) => {
+                        const newState = [...prevState];
 
-                    setState(newState);
+                        newState[index] = { ...newState[index], value };
+
+                        return newState;
+                    });
 
                     if (callbackRef.current) {
                         callbackRef.current(value, signalName);
@@ -55,7 +66,7 @@ export function useCrestronSubscribeDigitalCollection(
         return () => {
             unsubscribeAll();
         };
-    }, [signalNames]);
+    }, []);
 
     return state;
 }
