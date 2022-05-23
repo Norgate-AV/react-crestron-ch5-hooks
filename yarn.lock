@@ -1393,9 +1393,9 @@
     fastq "^1.6.0"
 
 "@norgate-av/crestron-ch5-helper@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@norgate-av/crestron-ch5-helper/-/crestron-ch5-helper-1.1.0.tgz#1b08d2f17afc78f0d3ad975349759178a336f77d"
-  integrity sha512-qeOBCOhYDn4wuIM2JRuWNXNFNamZHneM7kiMu7hUcp8ASLKiGY2Psxx4uHcGuzTMD+tRmtv+5z08IAlY60nETw==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@norgate-av/crestron-ch5-helper/-/crestron-ch5-helper-1.2.0.tgz#3f48a9dcee250a2850f57a7b5a32250c4376b73a"
+  integrity sha512-faxIq/tDs8BbeLjOr8eAgx3UsjMoY4RnhG0ORLYr1b20NmEVu2RSMtP7hmLk+ukZff5aqwEA2KM4SUkXB9BLyw==
 
 "@npmcli/arborist@^5.0.0", "@npmcli/arborist@^5.0.4":
   version "5.0.5"
