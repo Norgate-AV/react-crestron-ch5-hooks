@@ -1,12 +1,24 @@
-name: size
+name: Size Limit
+
 on: [pull_request]
+
 jobs:
   size:
+    name: Size Limit
+
     runs-on: ubuntu-latest
+
     env:
       CI_JOB_NUMBER: 1
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: andresz1/size-limit-action@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check Size
+        uses: andresz1/size-limit-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
