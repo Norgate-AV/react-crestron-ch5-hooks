@@ -16,10 +16,10 @@ If you are proposing a new feature, make sure to [open an issue](https://github.
 2.  Install the dependencies and build:
 
     ```bash
-    yarn && yarn build
+    pnpm install && pnpm build
     ```
 
-    > **Note:** you'll need to run `yarn build` any time you want to see your changes, or run `yarn start` to leave it in watch mode.
+    > **Note:** you'll need to run `pnpm build` any time you want to see your changes, or run `pnpm start` to leave it in watch mode.
 
 3.  Create a new branch and start working on it:
 
@@ -37,11 +37,11 @@ If you are proposing a new feature, make sure to [open an issue](https://github.
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
-This project enforces the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format for commits. If in doubt, you can use the `yarn commit` command to commit your changes. This will run the [Commitizen](https://commitizen-tools.github.io/commitizen/) CLI and walk you through a series of prompts to fill out the commit message in the correct format.
+This project enforces the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format for commits. If in doubt, you can use the `pnpm commit` command to commit your changes. This will run the [Commitizen](https://commitizen-tools.github.io/commitizen/) CLI and walk you through a series of prompts to fill out the commit message in the correct format.
 
 ## Submitting a Pull Request 🚀
 
-Be sure to run `yarn test` before you create your Pull Request to make sure you haven't broken anything.
+Be sure to run `pnpm test` before you create your Pull Request to make sure you haven't broken anything.
 
 ## Add yourself as a Contributor 🙋‍♂️
 
@@ -57,8 +57,8 @@ You can add yourself in one of two ways:
 
     > or
 
-2.  Run the `yarn contrib:add` command to add yourself to the contributors list.
+2.  Run the `pnpm contrib:add` command to add yourself to the contributors list.
 
     ```bash
-    yarn contrib:add <username> <contribution>,<contribution>,...
+    pnpm contrib:add <username> <contribution>,<contribution>,...
     ```

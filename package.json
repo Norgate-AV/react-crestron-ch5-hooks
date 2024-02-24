@@ -1,7 +1,7 @@
 {
     "name": "@norgate-av/react-crestron-ch5-hooks",
     "description": "A collection of Crestron CH5 hooks ⚓ for React 😀",
-    "version": "0.0.0-development",
+    "version": "1.0.0",
     "keywords": [
         "react",
         "hooks",
@@ -14,23 +14,23 @@
     "typings": "dist/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks.git"
+        "url": "https://github.com/Norgate-AV/react-crestron-ch5-hooks.git"
     },
     "bugs": {
-        "url": "https://github.com/Norgate-AV-Solutions-Ltd/react-crestron-ch5-hooks/issues"
+        "url": "https://github.com/Norgate-AV/react-crestron-ch5-hooks/issues"
     },
     "files": [
         "dist"
     ],
     "engines": {
-        "node": ">=14"
+        "node": ">=18"
     },
     "scripts": {
-        "start": "yarn resolve:crcomlib && tsdx watch",
-        "build": "yarn clean:dist && yarn resolve:crcomlib && tsdx build --format cjs,esm,umd",
-        "test": "yarn resolve:crcomlib && tsdx test --passWithNoTests",
-        "test:watch": "yarn resolve:crcomlib && tsdx test --passWithNoTests --watch",
-        "test:coverage": "yarn clean:coverage && yarn resolve:crcomlib && tsdx test --passWithNoTests --coverage",
+        "start": "pnpm resolve:crcomlib && tsdx watch",
+        "build": "pnpm clean:dist && pnpm resolve:crcomlib && tsdx build --format cjs,esm,umd",
+        "test": "pnpm resolve:crcomlib && tsdx test --passWithNoTests",
+        "test:watch": "pnpm resolve:crcomlib && tsdx test --passWithNoTests --watch",
+        "test:coverage": "pnpm clean:coverage && pnpm resolve:crcomlib && tsdx test --passWithNoTests --coverage",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prepare": "husky install",
@@ -38,7 +38,7 @@
         "analyze": "size-limit --why",
         "clean:dist": "rimraf dist",
         "clean:coverage": "rimraf coverage",
-        "clean:all": "yarn clean:dist && yarn clean:coverage",
+        "clean:all": "pnpm clean:dist && pnpm clean:coverage",
         "semantic-release": "semantic-release",
         "commit": "git-cz",
         "pretty:fix": "prettier --write .",
@@ -74,6 +74,8 @@
         "@semantic-release/git": "^10.0.1",
         "@size-limit/preset-small-lib": "^7.0.8",
         "@testing-library/react": "^13.1.1",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.20",
         "@types/react": "^18.0.6",
         "@types/react-dom": "^18.0.2",
         "@types/rimraf": "^3.0.2",
@@ -117,21 +119,6 @@
                     "cjs": "build_bundles/cjs/cr-com-lib.js"
                 }
             }
-        }
-    },
-    "lint-staged": {
-        "*?(test|spec).{js,jsx,ts,tsx}": [
-            "yarn lint:fix",
-            "yarn pretty:fix",
-            "yarn test"
-        ],
-        "*.{css,scss,md,html,json,yml,yaml}": [
-            "yarn pretty:fix"
-        ]
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
         }
     }
 }

@@ -1,22 +1,24 @@
 {
     "branches": ["master"],
+    "preset": "conventionalcommits",
     "plugins": [
         [
             "@semantic-release/commit-analyzer",
             {
-                "releaseRules": [
-                    { "type": "docs", "scope": "README", "release": "patch" },
-                    { "type": "refactor", "release": "patch" },
-                    { "type": "style", "release": "patch" }
-                ],
+                "releaseRules": [{ "type": "refactor", "release": "patch" }],
                 "parserOpts": {
-                    "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+                    "noteKeywords": [
+                        "BREAKING CHANGE",
+                        "BREAKING CHANGES",
+                        "BREAKING"
+                    ]
                 }
             }
         ],
         [
             "@semantic-release/release-notes-generator",
             {
+                "preset": "conventionalcommits",
                 "parserOpts": {
                     "noteKeywords": [
                         "BREAKING CHANGE",
@@ -26,6 +28,57 @@
                 },
                 "writerOpts": {
                     "commitsSort": ["subject", "scope"]
+                },
+                "presetConfig": {
+                    "header": "Changelog",
+                    "types": [
+                        {
+                            "type": "feat",
+                            "section": "🌟 Features",
+                            "hidden": false
+                        },
+                        {
+                            "type": "fix",
+                            "section": "🐛 Bug Fixes",
+                            "hidden": false
+                        },
+                        {
+                            "type": "chore",
+                            "section": "🧰 Chores",
+                            "hidden": false
+                        },
+                        {
+                            "type": "docs",
+                            "section": "📖 Documentation",
+                            "hidden": false
+                        },
+                        {
+                            "type": "style",
+                            "section": "💅 Style",
+                            "hidden": false
+                        },
+                        {
+                            "type": "refactor",
+                            "section": "✨ Refactor",
+                            "hidden": false
+                        },
+                        {
+                            "type": "perf",
+                            "section": "🚀 Performance",
+                            "hidden": false
+                        },
+                        {
+                            "type": "test",
+                            "section": "🧪 Tests",
+                            "hidden": false
+                        },
+                        {
+                            "type": "build",
+                            "section": "🛠️ Build",
+                            "hidden": false
+                        },
+                        { "type": "ci", "section": "🤖 CI", "hidden": false }
+                    ]
                 }
             }
         ],
@@ -36,6 +89,12 @@
             }
         ],
         "@semantic-release/npm",
+        [
+            "@semantic-release/git",
+            {
+                "message": "chore(release): ${nextRelease.version} [skip ci]"
+            }
+        ],
         "@semantic-release/github"
     ]
 }

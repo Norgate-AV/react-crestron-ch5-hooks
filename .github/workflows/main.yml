@@ -1,38 +1,52 @@
 name: CI
-on: [push]
+
+on:
+  push:
+    branches: [master, develop]
+
+  pull_request:
+    branches: [master, develop]
+
+  workflow_dispatch:
+
 jobs:
   build:
     name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
 
     runs-on: ${{ matrix.os }}
+
     strategy:
       matrix:
-        node: ["14.x", "16.x", "17.x"]
+        node: ["18.x", "20.x"]
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v2
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
-        with:
-          install-command: yarn --frozen-lockfile --network-timeout 1000000
+          cache: "pnpm"
 
       - name: Lint
-        run: yarn lint:fix
+        run: pnpm lint:fix
 
       - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+        run: pnpm test --ci --coverage --maxWorkers=2
 
       - name: Cache Coverage
         id: cache-coverage
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./coverage
           key: ${{ runner.os }}-coverage
@@ -46,59 +60,49 @@ jobs:
 
       - name: Upload coverage to Codecov
         if: steps.cache-coverage.outputs.cache-hit == 'true'
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v4
         with:
           directory: ./coverage
           verbose: true
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
-  publish:
-    runs-on: ubuntu-latest
+  release:
+    name: Release
+
     if: ${{ github.ref == 'refs/heads/master' }}
 
     needs: [build]
 
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          node-version: ${{ matrix.node }}
+          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
         with:
-          install-command: yarn --frozen-lockfile --network-timeout 1000000
+          version: 8
 
-      - name: Lint
-        run: yarn lint:fix
-
-      - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
-
-      - name: Upload coverage to Coveralls
-        if: steps.cache-coverage.outputs.cache-hit == 'true'
-        uses: coverallsapp/github-action@1.1.3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path-to-lcov: ./coverage/lcov.info
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          node-version-file: .nvmrc
+          cache: "pnpm"
 
-      - name: Upload coverage to Codecov
-        if: steps.cache-coverage.outputs.cache-hit == 'true'
-        uses: codecov/codecov-action@v2
-        with:
-          directory: ./coverage
-          verbose: true
+      - name: Install
+        run: pnpm install
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Release
-        run: yarn semantic-release
+        run: pnpm semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
