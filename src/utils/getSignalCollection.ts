@@ -1,4 +1,4 @@
-import { IBaseSignal } from "../types";
+import { IBaseSignal } from "../@types/index.js";
 
 export function getSignalCollection<TState, TEventAction>(
     length: number,
@@ -7,9 +7,11 @@ export function getSignalCollection<TState, TEventAction>(
 ): IBaseSignal<TState, TEventAction>[] {
     const signals: IBaseSignal<TState, TEventAction>[] = [];
 
-    // eslint-disable-next-line no-plusplus
     for (let index = 0; index < length; index++) {
-        signals.push({ state: state[index], action: action[index] });
+        signals.push({
+            state: state[index] as TState,
+            action: action[index] as TEventAction,
+        });
     }
 
     return signals;

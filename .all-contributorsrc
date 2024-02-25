@@ -1,25 +1,21 @@
 {
-  "projectName": "react-crestron-ch5-hooks",
-  "projectOwner": "norgate-av-solutions-ltd",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "files": [
-    "README.md"
-  ],
-  "imageSize": 100,
-  "commit": false,
-  "commitConvention": "angular",
-  "contributorsPerLine": 7,
-  "skipCi": true,
-  "contributors": [
-    {
-      "login": "dependabot",
-      "name": "Dependabot",
-      "avatar_url": "https://avatars.githubusercontent.com/u/27347476?v=4",
-      "profile": "https://github.com/features/security",
-      "contributions": [
-        "maintenance"
-      ]
-    }
-  ]
+    "projectName": "react-crestron-ch5-hooks",
+    "projectOwner": "Norgate-AV",
+    "repoType": "github",
+    "repoHost": "https://github.com",
+    "files": ["README.md"],
+    "imageSize": 100,
+    "commit": false,
+    "commitConvention": "angular",
+    "contributorsPerLine": 7,
+    "skipCi": true,
+    "contributors": [
+        {
+            "login": "dependabot",
+            "name": "Dependabot",
+            "avatar_url": "https://avatars.githubusercontent.com/u/27347476?v=4",
+            "profile": "https://github.com/features/security",
+            "contributions": ["maintenance"]
+        }
+    ]
 }

@@ -1,9 +1,11 @@
 {
     "typescript.validate.enable": true,
+    "typescript.tsdk": "./node_modules/typescript/lib",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "files.trimTrailingWhitespace": true,
+    "files.autoSave": "onFocusChange",
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
@@ -17,5 +19,28 @@
         "**/*.js.map": true,
         "node_modules": true
     },
+    "markdownlint.config": {
+        "MD007": {
+            "indent": 4
+        },
+        "MD026": false,
+        "MD033": false,
+        "MD030": {
+            "ul_single": 3,
+            "ul_multi": 3
+        }
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": "explicit"
+    },
+    "[dotenv]": {
+        "editor.formatOnSave": false
+    },
+    "json.schemas": [
+        {
+            "url": "./tsup.schema.json",
+            "fileMatch": ["package.json", "tsup.config.json"]
+        }
+    ],
     "docwriter.progress.trackFunctions": true
 }

@@ -1,1 +1,1 @@
-export * from "./getSignalCollection";
+export * from "./getSignalCollection.js";

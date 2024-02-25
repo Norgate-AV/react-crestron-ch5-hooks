@@ -1,7 +1,7 @@
 import React from "react";
-import { useCrestronSubscribeAnalog } from "../hooks";
-import { AnalogStateCallback } from "../types";
-import { BaseSubscribeStateComponent } from "./BaseSubscribeStateComponent";
+import { useCrestronSubscribeAnalog } from "../hooks/index.js";
+import { AnalogStateCallback } from "../@types/index.js";
+import { BaseSubscribeStateComponent } from "./BaseSubscribeStateComponent.js";
 
 export function UseCrestronSubscribeAnalogExample({
     description,
@@ -18,7 +18,7 @@ export function UseCrestronSubscribeAnalogExample({
         <BaseSubscribeStateComponent
             description={description}
             signalName={signalName}
-            value={state}
+            value={state.value}
         />
     );
 }
