@@ -31,7 +31,6 @@
         "start": "vite-node",
         "prebuild": "pnpm clean:dist && pnpm resolve:crcomlib",
         "build": "tsup",
-        "pretest": "pnpm resolve:crcomlib",
         "test": "vitest --passWithNoTests",
         "test:coverage": "pnpm clean:coverage && pnpm resolve:crcomlib && vitest --passWithNoTests --coverage",
         "lint": "tsc && eslint . --fix",
@@ -69,7 +68,7 @@
     "devDependencies": {
         "@commitlint/cli": "^18.6.1",
         "@commitlint/config-conventional": "^18.6.2",
-        "@crestron/ch5-crcomlib": "^1.2.0",
+        "@crestron/ch5-crcomlib": "link:../CH5ComponentLibrary",
         "@norgate-av/crestron-ch5-helper": "^2.0.0",
         "@semantic-release/changelog": "^6.0.1",
         "@semantic-release/git": "^10.0.1",
