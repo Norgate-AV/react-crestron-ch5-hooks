@@ -45,7 +45,7 @@ jobs:
         run: pnpm lint
 
       - name: Test
-        run: pnpm test --coverage --maxWorkers=2
+        run: pnpm test:coverage
 
       - name: Cache Coverage
         id: cache-coverage
