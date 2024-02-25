@@ -33,7 +33,7 @@
         "build": "tsup",
         "pretest": "pnpm resolve:crcomlib",
         "test": "vitest --passWithNoTests",
-        "test:coverage": "pnpm clean:coverage && pnpm resolve:crcomlib && vitest --passWithNoTests --coverage --maxWorkers=2",
+        "test:coverage": "pnpm clean:coverage && pnpm resolve:crcomlib && vitest --passWithNoTests --coverage",
         "lint": "tsc && eslint . --fix",
         "prepare": "husky",
         "size": "size-limit",
