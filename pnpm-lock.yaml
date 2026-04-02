@@ -67,9 +67,6 @@ importers:
       lint-staged:
         specifier: ^16.4.0
         version: 16.4.0
-      node-jq:
-        specifier: ^6.3.1
-        version: 6.3.1
       prettier:
         specifier: ^3.2.5
         version: 3.8.1
@@ -82,18 +79,12 @@ importers:
       rimraf:
         specifier: ^6.1.3
         version: 6.1.3
-      run-script-os:
-        specifier: ^1.1.6
-        version: 1.1.6
       semantic-release:
         specifier: ^25.0.3
         version: 25.0.3(typescript@6.0.2)
       size-limit:
         specifier: ^12.0.1
         version: 12.0.1(jiti@2.6.1)
-      sponge:
-        specifier: ^0.1.0
-        version: 0.1.0
       terser:
         specifier: ^5.28.1
         version: 5.46.1
@@ -678,13 +669,6 @@ packages:
     peerDependenciesMeta:
       "@noble/hashes":
         optional: true
-
-  "@isaacs/fs-minipass@4.0.1":
-    resolution:
-      {
-        integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==,
-      }
-    engines: { node: ">=18.0.0" }
 
   "@jridgewell/gen-mapping@0.3.13":
     resolution:
@@ -1945,13 +1929,6 @@ packages:
       }
     engines: { node: ">= 14.16.0" }
 
-  chownr@3.0.0:
-    resolution:
-      {
-        integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==,
-      }
-    engines: { node: ">=18" }
-
   clean-stack@2.2.0:
     resolution:
       {
@@ -2126,13 +2103,6 @@ packages:
       {
         integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==,
       }
-
-  concat-stream@1.6.2:
-    resolution:
-      {
-        integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==,
-      }
-    engines: { "0": node >= 0.8 }
 
   confbox@0.1.8:
     resolution:
@@ -2475,12 +2445,6 @@ packages:
         integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==,
       }
     engines: { node: ">= 0.4" }
-
-  duplexer2@0.0.2:
-    resolution:
-      {
-        integrity: sha512-+AWBwjGadtksxjOQSFDhPNQbed7icNXApT4+2BNpsXzcCBiInq2H9XW0O8sfHFaPmnQRs7cg/P0fAr2IWQSW0g==,
-      }
 
   duplexer2@0.1.4:
     resolution:
@@ -3425,13 +3389,6 @@ packages:
         integrity: sha512-RGdriMmQQvZ2aqaQq3awNA6dCGtKpiDFcOzrTWrDAT2MiWrKQVPmxLGHl7Y2nNu6led0kEyoX0enY0qXYsv9zw==,
       }
 
-  is-extglob@1.0.0:
-    resolution:
-      {
-        integrity: sha512-7Q+VbVafe6x2T+Tu6NcOf6sRklazEPmBoB3IWk3WdGZM2iGUwU/Oe3Wtq5lSEkDTTlpp8yx+5t4pzO/i9Ty1ww==,
-      }
-    engines: { node: ">=0.10.0" }
-
   is-extglob@2.1.1:
     resolution:
       {
@@ -3467,13 +3424,6 @@ packages:
       }
     engines: { node: ">= 0.4" }
 
-  is-glob@2.0.1:
-    resolution:
-      {
-        integrity: sha512-a1dBeB19NXsf/E0+FHqkagizel/LQw2DjSQpvQrj3zT+jYPpaUCryPnrQajXKFLCMuf4I6FhRpaGtw4lPrG6Eg==,
-      }
-    engines: { node: ">=0.10.0" }
-
   is-glob@4.0.3:
     resolution:
       {
@@ -3493,13 +3443,6 @@ packages:
         integrity: sha512-2HvIEKRoqS62guEC+qBjpvRubdX910WCMuJTZ+I9yvqKU2/12eSL549HMwtabb4oupdj2sMP50k+XJfB/8JE6w==,
       }
     engines: { node: ">=8" }
-
-  is-invalid-path@0.1.0:
-    resolution:
-      {
-        integrity: sha512-aZMG0T3F34mTg4eTdszcGXx54oiZ4NtHSft3hWNJMGJXUUqdIj3cOZuHcU0nCWWcY3jd7yRe/3AEm3vSNTpBGQ==,
-      }
-    engines: { node: ">=0.10.0" }
 
   is-map@2.0.3:
     resolution:
@@ -3639,13 +3582,6 @@ packages:
         integrity: sha512-rMYPYvCzsXywIsldgLaSoPlw5PfoB/ssr7hY4pLfcodrA5M/eArza1a9VmTiNIBNMjOGr1Ow9mTyU2o69U6U9Q==,
       }
 
-  is-valid-path@0.1.1:
-    resolution:
-      {
-        integrity: sha512-+kwPrVDu9Ms03L90Qaml+79+6DZHqHyRoANI6IsZJ/g8frhnfchDOBCa0RbQ6/kdHt5CS5OeIEyrYznNuVN+8A==,
-      }
-    engines: { node: ">=0.10.0" }
-
   is-weakmap@2.0.2:
     resolution:
       {
@@ -3673,12 +3609,6 @@ packages:
         integrity: sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==,
       }
     engines: { node: ">=0.10.0" }
-
-  isarray@0.0.1:
-    resolution:
-      {
-        integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==,
-      }
 
   isarray@1.0.0:
     resolution:
@@ -4401,13 +4331,6 @@ packages:
       }
     engines: { node: ">=16 || 14 >=14.17" }
 
-  minizlib@3.1.0:
-    resolution:
-      {
-        integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==,
-      }
-    engines: { node: ">= 18" }
-
   mlly@1.8.2:
     resolution:
       {
@@ -4484,14 +4407,6 @@ packages:
     peerDependenciesMeta:
       encoding:
         optional: true
-
-  node-jq@6.3.1:
-    resolution:
-      {
-        integrity: sha512-4RRIiWwBGxVLLARVBHWyWjruO3IMjK/9bfS96W3RHDNjrGqJiZjWu6Hd1X2J8Xd/otu7FGFm7ryzrdioHxswuw==,
-      }
-    engines: { node: ">= 18" }
-    hasBin: true
 
   normalize-package-data@6.0.2:
     resolution:
@@ -5172,18 +5087,6 @@ packages:
       }
     engines: { node: ">=18" }
 
-  readable-stream@1.0.34:
-    resolution:
-      {
-        integrity: sha512-ok1qVCJuRkNmvebYikljxJA/UEsKwLl2nI1OmaqAu4/UE+h0wKCHok4XkL/gvi39OacXvw59RJUOFUkDib2rHg==,
-      }
-
-  readable-stream@1.1.14:
-    resolution:
-      {
-        integrity: sha512-+MeVjFf4L44XUkhM1eYbD8fyEsxcV81pqMSR5gblfcLCHfZvbrqy4/qYHE+/R5HoBUT11WV5O08Cr1n3YXkWVQ==,
-      }
-
   readable-stream@2.3.8:
     resolution:
       {
@@ -5353,13 +5256,6 @@ packages:
         integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==,
       }
     engines: { node: ">=0.12.0" }
-
-  run-script-os@1.1.6:
-    resolution:
-      {
-        integrity: sha512-ql6P2LzhBTTDfzKts+Qo4H94VUKpxKDFz6QxxwaUZN0mwvi7L3lpOI7BqPCq7lgDh3XLl0dpeXwfcVIitlrYrw==,
-      }
-    hasBin: true
 
   rxjs@6.6.7:
     resolution:
@@ -5641,13 +5537,6 @@ packages:
         integrity: sha512-NKywug4u4pX/AZBB1FCPzZ6/7O+Xhz1qMVbzTvvKvikjO99oPN87SkK08mEY9P63/5lWjK+wgOOgApnTg5r6qg==,
       }
 
-  sponge@0.1.0:
-    resolution:
-      {
-        integrity: sha512-rBvJQaDWNAwYnFqHPnQCUUu95Uvr1FTBNfIr9VVLr7s4/6TBGbqKI63kU+CR5tgZz64xkJPsLvhH1xh4hHugRg==,
-      }
-    hasBin: true
-
   ssr-window@4.0.2:
     resolution:
       {
@@ -5727,12 +5616,6 @@ packages:
         integrity: sha512-UXSH262CSZY1tfu3G3Secr6uGLCFVPMhIqHjlgCUtCCcgihYc/xKs9djMTMUOb2j1mVSeU8EU6NWc/iQKU6Gfg==,
       }
     engines: { node: ">= 0.4" }
-
-  string_decoder@0.10.31:
-    resolution:
-      {
-        integrity: sha512-ev2QzSzWPYmy9GuqfIVildA4OdcGLeFZQrq5ys6RtiuF+RQQiZWr8TZNyAcuVXyQRYfEO+MsoB/1BuQVhOJuoQ==,
-      }
 
   string_decoder@1.1.1:
     resolution:
@@ -5865,13 +5748,6 @@ packages:
       }
     engines: { node: ">=20" }
 
-  tar@7.5.13:
-    resolution:
-      {
-        integrity: sha512-tOG/7GyXpFevhXVh8jOPJrmtRpOTsYqUIkVdVooZYJS/z8WhfQUX8RJILmeuJNinGAMSu1veBr4asSHFt5/hng==,
-      }
-    engines: { node: ">=18" }
-
   temp-dir@3.0.0:
     resolution:
       {
@@ -5905,12 +5781,6 @@ packages:
     resolution:
       {
         integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==,
-      }
-
-  through2@0.6.5:
-    resolution:
-      {
-        integrity: sha512-RkK/CCESdTKQZHdmKICijdKKsCRVHs5KsLZ6pACAmF/1GPUQhonHSXWNERctxEp7RmvjdNbZTL5z9V7nSCXKcg==,
       }
 
   through2@2.0.5:
@@ -6155,12 +6025,6 @@ packages:
         integrity: sha512-q7QNVDGTdl702bVFiI5eY4l/HkgCM6at9KhcFbgUAzezHFbOVy4+0O/lCjsABEQwbZPravVfBIiBVGo89yzHFg==,
       }
     engines: { node: ">= 0.4" }
-
-  typedarray@0.0.6:
-    resolution:
-      {
-        integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==,
-      }
 
   typescript@6.0.2:
     resolution:
@@ -6606,13 +6470,6 @@ packages:
       }
     engines: { node: ">=10" }
 
-  yallist@5.0.0:
-    resolution:
-      {
-        integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==,
-      }
-    engines: { node: ">=18" }
-
   yaml@2.8.3:
     resolution:
       {
@@ -6683,12 +6540,6 @@ packages:
         integrity: sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==,
       }
     engines: { node: ">=18" }
-
-  zod@3.25.76:
-    resolution:
-      {
-        integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==,
-      }
 
   zwitch@1.0.5:
     resolution:
@@ -7017,10 +6868,6 @@ snapshots:
     optional: true
 
   "@exodus/bytes@1.15.0": {}
-
-  "@isaacs/fs-minipass@4.0.1":
-    dependencies:
-      minipass: 7.1.3
 
   "@jridgewell/gen-mapping@0.3.13":
     dependencies:
@@ -7750,8 +7597,6 @@ snapshots:
     dependencies:
       readdirp: 4.1.2
 
-  chownr@3.0.0: {}
-
   clean-stack@2.2.0: {}
 
   clean-stack@5.3.0:
@@ -7866,13 +7711,6 @@ snapshots:
       dot-prop: 5.3.0
 
   concat-map@0.0.1: {}
-
-  concat-stream@1.6.2:
-    dependencies:
-      buffer-from: 1.1.2
-      inherits: 2.0.4
-      readable-stream: 2.3.8
-      typedarray: 0.0.6
 
   confbox@0.1.8: {}
 
@@ -8097,10 +7935,6 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       es-errors: 1.3.0
       gopd: 1.2.0
-
-  duplexer2@0.0.2:
-    dependencies:
-      readable-stream: 1.1.14
 
   duplexer2@0.1.4:
     dependencies:
@@ -8769,8 +8603,6 @@ snapshots:
 
   is-decimal@1.0.4: {}
 
-  is-extglob@1.0.0: {}
-
   is-extglob@2.1.1: {}
 
   is-finalizationregistry@1.1.1:
@@ -8791,10 +8623,6 @@ snapshots:
       has-tostringtag: 1.0.2
       safe-regex-test: 1.1.0
 
-  is-glob@2.0.1:
-    dependencies:
-      is-extglob: 1.0.0
-
   is-glob@4.0.3:
     dependencies:
       is-extglob: 2.1.1
@@ -8802,10 +8630,6 @@ snapshots:
   is-hexadecimal@1.0.4: {}
 
   is-interactive@1.0.0: {}
-
-  is-invalid-path@0.1.0:
-    dependencies:
-      is-glob: 2.0.1
 
   is-map@2.0.3: {}
 
@@ -8866,10 +8690,6 @@ snapshots:
 
   is-utf8@0.2.1: {}
 
-  is-valid-path@0.1.1:
-    dependencies:
-      is-invalid-path: 0.1.0
-
   is-weakmap@2.0.2: {}
 
   is-weakref@1.1.1:
@@ -8882,8 +8702,6 @@ snapshots:
       get-intrinsic: 1.3.0
 
   is-windows@1.0.2: {}
-
-  isarray@0.0.1: {}
 
   isarray@1.0.0: {}
 
@@ -9317,10 +9135,6 @@ snapshots:
 
   minipass@7.1.3: {}
 
-  minizlib@3.1.0:
-    dependencies:
-      minipass: 7.1.3
-
   mlly@1.8.2:
     dependencies:
       acorn: 8.16.0
@@ -9360,14 +9174,6 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
-
-  node-jq@6.3.1:
-    dependencies:
-      is-valid-path: 0.1.1
-      strip-final-newline: 2.0.0
-      tar: 7.5.13
-      tempy: 3.2.0
-      zod: 3.25.76
 
   normalize-package-data@6.0.2:
     dependencies:
@@ -9688,20 +9494,6 @@ snapshots:
       type-fest: 4.41.0
       unicorn-magic: 0.1.0
 
-  readable-stream@1.0.34:
-    dependencies:
-      core-util-is: 1.0.3
-      inherits: 2.0.4
-      isarray: 0.0.1
-      string_decoder: 0.10.31
-
-  readable-stream@1.1.14:
-    dependencies:
-      core-util-is: 1.0.3
-      inherits: 2.0.4
-      isarray: 0.0.1
-      string_decoder: 0.10.31
-
   readable-stream@2.3.8:
     dependencies:
       core-util-is: 1.0.3
@@ -9861,8 +9653,6 @@ snapshots:
       fsevents: 2.3.3
 
   run-async@2.4.1: {}
-
-  run-script-os@1.1.6: {}
 
   rxjs@6.6.7:
     dependencies:
@@ -10066,12 +9856,6 @@ snapshots:
     dependencies:
       through2: 2.0.5
 
-  sponge@0.1.0:
-    dependencies:
-      concat-stream: 1.6.2
-      duplexer2: 0.0.2
-      through2: 0.6.5
-
   ssr-window@4.0.2: {}
 
   stackback@0.0.2: {}
@@ -10129,8 +9913,6 @@ snapshots:
       call-bind: 1.0.8
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
-
-  string_decoder@0.10.31: {}
 
   string_decoder@1.1.1:
     dependencies:
@@ -10200,14 +9982,6 @@ snapshots:
 
   tagged-tag@1.0.0: {}
 
-  tar@7.5.13:
-    dependencies:
-      "@isaacs/fs-minipass": 4.0.1
-      chownr: 3.0.0
-      minipass: 7.1.3
-      minizlib: 3.1.0
-      yallist: 5.0.0
-
   temp-dir@3.0.0: {}
 
   tempy@3.2.0:
@@ -10231,11 +10005,6 @@ snapshots:
   thenify@3.3.1:
     dependencies:
       any-promise: 1.3.0
-
-  through2@0.6.5:
-    dependencies:
-      readable-stream: 1.0.34
-      xtend: 4.0.2
 
   through2@2.0.5:
     dependencies:
@@ -10388,8 +10157,6 @@ snapshots:
       math-intrinsics: 1.1.0
       typed-array-buffer: 1.0.3
       typed-array-byte-offset: 1.0.4
-
-  typedarray@0.0.6: {}
 
   typescript@6.0.2: {}
 
@@ -10663,8 +10430,6 @@ snapshots:
 
   y18n@5.0.8: {}
 
-  yallist@5.0.0: {}
-
   yaml@2.8.3: {}
 
   yargs-parser@18.1.3:
@@ -10722,7 +10487,5 @@ snapshots:
       yargs-parser: 22.0.0
 
   yoctocolors@2.1.2: {}
-
-  zod@3.25.76: {}
 
   zwitch@1.0.5: {}
