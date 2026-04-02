@@ -25,26 +25,21 @@ export function useCrestronPublishDigitalCollection(
 
                 const push = () => setValue(true);
                 const release = () => setValue(false);
+                const hold = (duration: number) => {
+                    push();
+                    setTimeout(release, duration);
+                };
                 const click = () => {
                     push();
                     release();
                 };
 
-                // const hold = (duration: number, callback: () => void) => {
-                //     push();
-
-                //     setTimeout(() => {
-                //         release();
-                //         callback();
-                //     }, duration);
-                // };
-
                 return {
                     setValue,
                     push,
                     release,
+                    hold,
                     click,
-                    // hold,
                 };
             }),
         [signalNames],

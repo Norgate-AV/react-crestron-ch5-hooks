@@ -4,5 +4,5 @@ export interface IDigitalEventAction extends IBaseEventAction<Digital> {
     push: () => void;
     release: () => void;
     click: () => void;
-    // hold: (duration: number, callback: () => void) => void;
+    hold: (duration: number) => void;
 }

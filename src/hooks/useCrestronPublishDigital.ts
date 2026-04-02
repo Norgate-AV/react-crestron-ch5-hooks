@@ -19,23 +19,21 @@ export function useCrestronPublishDigital(
 
     const push = useCallback(() => setValue(true), [setValue]);
     const release = useCallback(() => setValue(false), [setValue]);
+    const hold = useCallback(
+        (duration: number) => {
+            push();
+            setTimeout(release, duration);
+        },
+        [push, release],
+    );
     const click = useCallback(() => {
         push();
         release();
     }, [push, release]);
 
-    // const hold = (duration: number, callback: () => void) => {
-    //     push();
-
-    //     setTimeout(() => {
-    //         release();
-    //         callback();
-    //     }, duration);
-    // };
-
     return useMemo(
-        () => [{ setValue, push, release, click }],
-        [setValue, push, release, click],
+        () => [{ setValue, push, release, hold, click }],
+        [setValue, push, release, hold, click],
     );
 }
 

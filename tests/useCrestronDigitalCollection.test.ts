@@ -41,6 +41,7 @@ describe("useCrestronDigitalCollection", () => {
                     push: expect.any(Function) as () => void,
                     release: expect.any(Function) as () => void,
                     click: expect.any(Function) as () => void,
+                    hold: expect.any(Function) as (duration: number) => void,
                 },
             }),
         );
