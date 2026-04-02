@@ -25,59 +25,59 @@ A collection of React custom hooks ⚓ for Crestron CH5 project development.
 
 ## Contents 📖
 
--   [Features :package:](#features-package)
--   [Installation :zap:](#installation-zap)
--   [Usage :rocket:](#usage-rocket)
-    -   [Publish :arrow_right:](#publish-arrow_right)
-        -   [useCrestronPublishAnalog](#usecrestronpublishanalog)
-        -   [useCrestronPublishDigital](#usecrestronpublishdigital)
-        -   [useCrestronPublishSerial](#usecrestronpublishserial)
-        -   [useCrestronPublishAnalogCollection](#usecrestronpublishanalogcollection)
-        -   [useCrestronPublishDigitalCollection](#usecrestronpublishdigitalcollection)
-        -   [useCrestronPublishSerialCollection](#usecrestronpublishserialcollection)
-    -   [Subscribe :arrow_left:](#subscribe-arrow_left)
-        -   [useCrestronSubscribeAnalog](#usecrestronsubscribeanalog)
-        -   [useCrestronSubscribeDigital](#usecrestronsubscribedigital)
-        -   [useCrestronSubscribeSerial](#usecrestronsubscribeserial)
-        -   [useCrestronSubscribeAnalogCollection](#usecrestronsubscribeanalogcollection)
-        -   [useCrestronSubscribeDigitalCollection](#usecrestronsubscribedigitalcollection)
-        -   [useCrestronSubscribeSerialCollection](#usecrestronsubscribeserialcollection)
-    -   [Publish & Subscribe :left_right_arrow:](#publish--subscribe-left_right_arrow)
-        -   [useCrestronAnalog](#usecrestronanalog)
-        -   [useCrestronDigital](#usecrestrondigital)
-        -   [useCrestronSerial](#usecrestronserial)
-        -   [useCrestronAnalogCollection](#usecrestronanalogcollection)
-        -   [useCrestronDigitalCollection](#usecrestrondigitalcollection)
-        -   [useCrestronSerialCollection](#usecrestronserialcollection)
-    -   [Optional Subscribe Callback :phone:](#optional-subscribe-callback-phone)
--   [Types :keyboard:](#types-keyboard)
-    -   [Aliases](#aliases)
-        -   [Analog](#analog)
-        -   [Digital](#digital)
-        -   [Serial](#serial)
-    -   [Event Actions](#event-actions)
-        -   [IBaseEventAction](#ibaseeventaction)
-        -   [IAnalogEventAction](#ianalogeventaction)
-        -   [IDigitalEventAction](#idigitaleventaction)
-        -   [ISerialEventAction](#iserialeventaction)
-    -   [State](#state)
-        -   [IBaseState](#ibasestate)
-        -   [IAnalogState](#ianalogstate)
-        -   [IDigitalState](#idigitalstate)
-        -   [ISerialState](#iserialstate)
-        -   [IStateSubscription](#istatesubscription)
-        -   [StateCallback](#statecallback)
-        -   [AnalogStateCallback](#analogstatecallback)
-        -   [DigitalStateCallback](#digitalstatecallback)
-        -   [SerialStateCallback](#serialstatecallback)
-    -   [Signals](#signals)
-        -   [IBaseSignal](#ibasesignal)
-        -   [IAnalogSignal](#ianalogsignal)
-        -   [IDigitalSignal](#idigitalsignal)
-        -   [ISerialSignal](#iserialsignal)
--   [Team :soccer:](#team-soccer)
--   [Contributors :sparkles:](#contributors-sparkles)
--   [LICENSE :balance_scale:](#license-balance_scale)
+- [Features :package:](#features-package)
+- [Installation :zap:](#installation-zap)
+- [Usage :rocket:](#usage-rocket)
+    - [Publish :arrow_right:](#publish-arrow_right)
+        - [useCrestronPublishAnalog](#usecrestronpublishanalog)
+        - [useCrestronPublishDigital](#usecrestronpublishdigital)
+        - [useCrestronPublishSerial](#usecrestronpublishserial)
+        - [useCrestronPublishAnalogCollection](#usecrestronpublishanalogcollection)
+        - [useCrestronPublishDigitalCollection](#usecrestronpublishdigitalcollection)
+        - [useCrestronPublishSerialCollection](#usecrestronpublishserialcollection)
+    - [Subscribe :arrow_left:](#subscribe-arrow_left)
+        - [useCrestronSubscribeAnalog](#usecrestronsubscribeanalog)
+        - [useCrestronSubscribeDigital](#usecrestronsubscribedigital)
+        - [useCrestronSubscribeSerial](#usecrestronsubscribeserial)
+        - [useCrestronSubscribeAnalogCollection](#usecrestronsubscribeanalogcollection)
+        - [useCrestronSubscribeDigitalCollection](#usecrestronsubscribedigitalcollection)
+        - [useCrestronSubscribeSerialCollection](#usecrestronsubscribeserialcollection)
+    - [Publish & Subscribe :left_right_arrow:](#publish--subscribe-left_right_arrow)
+        - [useCrestronAnalog](#usecrestronanalog)
+        - [useCrestronDigital](#usecrestrondigital)
+        - [useCrestronSerial](#usecrestronserial)
+        - [useCrestronAnalogCollection](#usecrestronanalogcollection)
+        - [useCrestronDigitalCollection](#usecrestrondigitalcollection)
+        - [useCrestronSerialCollection](#usecrestronserialcollection)
+    - [Optional Subscribe Callback :phone:](#optional-subscribe-callback-phone)
+- [Types :keyboard:](#types-keyboard)
+    - [Aliases](#aliases)
+        - [Analog](#analog)
+        - [Digital](#digital)
+        - [Serial](#serial)
+    - [Event Actions](#event-actions)
+        - [IBaseEventAction](#ibaseeventaction)
+        - [IAnalogEventAction](#ianalogeventaction)
+        - [IDigitalEventAction](#idigitaleventaction)
+        - [ISerialEventAction](#iserialeventaction)
+    - [State](#state)
+        - [IBaseState](#ibasestate)
+        - [IAnalogState](#ianalogstate)
+        - [IDigitalState](#idigitalstate)
+        - [ISerialState](#iserialstate)
+        - [IStateSubscription](#istatesubscription)
+        - [StateCallback](#statecallback)
+        - [AnalogStateCallback](#analogstatecallback)
+        - [DigitalStateCallback](#digitalstatecallback)
+        - [SerialStateCallback](#serialstatecallback)
+    - [Signals](#signals)
+        - [IBaseSignal](#ibasesignal)
+        - [IAnalogSignal](#ianalogsignal)
+        - [IDigitalSignal](#idigitalsignal)
+        - [ISerialSignal](#iserialsignal)
+- [Team :soccer:](#team-soccer)
+- [Contributors :sparkles:](#contributors-sparkles)
+- [LICENSE :balance_scale:](#license-balance_scale)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -152,6 +152,8 @@ export const SomeAwesomeComponent = () => {
             </button>
 
             <button onClick={() => action.click()}>Click</button>
+
+            <button onTouchStart={() => action.hold(2000)}>Hold</button>
         </div>
     );
 };
@@ -236,6 +238,8 @@ export const SomeAwesomeComponent = () => {
 
             <button onClick={() => action1.click()}>Click 1</button>
 
+            <button onTouchStart={() => action1.hold(2000)}>Hold 1</button>
+
             <button
                 onTouchStart={() => action2.setValue(true)}
                 onTouchEnd={() => action2.setValue(false)}
@@ -252,6 +256,8 @@ export const SomeAwesomeComponent = () => {
 
             <button onClick={() => action2.click()}>Click 2</button>
 
+            <button onTouchStart={() => action2.hold(2000)}>Hold 2</button>
+
             <button
                 onTouchStart={() => action3.setValue(true)}
                 onTouchEnd={() => action3.setValue(false)}
@@ -266,6 +272,8 @@ export const SomeAwesomeComponent = () => {
                 Push/Release 3
             </button>
             <button onClick={() => action3.click()}>Click 3</button>
+
+            <button onTouchStart={() => action3.hold(2000)}>Hold 3</button>
         </div>
     );
 };
@@ -497,6 +505,8 @@ export const SomeAwesomeComponent = () => {
             </button>
 
             <button onClick={() => signal.action.click()}>Click</button>
+
+            <button onTouchStart={() => signal.action.hold(2000)}>Hold</button>
         </div>
     );
 };
@@ -599,6 +609,10 @@ export const SomeAwesomeComponent = () => {
 
             <button onClick={() => signal1.action.click()}>Click 1</button>
 
+            <button onTouchStart={() => signal1.action.hold(2000)}>
+                Hold 1
+            </button>
+
             <button
                 onTouchStart={() => signal2.action.setValue(true)}
                 onTouchEnd={() => signal2.action.setValue(false)}
@@ -615,6 +629,10 @@ export const SomeAwesomeComponent = () => {
 
             <button onClick={() => signal2.action.click()}>Click 2</button>
 
+            <button onTouchStart={() => signal2.action.hold(2000)}>
+                Hold 2
+            </button>
+
             <button
                 onTouchStart={() => signal3.action.setValue(true)}
                 onTouchEnd={() => signal3.action.setValue(false)}
@@ -629,6 +647,10 @@ export const SomeAwesomeComponent = () => {
                 Push/Release 3
             </button>
             <button onClick={() => signal3.action.click()}>Click 3</button>
+
+            <button onTouchStart={() => signal3.action.hold(2000)}>
+                Hold 3
+            </button>
         </div>
     );
 };
@@ -774,6 +796,7 @@ export declare interface IDigitalEventAction extends IBaseEventAction<Digital> {
     push: () => void;
     release: () => void;
     click: () => void;
+    hold: (duration: number) => void;
 }
 ```
 
@@ -858,22 +881,28 @@ export declare interface IBaseSignal<TState, TAction> {
 #### IAnalogSignal
 
 ```ts
-export declare interface IAnalogSignal
-    extends IBaseSignal<IAnalogState, IAnalogEventAction> {}
+export declare interface IAnalogSignal extends IBaseSignal<
+    IAnalogState,
+    IAnalogEventAction
+> {}
 ```
 
 #### IDigitalSignal
 
 ```ts
-export declare interface IDigitalSignal
-    extends IBaseSignal<IDigitalState, IDigitalEventAction> {}
+export declare interface IDigitalSignal extends IBaseSignal<
+    IDigitalState,
+    IDigitalEventAction
+> {}
 ```
 
 #### ISerialSignal
 
 ```ts
-export declare interface ISerialSignal
-    extends IBaseSignal<ISerialState, ISerialEventAction> {}
+export declare interface ISerialSignal extends IBaseSignal<
+    ISerialState,
+    ISerialEventAction
+> {}
 ```
 
 ## Team :soccer:
