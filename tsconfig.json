@@ -1,5 +1,4 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Node LTS",
     "_version": "18.1.0",
     "compilerOptions": {
@@ -17,7 +16,8 @@
         "typeRoots": ["src/@types", "node_modules/@types"],
         "allowSyntheticDefaultImports": true,
         "noEmit": true,
-        "jsx": "react"
+        "jsx": "react",
+        "ignoreDeprecations": "6.0"
     },
     "include": ["src/**/*", "tests/**/*", "vitest.config.ts"]
 }
