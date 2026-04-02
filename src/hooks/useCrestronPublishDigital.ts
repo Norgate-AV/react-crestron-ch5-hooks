@@ -26,10 +26,7 @@ export function useCrestronPublishDigital(
         },
         [push, release],
     );
-    const click = useCallback(() => {
-        push();
-        release();
-    }, [push, release]);
+    const click = useCallback(() => hold(0), [hold]);
 
     return useMemo(
         () => [{ setValue, push, release, hold, click }],

@@ -29,10 +29,7 @@ export function useCrestronPublishDigitalCollection(
                     push();
                     setTimeout(release, duration);
                 };
-                const click = () => {
-                    push();
-                    release();
-                };
+                const click = () => hold(0);
 
                 return {
                     setValue,

@@ -83,19 +83,28 @@ describe("useCrestronSubscribeDigital", () => {
         expect(publishEvent).toHaveBeenCalledTimes(1);
         publishEvent.mockClear();
 
+        vi.useFakeTimers();
+
         act(() => {
             action.click();
         });
 
         expect(publishEvent).toHaveBeenCalledWith(signalType, signalName, true);
+        expect(publishEvent).toHaveBeenCalledTimes(1);
+
+        act(() => {
+            vi.advanceTimersByTime(0);
+        });
+
         expect(publishEvent).toHaveBeenCalledWith(
             signalType,
             signalName,
             false,
         );
-
         expect(publishEvent).toHaveBeenCalledTimes(2);
         publishEvent.mockClear();
+
+        vi.useRealTimers();
     });
 
     it("should call hold correctly", () => {

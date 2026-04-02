@@ -1,4 +1,4 @@
-import { describe, expect, it, beforeAll } from "vitest";
+import { describe, expect, it, beforeAll, vi } from "vitest";
 import {
     renderHook,
     RenderHookResult,
@@ -115,6 +115,8 @@ describe("useCrestronDigitalCollection", () => {
             expect(publishEvent).toHaveBeenCalledTimes(1);
             publishEvent.mockClear();
 
+            vi.useFakeTimers();
+
             act(() => {
                 action.click();
             });
@@ -124,14 +126,21 @@ describe("useCrestronDigitalCollection", () => {
                 signalName,
                 true,
             );
+            expect(publishEvent).toHaveBeenCalledTimes(1);
+
+            act(() => {
+                vi.advanceTimersByTime(0);
+            });
+
             expect(publishEvent).toHaveBeenCalledWith(
                 signalType,
                 signalName,
                 false,
             );
-
             expect(publishEvent).toHaveBeenCalledTimes(2);
             publishEvent.mockClear();
+
+            vi.useRealTimers();
         });
     });
 
