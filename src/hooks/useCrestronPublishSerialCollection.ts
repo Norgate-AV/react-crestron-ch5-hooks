@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { ISerialEventAction } from "../@types/index.js";
@@ -11,17 +12,18 @@ import { ISerialEventAction } from "../@types/index.js";
 export function useCrestronPublishSerialCollection(
     signalNames: string[],
 ): ISerialEventAction[] {
-    const signalType = CrestronCH5.SignalType.String;
-    const actions: ISerialEventAction[] = [];
-
-    signalNames.forEach((signalName) => {
-        actions.push({
-            setValue: (value: string) =>
-                publishEvent(signalType, signalName, value),
-        });
-    });
-
-    return actions;
+    return useMemo(
+        () =>
+            signalNames.map((signalName) => ({
+                setValue: (value: string) =>
+                    publishEvent(
+                        CrestronCH5.SignalType.String,
+                        signalName,
+                        value,
+                    ),
+            })),
+        [signalNames],
+    );
 }
 
 export default useCrestronPublishSerialCollection;

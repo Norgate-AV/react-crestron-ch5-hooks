@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { ISerialEventAction } from "../@types/index.js";
@@ -10,12 +11,13 @@ import { ISerialEventAction } from "../@types/index.js";
 export function useCrestronPublishSerial(
     signalName: string,
 ): [ISerialEventAction] {
-    return [
-        {
-            setValue: (value: string) =>
-                publishEvent(CrestronCH5.SignalType.String, signalName, value),
-        },
-    ];
+    const setValue = useCallback(
+        (value: string) =>
+            publishEvent(CrestronCH5.SignalType.String, signalName, value),
+        [signalName],
+    );
+
+    return useMemo(() => [{ setValue }], [setValue]);
 }
 
 export default useCrestronPublishSerial;

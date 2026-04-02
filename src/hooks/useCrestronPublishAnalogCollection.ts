@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { IAnalogEventAction } from "../@types/index.js";
@@ -11,17 +12,18 @@ import { IAnalogEventAction } from "../@types/index.js";
 export function useCrestronPublishAnalogCollection(
     signalNames: string[],
 ): IAnalogEventAction[] {
-    const signalType = CrestronCH5.SignalType.Number;
-    const actions: IAnalogEventAction[] = [];
-
-    signalNames.forEach((signalName) => {
-        actions.push({
-            setValue: (value: number) =>
-                publishEvent(signalType, signalName, value),
-        });
-    });
-
-    return actions;
+    return useMemo(
+        () =>
+            signalNames.map((signalName) => ({
+                setValue: (value: number) =>
+                    publishEvent(
+                        CrestronCH5.SignalType.Number,
+                        signalName,
+                        value,
+                    ),
+            })),
+        [signalNames],
+    );
 }
 
 export default useCrestronPublishAnalogCollection;

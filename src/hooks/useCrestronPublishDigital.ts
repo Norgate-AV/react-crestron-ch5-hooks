@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { IDigitalEventAction } from "../@types/index.js";
@@ -10,24 +11,18 @@ import { IDigitalEventAction } from "../@types/index.js";
 export function useCrestronPublishDigital(
     signalName: string,
 ): [IDigitalEventAction] {
-    const signalType = CrestronCH5.SignalType.Boolean;
+    const setValue = useCallback(
+        (value: boolean) =>
+            publishEvent(CrestronCH5.SignalType.Boolean, signalName, value),
+        [signalName],
+    );
 
-    const setValue = (value: boolean) => {
-        publishEvent(signalType, signalName, value);
-    };
-
-    const push = () => {
-        setValue(true);
-    };
-
-    const release = () => {
-        setValue(false);
-    };
-
-    const click = () => {
+    const push = useCallback(() => setValue(true), [setValue]);
+    const release = useCallback(() => setValue(false), [setValue]);
+    const click = useCallback(() => {
         push();
         release();
-    };
+    }, [push, release]);
 
     // const hold = (duration: number, callback: () => void) => {
     //     push();
@@ -38,15 +33,10 @@ export function useCrestronPublishDigital(
     //     }, duration);
     // };
 
-    return [
-        {
-            setValue,
-            push,
-            release,
-            click,
-            // hold,
-        },
-    ];
+    return useMemo(
+        () => [{ setValue, push, release, click }],
+        [setValue, push, release, click],
+    );
 }
 
 export default useCrestronPublishDigital;

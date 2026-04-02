@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
 import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { IAnalogEventAction } from "../@types/index.js";
@@ -10,12 +11,13 @@ import { IAnalogEventAction } from "../@types/index.js";
 export function useCrestronPublishAnalog(
     signalName: string,
 ): [IAnalogEventAction] {
-    return [
-        {
-            setValue: (value: number) =>
-                publishEvent(CrestronCH5.SignalType.Number, signalName, value),
-        },
-    ];
+    const setValue = useCallback(
+        (value: number) =>
+            publishEvent(CrestronCH5.SignalType.Number, signalName, value),
+        [signalName],
+    );
+
+    return useMemo(() => [{ setValue }], [setValue]);
 }
 
 export default useCrestronPublishAnalog;
