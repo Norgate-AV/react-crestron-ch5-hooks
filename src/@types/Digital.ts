@@ -1,1 +1,1 @@
-export declare type Digital = boolean;
+export type Digital = boolean;

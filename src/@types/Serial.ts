@@ -1,1 +1,1 @@
-export declare type Serial = string;
+export type Serial = string;

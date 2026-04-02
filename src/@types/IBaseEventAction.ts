@@ -1,3 +1,3 @@
-export declare interface IBaseEventAction<T> {
+export interface IBaseEventAction<T> {
     setValue: (value: T) => void;
 }

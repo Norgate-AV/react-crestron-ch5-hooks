@@ -1,3 +1,3 @@
-export declare interface IBaseState<T> {
+export interface IBaseState<T> {
     value: T;
 }

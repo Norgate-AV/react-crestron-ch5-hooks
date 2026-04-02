@@ -1,1 +1,1 @@
-export declare type Analog = number;
+export type Analog = number;

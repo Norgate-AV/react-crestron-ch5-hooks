@@ -1,4 +1,4 @@
-export declare interface IStateSubscription {
+export interface IStateSubscription {
     id: string;
     signalName: string;
 }

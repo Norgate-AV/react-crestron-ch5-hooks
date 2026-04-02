@@ -1,3 +1,3 @@
 import { Serial, StateCallback } from "./index.js";
 
-export declare type SerialStateCallback = StateCallback<Serial>;
+export type SerialStateCallback = StateCallback<Serial>;
