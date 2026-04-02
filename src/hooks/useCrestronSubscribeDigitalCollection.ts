@@ -20,9 +20,12 @@ export function useCrestronSubscribeDigitalCollection(
     callback?: DigitalStateCallback,
 ): IDigitalState[] {
     const [state, setState] = useState<IDigitalState[]>(
-        Array.from<IDigitalState>({ length: signalNames.length }).fill({
-            value: false,
-        }),
+        Array.from(
+            { length: signalNames.length },
+            (): IDigitalState => ({
+                value: false,
+            }),
+        ),
     );
 
     const callbackRef = useRef<DigitalStateCallback | undefined>(undefined);

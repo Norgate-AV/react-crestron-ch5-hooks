@@ -20,9 +20,12 @@ export function useCrestronSubscribeAnalogCollection(
     callback?: AnalogStateCallback,
 ): IAnalogState[] {
     const [state, setState] = useState<IAnalogState[]>(
-        Array.from<IAnalogState>({ length: signalNames.length }).fill({
-            value: 0,
-        }),
+        Array.from(
+            { length: signalNames.length },
+            (): IAnalogState => ({
+                value: 0,
+            }),
+        ),
     );
 
     const callbackRef = useRef<AnalogStateCallback | undefined>(undefined);
