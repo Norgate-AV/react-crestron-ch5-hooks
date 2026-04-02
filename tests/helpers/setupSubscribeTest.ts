@@ -6,9 +6,8 @@ export function setupSubscribeTest<T>(
     signalType: string,
     signalName: string | string[],
 ) {
-    const callback: StateCallback<T> = (value, signalName) => {
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        console.log(`Signal: ${signalName}, New Value: [${value}]`);
+    const callback: StateCallback<T> = (_value, _signalName) => {
+        // no-op
     };
 
     const subscribeState = vi.spyOn(CrComLib, "subscribeState");

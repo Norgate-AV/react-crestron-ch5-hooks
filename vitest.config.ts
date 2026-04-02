@@ -3,8 +3,9 @@ import { resolve } from "path";
 
 export default defineConfig({
     test: {
-        environment: "jsdom",
-        testTimeout: 60000,
+        environment: "happy-dom",
+        pool: "threads",
+        testTimeout: 5000,
         resolveSnapshotPath(path, extension) {
             return path + extension;
         },
