@@ -15,7 +15,7 @@ export function useCrestronSubscribeDigital(
     callback?: DigitalStateCallback,
 ): [IDigitalState] {
     const [state, setState] = useState<boolean>(false);
-    const callbackRef = useRef<DigitalStateCallback | undefined>();
+    const callbackRef = useRef<DigitalStateCallback | undefined>(undefined);
 
     useEffect(() => {
         callbackRef.current = callback;

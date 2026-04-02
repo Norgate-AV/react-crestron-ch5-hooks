@@ -15,7 +15,7 @@ export function useCrestronSubscribeAnalog(
     callback?: AnalogStateCallback,
 ): [IAnalogState] {
     const [state, setState] = useState<number>(0);
-    const callbackRef = useRef<AnalogStateCallback | undefined>();
+    const callbackRef = useRef<AnalogStateCallback | undefined>(undefined);
 
     useEffect(() => {
         callbackRef.current = callback;

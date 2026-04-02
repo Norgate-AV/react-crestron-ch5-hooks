@@ -25,7 +25,7 @@ export function useCrestronSubscribeDigitalCollection(
         }),
     );
 
-    const callbackRef = useRef<DigitalStateCallback | undefined>();
+    const callbackRef = useRef<DigitalStateCallback | undefined>(undefined);
 
     useEffect(() => {
         callbackRef.current = callback;

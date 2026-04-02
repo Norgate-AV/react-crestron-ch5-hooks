@@ -25,7 +25,7 @@ export function useCrestronSubscribeSerialCollection(
         }),
     );
 
-    const callbackRef = useRef<SerialStateCallback | undefined>();
+    const callbackRef = useRef<SerialStateCallback | undefined>(undefined);
 
     useEffect(() => {
         callbackRef.current = callback;

@@ -25,7 +25,7 @@ export function useCrestronSubscribeAnalogCollection(
         }),
     );
 
-    const callbackRef = useRef<AnalogStateCallback | undefined>();
+    const callbackRef = useRef<AnalogStateCallback | undefined>(undefined);
 
     useEffect(() => {
         callbackRef.current = callback;
