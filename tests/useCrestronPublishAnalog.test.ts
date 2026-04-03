@@ -9,7 +9,7 @@ import { useCrestronPublishAnalog } from "../src/hooks/index.js";
 import { IAnalogEventAction } from "../src/@types/index.js";
 import { setupPublishTest, signalNames } from "./helpers/index.js";
 
-describe("useCrestronSubscribeAnalog", () => {
+describe("useCrestronPublishAnalog", () => {
     const { signalType, signalName, publishEvent } = setupPublishTest(
         CrestronCH5.SignalType.Analog,
         signalNames[0] as string,

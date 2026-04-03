@@ -75,6 +75,33 @@ describe("useCrestronSerialCollection", () => {
         });
     });
 
+    it("should update state and invoke callback when the signal value changes for each signalName", () => {
+        const signalNamesArr = signalName as string[];
+
+        signalNamesArr.forEach((name, index) => {
+            const handler = subscribeState.mock.calls[index]![2] as (
+                value: Serial,
+            ) => void;
+
+            act(() => {
+                handler("hello");
+            });
+
+            expect(hook!.result.current[index]!.state.value).toBe("hello");
+            expect(callback).toHaveBeenCalledWith("hello", name);
+            expect(callback).toHaveBeenCalledTimes(1);
+            callback.mockClear();
+        });
+    });
+
+    it("should work without a callback", () => {
+        const { result } = renderHook(() =>
+            useCrestronSerialCollection(signalName as string[]),
+        );
+
+        expect(result.current.every((s) => s.state.value === "")).toBe(true);
+    });
+
     it("should call CrComLib.unsubscribeState() correctly on unmount", () => {
         act(() => {
             hook?.unmount();

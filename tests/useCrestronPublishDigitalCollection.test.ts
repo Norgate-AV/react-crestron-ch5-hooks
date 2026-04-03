@@ -152,4 +152,31 @@ describe("useCrestronPublishDigitalCollection", () => {
             vi.useRealTimers();
         });
     });
+
+    it("click should be equivalent to hold(0) for each signalName", () => {
+        const signalNamesArr = signalName as string[];
+
+        signalNamesArr.forEach((name, index) => {
+            const action = actions[index] as IDigitalEventAction;
+
+            vi.useFakeTimers();
+
+            act(() => {
+                action.hold(0);
+            });
+
+            expect(publishEvent).toHaveBeenCalledWith(signalType, name, true);
+            expect(publishEvent).toHaveBeenCalledTimes(1);
+
+            act(() => {
+                vi.advanceTimersByTime(0);
+            });
+
+            expect(publishEvent).toHaveBeenCalledWith(signalType, name, false);
+            expect(publishEvent).toHaveBeenCalledTimes(2);
+            publishEvent.mockClear();
+
+            vi.useRealTimers();
+        });
+    });
 });

@@ -50,6 +50,29 @@ describe("useCrestronSubscribeSerial", () => {
         expect(subscribeState).toHaveReturnedWith(expect.any(String));
     });
 
+    it("should update state and invoke callback when the signal value changes", () => {
+        const handler = subscribeState.mock.calls[0]![2] as (
+            value: Serial,
+        ) => void;
+
+        act(() => {
+            handler("hello");
+        });
+
+        expect(hook!.result.current[0].value).toBe("hello");
+        expect(callback).toHaveBeenCalledWith("hello", signalName as string);
+        expect(callback).toHaveBeenCalledTimes(1);
+        callback.mockClear();
+    });
+
+    it("should work without a callback", () => {
+        const { result } = renderHook(() =>
+            useCrestronSubscribeSerial(signalName as string),
+        );
+
+        expect(result.current[0].value).toBe("");
+    });
+
     it("should call CrComLib.unsubscribeState() correctly on unmount", () => {
         act(() => {
             hook?.unmount();

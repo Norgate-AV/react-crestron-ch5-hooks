@@ -51,6 +51,33 @@ describe("useCrestronSubscribeDigitalCollection", () => {
         expect(subscribeState).toHaveReturnedWith(expect.any(String));
     });
 
+    it("should update state and invoke callback when the signal value changes for each signalName", () => {
+        const signalNamesArr = signalName as string[];
+
+        signalNamesArr.forEach((name, index) => {
+            const handler = subscribeState.mock.calls[index]![2] as (
+                value: Digital,
+            ) => void;
+
+            act(() => {
+                handler(true);
+            });
+
+            expect(hook!.result.current[index]!.value).toBe(true);
+            expect(callback).toHaveBeenCalledWith(true, name);
+            expect(callback).toHaveBeenCalledTimes(1);
+            callback.mockClear();
+        });
+    });
+
+    it("should work without a callback", () => {
+        const { result } = renderHook(() =>
+            useCrestronSubscribeDigitalCollection(signalName as string[]),
+        );
+
+        expect(result.current.every((s) => s.value === false)).toBe(true);
+    });
+
     it("should call CrComLib.unsubscribeState() correctly on unmount", () => {
         act(() => {
             hook?.unmount();

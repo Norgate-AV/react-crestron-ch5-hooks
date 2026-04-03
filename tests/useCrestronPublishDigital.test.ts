@@ -9,7 +9,7 @@ import { useCrestronPublishDigital } from "../src/hooks/index.js";
 import { IDigitalEventAction } from "../src/@types/index.js";
 import { setupPublishTest, signalNames } from "./helpers/index.js";
 
-describe("useCrestronSubscribeDigital", () => {
+describe("useCrestronPublishDigital", () => {
     const { signalType, signalName, publishEvent } = setupPublishTest(
         CrestronCH5.SignalType.Digital,
         signalNames[0] as string,
@@ -119,6 +119,31 @@ describe("useCrestronSubscribeDigital", () => {
 
         act(() => {
             vi.advanceTimersByTime(100);
+        });
+
+        expect(publishEvent).toHaveBeenCalledWith(
+            signalType,
+            signalName,
+            false,
+        );
+        expect(publishEvent).toHaveBeenCalledTimes(2);
+        publishEvent.mockClear();
+
+        vi.useRealTimers();
+    });
+
+    it("click should be equivalent to hold(0)", () => {
+        vi.useFakeTimers();
+
+        act(() => {
+            action.hold(0);
+        });
+
+        expect(publishEvent).toHaveBeenCalledWith(signalType, signalName, true);
+        expect(publishEvent).toHaveBeenCalledTimes(1);
+
+        act(() => {
+            vi.advanceTimersByTime(0);
         });
 
         expect(publishEvent).toHaveBeenCalledWith(
