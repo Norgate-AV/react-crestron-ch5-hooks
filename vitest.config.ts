@@ -10,6 +10,11 @@ export default defineConfig({
             return path + extension;
         },
         include: ["tests/**/*.test.ts"],
+        coverage: {
+            provider: "v8",
+            reporter: ["lcov", "text"],
+            reportsDirectory: "./coverage",
+        },
     },
     resolve: {
         alias: [
