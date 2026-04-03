@@ -80,18 +80,5 @@
         "typescript": "^6.0.2",
         "vite-node": "^6.0.0",
         "vitest": "^4.1.2"
-    },
-    "crestron": {
-        "crcomlib": {
-            "root": "./node_modules/@crestron/ch5-crcomlib",
-            "packageJson": "./node_modules/@crestron/ch5-crcomlib/package.json",
-            "bundle": {
-                "name": "cr-com-lib.js",
-                "path": {
-                    "umd": "./node_modules/@crestron/ch5-crcomlib/build_bundles/umd/cr-com-lib.js",
-                    "cjs": "build_bundles/cjs/cr-com-lib.js"
-                }
-            }
-        }
     }
 }
