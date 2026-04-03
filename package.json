@@ -48,7 +48,7 @@
         "contrib:check": "all-contributors check"
     },
     "peerDependencies": {
-        "@crestron/ch5-crcomlib": "^1.2.0",
+        "@crestron/ch5-crcomlib": "^2.0.0",
         "@norgate-av/crestron-ch5-helper": "^1.1.0",
         "react": ">=16"
     },
