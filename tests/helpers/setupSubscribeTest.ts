@@ -9,6 +9,7 @@ export function setupSubscribeTest<T>(
 
     const subscribeState = vi.spyOn(CrComLib, "subscribeState");
     const unsubscribeState = vi.spyOn(CrComLib, "unsubscribeState");
+    const getState = vi.spyOn(CrComLib, "getState");
 
     return {
         signalType,
@@ -16,5 +17,6 @@ export function setupSubscribeTest<T>(
         callback,
         subscribeState,
         unsubscribeState,
+        getState,
     };
 }

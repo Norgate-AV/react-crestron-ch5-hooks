@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
+import {
+    subscribeState,
+    unsubscribeState,
+    getState,
+} from "@crestron/ch5-crcomlib";
 import {
     DigitalStateCallback,
     IDigitalState,
@@ -18,13 +22,11 @@ export function useCrestronSubscribeDigitalCollection(
     signalNames: string[],
     callback?: DigitalStateCallback,
 ): IDigitalState[] {
-    const [state, setState] = useState<IDigitalState[]>(
-        Array.from(
-            { length: signalNames.length },
-            (): IDigitalState => ({
-                value: false,
-            }),
-        ),
+    const [state, setState] = useState<IDigitalState[]>(() =>
+        signalNames.map((signalName): IDigitalState => {
+            const current = getState("boolean", signalName);
+            return { value: current !== null ? (current as boolean) : false };
+        }),
     );
 
     const callbackRef = useRef<DigitalStateCallback | undefined>(undefined);

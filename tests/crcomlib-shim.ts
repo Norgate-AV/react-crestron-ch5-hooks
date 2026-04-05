@@ -28,3 +28,11 @@ export function publishEvent(
     _name: string,
     _value: unknown,
 ): void {}
+
+export function getState(
+    _type: string,
+    _name: string,
+    _defaultValue?: unknown,
+): unknown | null {
+    return null;
+}

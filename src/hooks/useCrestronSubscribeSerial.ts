@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
+import {
+    subscribeState,
+    unsubscribeState,
+    getState,
+} from "@crestron/ch5-crcomlib";
 import { ISerialState, SerialStateCallback } from "../@types/index.js";
 
 /**
@@ -13,7 +17,10 @@ export function useCrestronSubscribeSerial(
     signalName: string,
     callback?: SerialStateCallback,
 ): [ISerialState] {
-    const [state, setState] = useState<string>("");
+    const [state, setState] = useState<string>(() => {
+        const current = getState("string", signalName);
+        return current !== null ? (current as string) : "";
+    });
     const callbackRef = useRef<SerialStateCallback | undefined>(undefined);
 
     useEffect(() => {

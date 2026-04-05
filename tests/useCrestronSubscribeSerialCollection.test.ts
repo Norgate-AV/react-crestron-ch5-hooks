@@ -15,6 +15,7 @@ describe("useCrestronSubscribeSerialCollection", () => {
         callback,
         subscribeState,
         unsubscribeState,
+        getState,
     } = setupSubscribeTest<Serial>("string", signalNames);
 
     let hook: RenderHookResult<ISerialState[], unknown> | null = null;
@@ -86,5 +87,29 @@ describe("useCrestronSubscribeSerialCollection", () => {
         );
 
         expect(unsubscribeState).toHaveBeenCalledTimes(signalName.length);
+    });
+
+    it("should call CrComLib.getState() with the correct signal type and name for each signal on mount", () => {
+        const names = signalName as string[];
+
+        names.forEach((name) => {
+            expect(getState).toHaveBeenCalledWith(signalType, name);
+        });
+    });
+
+    it("should initialize with the values from getState when prior states exist", () => {
+        getState.mockReturnValue("hello");
+
+        const { result } = renderHook(() =>
+            useCrestronSubscribeSerialCollection(signalName as string[]),
+        );
+
+        expect(result.current).toEqual(
+            Array.from<ISerialState>({ length: signalName.length }).fill({
+                value: "hello",
+            }),
+        );
+
+        getState.mockReturnValue(null);
     });
 });

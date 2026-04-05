@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
+import {
+    subscribeState,
+    unsubscribeState,
+    getState,
+} from "@crestron/ch5-crcomlib";
 import {
     AnalogStateCallback,
     IAnalogState,
@@ -18,13 +22,11 @@ export function useCrestronSubscribeAnalogCollection(
     signalNames: string[],
     callback?: AnalogStateCallback,
 ): IAnalogState[] {
-    const [state, setState] = useState<IAnalogState[]>(
-        Array.from(
-            { length: signalNames.length },
-            (): IAnalogState => ({
-                value: 0,
-            }),
-        ),
+    const [state, setState] = useState<IAnalogState[]>(() =>
+        signalNames.map((signalName): IAnalogState => {
+            const current = getState("number", signalName);
+            return { value: current !== null ? (current as number) : 0 };
+        }),
     );
 
     const callbackRef = useRef<AnalogStateCallback | undefined>(undefined);

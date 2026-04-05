@@ -15,6 +15,7 @@ describe("useCrestronSubscribeDigital", () => {
         callback,
         subscribeState,
         unsubscribeState,
+        getState,
     } = setupSubscribeTest<Digital>("boolean", signalNames[0] as string);
 
     let hook: RenderHookResult<[IDigitalState], unknown> | null = null;
@@ -81,5 +82,19 @@ describe("useCrestronSubscribeDigital", () => {
         );
 
         expect(unsubscribeState).toHaveBeenCalledTimes(1);
+    });
+
+    it("should call CrComLib.getState() with the correct signal type and name on mount", () => {
+        expect(getState).toHaveBeenCalledWith(signalType, signalName);
+    });
+
+    it("should initialize with the value from getState when a prior state exists", () => {
+        getState.mockReturnValueOnce(true);
+
+        const { result } = renderHook(() =>
+            useCrestronSubscribeDigital(signalName as string),
+        );
+
+        expect(result.current[0].value).toBe(true);
     });
 });

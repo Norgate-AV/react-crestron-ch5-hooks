@@ -15,6 +15,7 @@ describe("useCrestronSubscribeAnalog", () => {
         callback,
         subscribeState,
         unsubscribeState,
+        getState,
     } = setupSubscribeTest<Analog>("number", signalNames[0] as string);
 
     let hook: RenderHookResult<[IAnalogState], unknown> | null = null;
@@ -81,5 +82,19 @@ describe("useCrestronSubscribeAnalog", () => {
         );
 
         expect(unsubscribeState).toHaveBeenCalledTimes(1);
+    });
+
+    it("should call CrComLib.getState() with the correct signal type and name on mount", () => {
+        expect(getState).toHaveBeenCalledWith(signalType, signalName);
+    });
+
+    it("should initialize with the value from getState when a prior state exists", () => {
+        getState.mockReturnValueOnce(42);
+
+        const { result } = renderHook(() =>
+            useCrestronSubscribeAnalog(signalName as string),
+        );
+
+        expect(result.current[0].value).toBe(42);
     });
 });
