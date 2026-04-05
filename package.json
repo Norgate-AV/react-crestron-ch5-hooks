@@ -1,7 +1,7 @@
 {
     "name": "@norgate-av/react-crestron-ch5-hooks",
     "description": "A collection of Crestron CH5 hooks ⚓ for React 😀",
-    "version": "1.1.0",
+    "version": "2.0.0",
     "keywords": [
         "react",
         "hooks",

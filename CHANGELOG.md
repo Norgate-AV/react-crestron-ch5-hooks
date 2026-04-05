@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Norgate-AV/react-crestron-ch5-hooks/compare/v1.1.0...v2.0.0) (2026-04-05)
+
+### ⚠ BREAKING CHANGES
+
+- React peer dependency minimum raised from >=16 to >=18
+
+### 🌟 Features
+
+- migrate to @norgate-av/ch5-crcomlib and drop ch5-helper dependency ([9327a99](https://github.com/Norgate-AV/react-crestron-ch5-hooks/commit/9327a992caddb399194bb79432816e169f1e36db))
+- **hooks:** seed initial state from getState on mount ([fdd7e0f](https://github.com/Norgate-AV/react-crestron-ch5-hooks/commit/fdd7e0f31714de9843383cbb859cb8d6b249a6b3))
+
 ## [1.1.0](https://github.com/Norgate-AV/react-crestron-ch5-hooks/compare/v1.0.0...v1.1.0) (2026-04-03)
 
 ### 🌟 Features
