@@ -4,14 +4,13 @@ import {
     RenderHookResult,
     act,
 } from "@testing-library/react/pure.js";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishDigital } from "../src/hooks/index.js";
 import { IDigitalEventAction } from "../src/@types/index.js";
 import { setupPublishTest, signalNames } from "./helpers/index.js";
 
 describe("useCrestronPublishDigital", () => {
     const { signalType, signalName, publishEvent } = setupPublishTest(
-        CrestronCH5.SignalType.Digital,
+        "boolean",
         signalNames[0] as string,
     );
 

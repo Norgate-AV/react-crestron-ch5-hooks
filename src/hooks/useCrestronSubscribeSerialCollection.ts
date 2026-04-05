@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { subscribeState, unsubscribeState } from "@crestron/ch5-crcomlib";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import {
     SerialStateCallback,
     IStateSubscription,
@@ -35,7 +34,7 @@ export function useCrestronSubscribeSerialCollection(
     }, [callback]);
 
     useEffect(() => {
-        const signalType = CrestronCH5.SignalType.String;
+        const signalType = "string";
         const subscriptions: IStateSubscription[] = [];
 
         signalNames.forEach((signalName, index) => {

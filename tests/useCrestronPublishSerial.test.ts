@@ -4,14 +4,13 @@ import {
     RenderHookResult,
     act,
 } from "@testing-library/react/pure.js";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishSerial } from "../src/hooks/index.js";
 import { ISerialEventAction } from "../src/@types/index.js";
 import { setupPublishTest, signalNames } from "./helpers/index.js";
 
 describe("useCrestronPublishSerial", () => {
     const { signalType, signalName, publishEvent } = setupPublishTest(
-        CrestronCH5.SignalType.Serial,
+        "string",
         signalNames[0] as string,
     );
 

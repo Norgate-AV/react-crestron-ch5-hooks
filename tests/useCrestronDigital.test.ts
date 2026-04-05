@@ -4,7 +4,6 @@ import {
     RenderHookResult,
     act,
 } from "@testing-library/react/pure.js";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronDigital } from "../src/hooks/index.js";
 import { Digital, IDigitalSignal } from "../src/@types/index.js";
 import { setupTest, signalNames } from "./helpers/index.js";
@@ -17,10 +16,7 @@ describe("useCrestronDigital", () => {
         callback,
         subscribeState,
         unsubscribeState,
-    } = setupTest<Digital>(
-        CrestronCH5.SignalType.Digital,
-        signalNames[0] as string,
-    );
+    } = setupTest<Digital>("boolean", signalNames[0] as string);
 
     let hook: RenderHookResult<[IDigitalSignal], unknown> | null = null;
     let signal: IDigitalSignal;

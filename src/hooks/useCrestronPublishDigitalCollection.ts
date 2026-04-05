@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { IDigitalEventAction } from "../@types/index.js";
 
 /**
@@ -16,11 +15,7 @@ export function useCrestronPublishDigitalCollection(
         () =>
             signalNames.map((signalName) => {
                 const setValue = (value: boolean) => {
-                    publishEvent(
-                        CrestronCH5.SignalType.Boolean,
-                        signalName,
-                        value,
-                    );
+                    publishEvent("boolean", signalName, value);
                 };
 
                 const push = () => setValue(true);

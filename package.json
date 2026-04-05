@@ -27,13 +27,11 @@
         "node": ">=20"
     },
     "scripts": {
-        "prestart": "pnpm resolve:crcomlib",
         "start": "vite-node",
-        "prebuild": "pnpm clean:dist && pnpm resolve:crcomlib",
+        "prebuild": "pnpm clean:dist",
         "build": "tsup",
-        "pretest": "pnpm resolve:crcomlib",
         "test": "vitest --run --passWithNoTests",
-        "test:coverage": "pnpm clean:coverage && pnpm resolve:crcomlib && vitest --passWithNoTests --coverage",
+        "test:coverage": "pnpm clean:coverage && vitest --passWithNoTests --coverage",
         "lint": "tsc",
         "prepare": "husky",
         "clean:dist": "rimraf dist",
@@ -41,7 +39,6 @@
         "clean:all": "pnpm clean:dist && pnpm clean:coverage",
         "commit": "git-cz",
         "pretty:fix": "prettier --write .",
-        "resolve:crcomlib": "node -e \"const fs=require('fs');const p='./node_modules/@crestron/ch5-crcomlib/package.json';const j=JSON.parse(fs.readFileSync(p,'utf8'));j.main='build_bundles/cjs/cr-com-lib.js';fs.writeFileSync(p,JSON.stringify(j,null,2),'utf8');\"",
         "doctoc": "doctoc --title '## Contents 📖' README.md",
         "contrib:add": "all-contributors add",
         "contrib:generate": "all-contributors generate",
@@ -49,14 +46,12 @@
     },
     "peerDependencies": {
         "@crestron/ch5-crcomlib": "^2.0.0",
-        "@norgate-av/crestron-ch5-helper": "^1.1.0",
-        "react": ">=16"
+        "react": ">=18"
     },
     "devDependencies": {
         "@commitlint/cli": "^20.5.0",
         "@commitlint/config-conventional": "^20.5.0",
-        "@crestron/ch5-crcomlib": "^2.17.2",
-        "@norgate-av/crestron-ch5-helper": "^2.1.0",
+        "@crestron/ch5-crcomlib": "npm:@norgate-av/ch5-crcomlib@^2.17.2",
         "@semantic-release/changelog": "^6.0.1",
         "@semantic-release/git": "^10.0.1",
         "@testing-library/react": "^16.3.2",

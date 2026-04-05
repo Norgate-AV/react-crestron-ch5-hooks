@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from "react";
 import { publishEvent } from "@crestron/ch5-crcomlib";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { IDigitalEventAction } from "../@types/index.js";
 
 /**
@@ -12,8 +11,7 @@ export function useCrestronPublishDigital(
     signalName: string,
 ): [IDigitalEventAction] {
     const setValue = useCallback(
-        (value: boolean) =>
-            publishEvent(CrestronCH5.SignalType.Boolean, signalName, value),
+        (value: boolean) => publishEvent("boolean", signalName, value),
         [signalName],
     );
 

@@ -4,7 +4,6 @@ import {
     RenderHookResult,
     act,
 } from "@testing-library/react/pure.js";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSerial } from "../src/hooks/index.js";
 import { ISerialSignal, Serial } from "../src/@types/index.js";
 import { setupTest, signalNames } from "./helpers/index.js";
@@ -17,10 +16,7 @@ describe("useCrestronSerial", () => {
         callback,
         subscribeState,
         unsubscribeState,
-    } = setupTest<Serial>(
-        CrestronCH5.SignalType.Serial,
-        signalNames[0] as string,
-    );
+    } = setupTest<Serial>("string", signalNames[0] as string);
 
     let hook: RenderHookResult<[ISerialSignal], unknown> | null = null;
     let signal: ISerialSignal;

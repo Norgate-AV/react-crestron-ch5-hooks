@@ -4,14 +4,13 @@ import {
     RenderHookResult,
     act,
 } from "@testing-library/react/pure.js";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronPublishAnalogCollection } from "../src/hooks/index.js";
 import { IAnalogEventAction } from "../src/@types/index.js";
 import { setupPublishTest, signalNames } from "./helpers/index.js";
 
 describe("useCrestronPublishAnalogCollection", () => {
     const { signalType, signalName, publishEvent } = setupPublishTest(
-        CrestronCH5.SignalType.Analog,
+        "number",
         signalNames,
     );
 

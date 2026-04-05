@@ -4,7 +4,6 @@ import {
     RenderHookResult,
     act,
 } from "@testing-library/react/pure.js";
-import CrestronCH5 from "@norgate-av/crestron-ch5-helper";
 import { useCrestronSubscribeAnalog } from "../src/hooks/index.js";
 import { Analog, IAnalogState } from "../src/@types/index.js";
 import { setupSubscribeTest, signalNames } from "./helpers/index.js";
@@ -16,10 +15,7 @@ describe("useCrestronSubscribeAnalog", () => {
         callback,
         subscribeState,
         unsubscribeState,
-    } = setupSubscribeTest<Analog>(
-        CrestronCH5.SignalType.Analog,
-        signalNames[0] as string,
-    );
+    } = setupSubscribeTest<Analog>("number", signalNames[0] as string);
 
     let hook: RenderHookResult<[IAnalogState], unknown> | null = null;
 

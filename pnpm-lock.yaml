@@ -14,11 +14,8 @@ importers:
         specifier: ^20.5.0
         version: 20.5.0
       "@crestron/ch5-crcomlib":
-        specifier: ^2.17.2
-        version: 2.17.2
-      "@norgate-av/crestron-ch5-helper":
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: npm:@norgate-av/ch5-crcomlib@^2.17.2
+        version: "@norgate-av/ch5-crcomlib@2.17.2"
       "@semantic-release/changelog":
         specifier: ^6.0.1
         version: 6.0.3(semantic-release@25.0.3(typescript@6.0.2))
@@ -332,13 +329,6 @@ packages:
         optional: true
       conventional-commits-parser:
         optional: true
-
-  "@crestron/ch5-crcomlib@2.17.2":
-    resolution:
-      {
-        integrity: sha512-jX41pQd2+1EgjzNj5gIYqA2OzjJ5lTQo9xxWZcNwcT2EFmN6Y0KUCgqKQmrc5yuAbXMNiNB/eYtxdO1RMqQL/w==,
-      }
-    engines: { node: ">=20.4.0" }
 
   "@csstools/color-helpers@6.0.2":
     resolution:
@@ -698,12 +688,12 @@ packages:
       "@emnapi/core": ^1.7.1
       "@emnapi/runtime": ^1.7.1
 
-  "@norgate-av/crestron-ch5-helper@2.1.0":
+  "@norgate-av/ch5-crcomlib@2.17.2":
     resolution:
       {
-        integrity: sha512-cxqEBC2lzaeNnu3oRE2LeL18mnu4GN1oGKR2s2S/+S4AuakK3EOl0VqayRHD/TbUMjtJrbzxXGSm3XFaJHen0w==,
+        integrity: sha512-AUkZC5x0q05aC9X0gBtZAaT+SnJGheRsdH9FqBo+Baq6KrcrityJyGRQ5MZrDwvbvd76Tq9540Mml0f9RDsXQg==,
       }
-    engines: { node: ">=20" }
+    engines: { node: ">=20.4.0" }
 
   "@octokit/auth-token@6.0.0":
     resolution:
@@ -6691,20 +6681,6 @@ snapshots:
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.4.0
 
-  "@crestron/ch5-crcomlib@2.17.2":
-    dependencies:
-      "@raghavendradabbir/mycolorpicker": 1.0.0
-      axios: 1.14.0
-      hammerjs: 2.0.8
-      i18next: 21.10.0
-      lodash: 4.17.23
-      nouislider: 15.8.1
-      qrcode: 1.5.4
-      rxjs: 7.8.2
-      swiper: 7.4.1
-    transitivePeerDependencies:
-      - debug
-
   "@csstools/color-helpers@6.0.2":
     optional: true
 
@@ -6858,7 +6834,19 @@ snapshots:
       "@tybys/wasm-util": 0.10.1
     optional: true
 
-  "@norgate-av/crestron-ch5-helper@2.1.0": {}
+  "@norgate-av/ch5-crcomlib@2.17.2":
+    dependencies:
+      "@raghavendradabbir/mycolorpicker": 1.0.0
+      axios: 1.14.0
+      hammerjs: 2.0.8
+      i18next: 21.10.0
+      lodash: 4.17.23
+      nouislider: 15.8.1
+      qrcode: 1.5.4
+      rxjs: 7.8.2
+      swiper: 7.4.1
+    transitivePeerDependencies:
+      - debug
 
   "@octokit/auth-token@6.0.0": {}
 
